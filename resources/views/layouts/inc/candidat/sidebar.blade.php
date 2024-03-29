@@ -1,0 +1,1 @@
+@livewire('candidat.sidebar.sidebar')
