@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('concours', function (Blueprint $table) {
             $table->id();
+            $table->string('annee',15);
+            $table->foreignIdFor(\App\Models\Corp::class)->constrained();
+            $table->foreignIdFor(\App\Models\Candidat::class)->constrained();
             $table->timestamps();
         });
     }

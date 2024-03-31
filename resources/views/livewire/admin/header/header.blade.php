@@ -17,7 +17,7 @@
             }
         @endphp
         @if ($button)
-            <button type="button" class="btn btn-primary {{ $type->id == $session ? 'active' : '' }}"
+            <button type="button" class="btn btn-primary {{ $type->id == $session ? '' : 'active' }}"
                 wire:click='type({{ $type->id }})'>{{ $type->nom }} <span class="btn-icon-right">
             </button>
         @endif

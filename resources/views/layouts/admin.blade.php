@@ -124,6 +124,7 @@
      <!-- Date Range JS -->
      <script src="{{ asset('assets/vendor/daterange/daterange.js') }}"></script>
      <script src="{{ asset('assets/vendor/daterange/custom-daterange.js') }}"></script>
+     @yield('script')
     @livewireScripts
 </body>
 

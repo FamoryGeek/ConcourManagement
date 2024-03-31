@@ -1,11 +1,24 @@
 <?php
 
-use App\Http\Controllers\Admin\Dashboardontroller;
-use App\Http\Controllers\Admin\DroitController;
-use App\Http\Controllers\Admin\RoleController;
-use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\admin\CorpController;
+use App\Http\Controllers\admin\NoteController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\admin\CadreController;
+use App\Http\Controllers\Admin\DroitController;
+use App\Http\Controllers\admin\CentreController;
+use App\Http\Controllers\admin\ModuleController;
+use App\Http\Controllers\admin\ConcourController;
+use App\Http\Controllers\admin\DiplomeController;
+use App\Http\Controllers\admin\CandidatController;
+use App\Http\Controllers\Admin\Dashboardontroller;
+use App\Http\Controllers\admin\LocaliteController;
+use App\Http\Controllers\admin\CategorieController;
+use App\Http\Controllers\admin\TypeCandidatController;
+use App\Http\Controllers\admin\ProgrammationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,7 +112,7 @@ Route::controller(ConcourController::class)->name('concour.')->group(function ()
 });
 
 //corps
-Route::controller(CorpsController::class)->name('corp.')->group(function () {
+Route::controller(CorpController::class)->name('corp.')->group(function () {
     Route::get('/corps','index')->name('index');
     Route::get('/corps/create','create')->name('create');
     Route::post('/corps/store','store')->name('store');
@@ -159,7 +172,7 @@ Route::controller(ProgrammationController::class)->name('programmation.')->group
 });
 
 //typeCandidats
-Route::controller(TypeCandidatController::class)->name('typeCandidat.')->group(function () {
+Route::controller(TypeCandidatController::class)->name('type-candidat.')->group(function () {
     Route::get('/typeCandidats','index')->name('index');
     Route::get('/typeCandidats/create','create')->name('create');
     Route::post('/typeCandidats/store','store')->name('store');

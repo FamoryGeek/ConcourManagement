@@ -4,7 +4,7 @@
         <!-- App brand starts -->
         <div class="app-brand p-3 my-2">
             <a href="">
-                <img src="assets/images/logo.svg" class="logo" alt="Bootstrap Gallery" />
+                <img src="{{ asset('assets/images/logo.svg') }}" class="logo" alt="Bootstrap Gallery" />
             </a>
         </div>
 
@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 @empty
-                    <span>Pas de droits</span>
+                    <span></span>
                 @endforelse
             </ul>
         </div>

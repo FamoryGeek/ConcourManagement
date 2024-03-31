@@ -1,73 +1,111 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestion de concour</title>
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    <!-- *************
+			************ CSS Files *************
+		************* -->
+    <link
+      rel="stylesheet"
+      href="{{ asset('assets/fonts/bootstrap/bootstrap-icons.min.css') }}"
+    />
+    <link rel="stylesheet" href="{{ asset('assets/css/main.min.css') }}" />
+  </head>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+  <body>
+    <!-- Page wrapper starts -->
+    <div class="page-wrapper">
+      <!-- Auth container starts -->
+      <div class="auth-container">
+        <div class="d-flex justify-content-center">
+          <!-- Form starts -->
+          <form action="{{ route('login') }}" method="post">
+            @csrf
+            <!-- Logo starts -->
+            <a href="{{ URL('/') }}" class="auth-logo mt-5 mb-3">
+              <img src="{{ asset('assets/images/logo.svg') }}" alt="Bootstrap Gallery" />
+            </a>
+            <!-- Logo ends -->
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+            <!-- Authbox starts -->
+            <div class="auth-box">
+              <h4 class="mb-4">Bienvenue à nouveau</h4>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+              <div class="mb-3">
+                <label class="form-label" for="email"
+                  >Email <span class="text-danger">*</span></label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-envelope"></i>
+                  </span>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control @error('email') is-invalid @enderror"
+                    placeholder="Entrez votre email"
+                    value="{{ old('email') }}"
+                  />
+                  @error('email')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
                 </div>
+              </div>
+
+              <div class="mb-2">
+                <label class="form-label" for="password"
+                  >Mot de passe <span class="text-danger">*</span></label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-lock"></i>
+                  </span>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control @error('password') is-invalid @enderror"
+                    placeholder="Entrez votre mot de passe"
+                  />
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-end mb-3">
+                @if (Route::has('password.request'))
+                <a class="btn btn-link" href="{{ route('password.request') }}">
+                    {{ __('Mot de passe oublié?') }}
+                </a>
+            @endif
+              </div>
+
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+                <a href="{{ route('register') }}" class="btn btn-outline-dark"
+                  >Non enregistré ? S'inscrire</a
+                >
+              </div>
             </div>
+            <!-- Authbox ends -->
+          </form>
+          <!-- Form ends -->
         </div>
+      </div>
+      <!-- Auth container ends -->
     </div>
-</div>
-@endsection
+    <!-- Page wrapper ends -->
+  </body>
+</html>

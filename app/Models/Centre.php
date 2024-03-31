@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Centre extends Model
 {
     use HasFactory;
+    protected $guarded=[];
+
+    public function localite() {
+        return $this->belongsTo(Localite::class);
+    }
 }
