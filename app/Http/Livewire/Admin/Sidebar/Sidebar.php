@@ -19,16 +19,22 @@ class Sidebar extends Component
     }
     public function render()
     {
-        if (isNull($this->type)) {
-            $session = session()->get("type");
-            $droits = Auth::user()->role->droits;
-            $this->droits = $droits->where('acces', 1)
-            ->where('type_droit_id', $session);
-        } else {
-            $droits = Auth::user()->role->droits;
-            $this->droits = $droits->where('acces', 1)
-            ->where('type_droit_id', $this->type);
+        if(Auth::check()){
+            if (isNull($this->type)) {
+                $session = session()->get("type");
+                $droits = Auth::user()->role->droits;
+                $this->droits = $droits->where('acces', 1)
+                ->where('type_droit_id', $session);
+            } else {
+                $droits = Auth::user()->role->droits;
+                $this->droits = $droits->where('acces', 1)
+                ->where('type_droit_id', $this->type);
+            }
+            return view('livewire.admin.sidebar.sidebar');
+        }else{
+            toastr()->error('Vous etes deconnecter');
+            return view('auth.login');
         }
-        return view('livewire.admin.sidebar.sidebar');
+
     }
 }

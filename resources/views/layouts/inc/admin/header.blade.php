@@ -87,7 +87,19 @@
                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="me-2 text-truncate d-lg-block d-none">{{ Auth::user()->name }}</span>
                     <div class="icon-box md rounded-4 fw-bold bg-primary-subtle text-primary">
-                        FK
+                       {{--  {{ strtoupper(Str::substr(Auth::user()->name , 0, 2)) }} --}}
+                        @php
+                             $mots = explode(" ", Auth::user()->name);
+                            $lettres = '';
+                            foreach ($mots as $mot) {
+                                $premiereLettre = mb_substr($mot, 0, 1);
+                                $lettres .= $premiereLettre;
+                            }
+                            $lettres
+                        @endphp
+                        {{ $lettres }}
+
+
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end shadow-lg">

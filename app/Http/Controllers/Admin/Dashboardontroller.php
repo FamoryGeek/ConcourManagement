@@ -11,4 +11,10 @@ class Dashboardontroller extends Controller
     {
         return view('admin.dashboard');
     }
+    public function gestionnaire(){
+        return view('gestionnaire.dashboard');
+    }
+    public function candidat(){
+        return view('candidat.dashboard');
+    }
 }

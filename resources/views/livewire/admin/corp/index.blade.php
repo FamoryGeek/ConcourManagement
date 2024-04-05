@@ -32,7 +32,7 @@
                                                 {{ $corp->id }}
                                             </td>
                                             <td>{{ $corp->nom }}</td>
-                                            <td>{{ $corp->specialite }}</td>
+                                            <td>{{ $corp->specialite->nom }}</td>
                                             <td>{{ $corp->cadre->nom }}</td>
                                             <td>{{ $corp->categorie->nom }}</td>
                                             <td>

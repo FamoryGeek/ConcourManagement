@@ -17,4 +17,13 @@ class CandidatController extends Controller
         }
         return view('admin.candidat.index');
     }
+    public function create()
+    {
+        $autorisation = $this->autorisation(Auth::user()->role, 'candidat.index');
+        if ($autorisation == 'false') {
+            toastr()->info('Vous n\'avez pas le droit d\'acceder à ces ressources', 'Tentative échoué');
+            return redirect()->route('admin.dashboard');
+        }
+        return view('admin.candidat.create');
+    }
 }

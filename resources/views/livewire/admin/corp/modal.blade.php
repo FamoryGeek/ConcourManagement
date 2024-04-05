@@ -28,10 +28,15 @@
                             <div class="col-lg-6 col-sm-2 col-6 ">
                                 <div class="mb-3">
                                     <label class="form-label mb-3" for="a2">Nom de la specialité</label>
-                                    <input type="text" class="form-control" id="a2" wire:model="specialite"
-                                        placeholder="Entrez le nom de la specialité" autofocus>
+                                    <input class="form-control" list="specialite" id="a2"  wire:model="specialite_id">
+                                    <datalist  id="specialite" >
+                                        <option value="">Choisir la specialité</option>
+                                        @foreach ($specialites as $specialite)
+                                            <option value="{{ $specialite->id }}">{{ $specialite->nom }}</option>
+                                        @endforeach
+                                    </datalist>
                                 </div>
-                                @error('specialite')
+                                @error('specialite_id')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -39,8 +44,8 @@
                         <div class="row gx-2">
                             <div class="col-lg-6 col-sm-6 col-6">
                                 <div class="mb-3">
-                                    <label class="form-label mb-3" for="a7">Cadre</label>
-                                    <select class="form-select" id="a7" wire:model="cadre_id">
+                                    <label class="form-label mb-3" for="a3">Cadre</label>
+                                    <select class="form-select" id="a3" wire:model="cadre_id">
                                         <option value="">Choisir le cadre</option>
                                         @foreach ($cadres as $cadre)
                                             <option value="{{ $cadre->id }}">{{ $cadre->nom }}</option>
@@ -53,8 +58,8 @@
                             </div>
                             <div class="col-lg-6 col-sm-6 col-6">
                                 <div class="mb-3">
-                                    <label class="form-label mb-3" for="a7">Categorie</label>
-                                    <select class="form-select" id="a7" wire:model="categorie_id">
+                                    <label class="form-label mb-3" for="a4">Categorie</label>
+                                    <select class="form-select" id="a4" wire:model="categorie_id">
                                         <option value="">Choisir la categorie</option>
                                         @foreach ($categories as $categorie)
                                             <option value="{{ $categorie->id }}">{{ $categorie->nom }}</option>
@@ -114,10 +119,14 @@
                             <div class="col-lg-6 col-sm-2 col-6 ">
                                 <div class="mb-3">
                                     <label class="form-label mb-3" for="a2">Nom de la specialité</label>
-                                    <input type="text" class="form-control" id="a2" wire:model="specialite"
-                                        placeholder="Entrez le nom de la specialité" autofocus>
+                                    <select class="form-select" id="a2" wire:model="specialite_id">
+                                        <option value="">Choisir la specialité</option>
+                                        @foreach ($specialites as $specialite)
+                                            <option value="{{ $specialite->id }}">{{ $specialite->nom }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                @error('specialite')
+                                @error('specialite_id')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
