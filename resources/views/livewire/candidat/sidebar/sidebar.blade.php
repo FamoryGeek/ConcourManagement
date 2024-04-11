@@ -13,23 +13,30 @@
         <!-- Sidebar menu starts -->
         <div class="sidebarMenuScroll">
             <ul class="sidebar-menu">
-                <li class="current-page">
-                    <a href="{{ route('admin.dashboard') }}">
-                        <i class="bi bi-bar-chart-line"></i>
-                        <span class="menu-text">Dashboard</span>
+                <li class="{{ request()->is('candidat/dashboard')? 'active current-page' : '' }}">
+                    <a href="{{ route('candidat.dashboard') }}">
+                        <i class="bi bi-clipboard-data"></i>
+                        <span class="menu-text">Tableau de bord</span>
                     </a>
                 </li>
-                @forelse ($droits as $droit)
-                <li class="border-top @if (Route::currentRouteName() == $droit->route) @endif ">
-                    <a href="{{ route($droit->route) }}"
-                        class="@if (Route::currentRouteName() == $droit->route) text-dark @endif">
-                        <i class="bi bi-shop-window"></i>
-                        <span class="menu-text">{{ $droit->nom }}</span>
+                <li class="{{ request()->is('candidat/notes')? 'active current-page' : '' }}">
+                    <a href="{{ route('candidat.note.index') }}">
+                        <i class="bi bi-wallet2"></i>
+                        <span class="menu-text">Notes</span>
                     </a>
                 </li>
-                @empty
-                    <span></span>
-                @endforelse
+                <li class="{{ request()->is('candidat/programmations')? 'active current-page' : '' }}">
+                    <a href="{{ route('candidat.programmation.index') }}">
+                        <i class="bi bi-calendar-event"></i>
+                        <span class="menu-text">Emploi du temps</span>
+                    </a>
+                </li>
+                <li class="{{ request()->is('candidat/profil')? 'active current-page' : '' }}">
+                    <a href="{{ route('candidat.profil.index') }}">
+                        <i class="bi bi-person"></i>
+                        <span class="menu-text">Profil</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar menu ends -->

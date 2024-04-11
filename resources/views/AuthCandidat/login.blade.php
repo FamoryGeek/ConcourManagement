@@ -1,0 +1,1 @@
+@livewire('candidatAuth.login')

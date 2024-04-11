@@ -19,6 +19,11 @@ use App\Http\Controllers\admin\LocaliteController;
 use App\Http\Controllers\admin\CategorieController;
 use App\Http\Controllers\admin\TypeCandidatController;
 use App\Http\Controllers\admin\ProgrammationController;
+use App\Http\Controllers\AuthCandidat\LoginController;
+use App\Http\Controllers\Candidat\InscriptionController;
+use App\Http\Controllers\Candidat\NoteController as CandidatNoteController;
+use App\Http\Controllers\Candidat\ProfilController;
+use App\Http\Controllers\Candidat\ProgrammationController as CandidatProgrammationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +46,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin/dashboard', [Dashboardontroller::class, 'index'])->name('admin.dashboard');
 Route::get('/gestionnaire/dashboard', [Dashboardontroller::class, 'gestionnaire'])->name('gestionnaire.dashboard');
 Route::get('/candidat/dashboard', [Dashboardontroller::class, 'candidat'])->name('candidat.dashboard');
+Route::get('/candidat/inscription',[InscriptionController::class, 'index'])->name('candidat.inscription');
+
 
 Route::prefix('admin')->middleware(['auth'])->group(function(){
     //routes droits
@@ -83,7 +90,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
         Route::get('/categories','index')->name('index');
     });
 
-//centres
+    //centres
     Route::controller(CentreController::class)->name('centre.')->group(function () {
         Route::get('/centres','index')->name('index');
     });
@@ -126,5 +133,23 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     //typeCandidats
     Route::controller(TypeCandidatController::class)->name('type-candidat.')->group(function () {
         Route::get('/typeCandidats','index')->name('index');
+    });
+});
+
+Route::group(['middleware' => 'candidat.guest'], function () {
+    Route::get('candidat-login', [LoginController::class, 'index'])->name('candidatAuth.login');
+});
+Route::prefix('candidat')->middleware(['authCandidat'])->group(function(){
+    //notes
+    Route::controller(CandidatNoteController::class)->name('candidat.')->group(function(){
+        Route::get('/notes', 'index')->name('note.index');
+    });
+    //emploi du temps
+    Route::controller(CandidatProgrammationController::class)->name('candidat.')->group(function(){
+        Route::get('/programmations', 'index')->name('programmation.index');
+    });
+    //Profil
+    Route::controller(ProfilController::class)->name('candidat.')->group(function(){
+        Route::get('/profil', 'index')->name('profil.index');
     });
 });

@@ -37,28 +37,26 @@
     <div class="page-wrapper">
 
         <!-- Main container starts -->
-        <div class="main-container">
+        <div class="main">
 
             <!-- Sidebar wrapper starts -->
-            @include('layouts.inc.gestionnaire.sidebar')
+
             <!-- Sidebar wrapper ends -->
 
             <!-- App container starts -->
-            <div class="app-container">
+            <div class="app-container ">
 
                 <!-- App header starts -->
-                @include('layouts.inc.gestionnaire.header')
+
                 <!-- App header ends -->
 
                 <!-- App body starts -->
-                <div class="app-body">
-                    @yield('content')
-                </div>
+                @yield('content')
                 <!-- App body ends -->
 
                 <!-- App footer starts -->
-                <div class="app-footer">
-                    <span class="small">© FDEV93 & MATA91 2024</span>
+                <div class="app-footer text-center">
+                    <span class="large" style="font-weight: bold; font-size:1.1em;">© FDEV93 & MATA91 2024</span>
                 </div>
                 <!-- App footer ends -->
 
@@ -89,31 +87,6 @@
         <!-- Steps wizard JS -->
         <script src="{{ asset('assets/vendor/wizard/wizard.min.js') }}"></script>
         <script src="{{ asset('assets/vendor/wizard/wizard-custom.js') }}"></script>
-
-    <!-- Apex Charts -->
-    <script src="{{ asset('assets/vendor/apex/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/apex/custom/analytics/stats.js') }}"></script>
-    <script src="{{ asset('assets/vendor/apex/custom/analytics/sales.js') }}"></script>
-    <script src="{{ asset('assets/vendor/apex/custom/analytics/views.js') }}"></script>
-    <script src="{{ asset('assets/vendor/apex/custom/analytics/audiences.js') }}"></script>
-         <!-- Morris Graphs -->
-         <script src="{{ asset('assets/vendor/morris/raphael-min.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/morris.min.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/area.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/barColors.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/dayData.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/donutColors.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/donutFormatter.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/morrisBar.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/negativeValues.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/stackedBar.js') }}"></script>
-
-    <!-- Vector Maps -->
-    <script src="{{ asset('assets/vendor/jvectormap/jquery-jvectormap-2.0.5.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/jvectormap/world-mill-en.js') }}"></script>
-    <script src="{{ asset('assets/vendor/jvectormap/gdp-data.js') }}"></script>
-    <script src="{{ asset('assets/vendor/jvectormap/continents-mill.js') }}"></script>
-    <script src="{{ asset('assets/vendor/jvectormap/custom/world-map-markers4.js') }}"></script>
 
     <!-- Rating -->
     <script src="{{ asset('assets/vendor/rating/raty.js') }}"></script>

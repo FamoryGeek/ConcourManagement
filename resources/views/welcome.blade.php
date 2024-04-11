@@ -42,20 +42,20 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#" class="active">Accueil</a></li>
-          <li><a href="#">A propos</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#features">A propos</a></li>
+          <li><a href="#footer">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
       @if (Route::has('login'))
       <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
           @auth
-              <a href="{{ route('admin.dashboard') }}" class="btn-getstarted">Home</a>
+              <a href="{{ route('candidat.dashboard') }}" class="btn-getstarted">Home</a>
           @else
-              <a href="{{ route('login') }}" class="btn-getstarted">Se connecter</a>
+              <a href="{{ route('candidatAuth.login') }}" class="btn-getstarted">Se connecter</a>
 
-              @if (Route::has('register'))
-                  <a href="{{ route('register') }}" class="btn-getstarted">S'enregistrer</a>
+              @if (Route::has('candidat.inscription'))
+                  <a href="{{ route('candidat.inscription') }}" class="btn-getstarted">S'enregistrer</a>
               @endif
           @endauth
       </div>
@@ -74,7 +74,7 @@
         <h2 data-aos="fade-up" data-aos-delay="100" class="">Concurify<br>Votre porte d'entrée vers la fonction publique au Mali.</h2>
         <p data-aos="fade-up" data-aos-delay="200">Bienvenue sur MaliConcours, votre plateforme dédiée à simplifier et optimiser votre parcours vers la fonction publique au Mali. Découvrez nos services pour réussir vos concours avec succès !</p>
         <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="{{ route('login') }}" class="btn-get-started">S'inscrire</a>
+          <a href="{{ route('candidat.inscription') }}" class="btn-get-started">S'inscrire</a>
         </div>
       </div>
 
@@ -321,7 +321,7 @@
                   <p class="price">$180</p>
                 </div>
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
+                <h3><a href="{{ route('login') }}">Copywriting</a></h3>
                 <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">

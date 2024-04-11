@@ -5,8 +5,8 @@
                 <div class="card mb-3">
                     <div class="card-header d-flex justify-content-between">
                         <h5 class="card-title">Liste des candidats</h5>
-                        <a class="btn btn-primary btn-sm" href="{{ route('candidat.create') }}">Ajouter<i
-                                class="bi bi-plus"></i></a>
+                       {{--  <a class="btn btn-primary btn-sm" href="{{ route('candidat.create') }}">Ajouter<i
+                                class="bi bi-plus"></i></a> --}}
                     </div>
                     @if (session('status'))
                         <h5 class="alert alert-success">{{ session('status') }}</h5>

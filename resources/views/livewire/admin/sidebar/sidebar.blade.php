@@ -13,16 +13,17 @@
         <!-- Sidebar menu starts -->
         <div class="sidebarMenuScroll">
             <ul class="sidebar-menu">
-                <li class="current-page">
+                <li class="{{ request()->is('admin/dashboard')? 'active current-page' : '' }}">
                     <a href="{{ route('admin.dashboard') }}">
                         <i class="bi bi-bar-chart-line"></i>
-                        <span class="menu-text">Dashboard</span>
+                        <span class="menu-text">Tableau de bord</span>
                     </a>
                 </li>
                 @forelse ($droits as $droit)
-                <li class="border-top @if (Route::currentRouteName() == $droit->route) @endif ">
+                <li class=" @if (Route::currentRouteName() == $droit->route) active current-page  @endif ">
                     <a href="{{ route($droit->route) }}"
-                        class="@if (Route::currentRouteName() == $droit->route) text-dark @endif">
+                        class="@if (Route::currentRouteName() == $droit->route) text-white @endif">
+
                         <i class="bi bi-shop-window"></i>
                         <span class="menu-text">{{ $droit->nom }}</span>
                     </a>

@@ -30,11 +30,11 @@
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
+     inkscape:current-layer="Group_1" />
   <g
      id="Group_1"
      data-name="Group 1"
-     transform="matrix(0.97373678,0,0,0.97866695,-578.77631,-421.66388)">
+     transform="matrix(0.97373678,0,0,0.97866695,-571.90354,-422.42752)">
     <g
        id="Group_1-2"
        data-name="Group 1"
@@ -153,9 +153,9 @@
        x="796.08997"
        y="456.10117"
        id="text2"
-       transform="matrix(4.3042611,0.05583806,0,6.5278143,-2652.0802,-2509.8896)"><tspan
+       transform="matrix(4.0437446,-0.02537903,0.12268601,5.6300136,-2482.575,-2036.5223)"><tspan
          x="796.08997"
          y="456.10117"
-         id="tspan2">ConCuriFy</tspan></text>
+         id="tspan1">ConCuriFy</tspan></text>
   </g>
 </svg>

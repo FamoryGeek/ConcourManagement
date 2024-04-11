@@ -1,5 +1,5 @@
 <div>
-    @php
+   {{--  @php
         $session = session()->get('type');
     @endphp
     @foreach ($types as $type)
@@ -21,5 +21,5 @@
                 wire:click='type({{ $type->id }})'>{{ $type->nom }} <span class="btn-icon-right">
             </button>
         @endif
-    @endforeach
+    @endforeach --}}
 </div>

@@ -8,8 +8,9 @@ use App\Models\TypeCandidat;
 use App\Models\CompteCandidat;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Candidat extends Model
+class Candidat extends Authenticatable
 {
     use HasFactory;
     protected $guarded=[];
@@ -29,5 +30,5 @@ class Candidat extends Model
     public function cadre(){
         return $this->belongsTo(Cadre::class);
     }
-    
+
 }

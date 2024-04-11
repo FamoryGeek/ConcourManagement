@@ -58,7 +58,7 @@
 
                 <!-- App footer starts -->
                 <div class="app-footer">
-                    <span class="small">© FDEV93 & MATA91 2024</span>
+                    <span class="large" style="font-weight: bold; font-size:1.1em;">© FDEV93 & MATA91 2024</span>
                 </div>
                 <!-- App footer ends -->
 
@@ -92,21 +92,8 @@
 
     <!-- Apex Charts -->
     <script src="{{ asset('assets/vendor/apex/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/apex/custom/analytics/stats.js') }}"></script>
-    <script src="{{ asset('assets/vendor/apex/custom/analytics/sales.js') }}"></script>
-    <script src="{{ asset('assets/vendor/apex/custom/analytics/views.js') }}"></script>
-    <script src="{{ asset('assets/vendor/apex/custom/analytics/audiences.js') }}"></script>
-         <!-- Morris Graphs -->
-         <script src="{{ asset('assets/vendor/morris/raphael-min.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/morris.min.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/area.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/barColors.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/dayData.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/donutColors.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/donutFormatter.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/morrisBar.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/negativeValues.js') }}"></script>
-         <script src="{{ asset('assets/vendor/morris/custom/stackedBar.js') }}"></script>
+    <script src="{{ asset('assets/vendor/apex/custom/orders/orders.js') }}"></script>
+
 
     <!-- Vector Maps -->
     <script src="{{ asset('assets/vendor/jvectormap/jquery-jvectormap-2.0.5.min.js') }}"></script>
@@ -114,10 +101,6 @@
     <script src="{{ asset('assets/vendor/jvectormap/gdp-data.js') }}"></script>
     <script src="{{ asset('assets/vendor/jvectormap/continents-mill.js') }}"></script>
     <script src="{{ asset('assets/vendor/jvectormap/custom/world-map-markers4.js') }}"></script>
-
-    <!-- Rating -->
-    <script src="{{ asset('assets/vendor/rating/raty.js') }}"></script>
-    <script src="{{ asset('assets/vendor/rating/raty-custom.js') }}"></script>
 
     <!-- Custom JS files -->
     <script src="{{ asset('assets/js/custom.js') }}"></script>

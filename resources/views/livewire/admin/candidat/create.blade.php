@@ -115,9 +115,9 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="ag">Numero de
                                             téléphone<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="ag" wire:model="tel">
+                                        <input type="text" class="form-control" id="ag" wire:model="numero">
                                     </div>
-                                    @error('tel')
+                                    @error('numero')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -178,7 +178,7 @@
                                     <div class="mb-3">
                                         <label class="form-label mb-3" for="ak">Type
                                             Candidat<span class="text-danger">*</span></label>
-                                        <select class="form-select" id="ak" wire:model="typeCandidat_id">
+                                        <select class="form-select" id="ak" wire:model="type_candidat_id">
                                             <option value="">Choisir le type de candidat
                                             </option>
                                             @foreach ($typeCandidats as $typeCandidat)
@@ -188,7 +188,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    @error('typeCandidat_id')
+                                    @error('type_candidat_id')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                                 </div>
@@ -253,10 +253,10 @@
                                                     du
                                                     Certificat Medical<span class="text-danger">*</span></label>
                                                 <input class="form-control" type="file"
-                                                    id="an" wire:model="certificatMedicalImage">
+                                                    id="an" wire:model="certificatMedical">
                                             </div>
                                             </div>
-                                            @error('certificatMedicalImage')
+                                            @error('certificatMedical')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -270,11 +270,11 @@
                                                         la fiche
                                                         individuelle<span class="text-danger">*</span></label>
                                                     <input class="form-control" type="file"
-                                                        wire:model="ficheIndividuelleImage" id="ao">
+                                                        wire:model="ficheIndividuelle" id="ao">
                                                 </div>
                                             </div>
                                         </div>
-                                        @error('ficheIndividuelleImage')
+                                        @error('ficheIndividuelle')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -285,12 +285,12 @@
                                                     <label for="ap" class="form-label">Image
                                                         du
                                                         nina<span class="text-danger">*</span></label>
-                                                    <input class="form-control" type="file" wire:model="ninaImage"
+                                                    <input class="form-control" type="file" wire:model="nina_image"
                                                         id="ap">
                                                 </div>
                                             </div>
                                         </div>
-                                        @error('ninaImage')
+                                        @error('nina_image')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -303,11 +303,11 @@
                                                         l'acte de
                                                         naissance<span class="text-danger">*</span></label>
                                                     <input class="form-control" type="file"
-                                                        wire:model="acteNaissanceImage" id="aq">
+                                                        wire:model="acteNaissance" id="aq">
                                                 </div>
                                             </div>
                                         </div>
-                                         @error('acteNaissanceImage')
+                                         @error('acteNaissance')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -320,11 +320,11 @@
                                                         certificat
                                                         de nationalité<span class="text-danger">*</span></label>
                                                     <input class="form-control" type="file"
-                                                        wire:model="certificatNationaliteImage" id="ar">
+                                                        wire:model="certificatNationalite" id="ar">
                                                 </div>
                                             </div>
                                         </div>
-                                        @error('certificatNationaliteImage')
+                                        @error('certificatNationalite')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -338,11 +338,11 @@
                                                         d'équivalence (etranger) <span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" type="file"
-                                                        name="lettreEquivalenceImage" id="as">
+                                                        wire:model="lettreEquivalence" id="as">
                                                 </div>
                                             </div>
                                         </div>
-                                        @error('lettreEquivalenceImage')
+                                        @error('lettreEquivalence')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
