@@ -9,4 +9,13 @@ class Programmation extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+    public function centre()
+    {
+        return $this->belongsTo(Centre::class);
+    }
+    public function corp()
+    {
+        return $this->belongsTo(Corp::class);
+    }
 }

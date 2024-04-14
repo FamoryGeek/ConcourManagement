@@ -13,4 +13,9 @@ class Centre extends Model
     public function localite() {
         return $this->belongsTo(Localite::class);
     }
+
+    public function programmations()
+    {
+        return $this->hasMany(Programmation::class);
+    }
 }

@@ -43,7 +43,7 @@
                                                     data-bs-target="#edit_custom_policy" href="#"><i
                                                         class="bi bi-pencil"></i>
                                                 </a>
-                                                <a class="btn btn-info btn-sm delete_modal" data-bs-toggle="modal"
+                                                <a class="btn btn-danger btn-sm delete_modal" data-bs-toggle="modal"
                                                 data-bs-target="#delete_custom_policy" href="#"><i
                                                         class="bi bi-trash"></i>
                                                 </a>

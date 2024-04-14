@@ -130,6 +130,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
         Route::get('/programmations','index')->name('index');
     });
 
+    //notes
+    Route::controller(NoteController::class)->name('note.')->group(function () {
+        Route::get('/notes','index')->name('index');
+    });
+
     //typeCandidats
     Route::controller(TypeCandidatController::class)->name('type-candidat.')->group(function () {
         Route::get('/typeCandidats','index')->name('index');

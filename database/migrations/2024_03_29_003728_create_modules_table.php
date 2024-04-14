@@ -18,14 +18,8 @@ return new class extends Migration
             $table->timestamps();
         });
         DB::table('modules')->insert([
-            ['nom' => 'CAP'],
-            ['nom' => 'BT2'],
-            ['nom' => 'DES'],
-            ['nom' => 'DUT/DEUG'],
-            ['nom' => 'Licence'],
-            ['nom' => 'Master'],
-            ['nom' => 'Doctorat/DEA'],
-            ['nom' => 'Maîtrise']
+            ['nom' => 'Epreuve Technique'],
+            ['nom' => 'Culture Générale'],
         ]);
     }
 

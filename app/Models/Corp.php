@@ -23,4 +23,8 @@ class Corp extends Model
     public function concours(){
         return $this->belongsToMany(Concour::class);
     }
+    public function programmations()
+    {
+        return $this->hasMany(Programmation::class);
+    }
 }

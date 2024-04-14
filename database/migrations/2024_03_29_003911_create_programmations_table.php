@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('programmations', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->foreignIdFor(\App\Models\Centre::class)->constrained();
+            $table->foreignIdFor(\App\Models\Corp::class)->constrained();
             $table->timestamps();
         });
     }

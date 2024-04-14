@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire\Admin\Header;
 
-use App\Models\Type_droit;
 use Livewire\Component;
+use App\Models\Type_droit;
+use Illuminate\Support\Facades\Auth;
 
 class Header extends Component
 {
@@ -15,6 +16,9 @@ class Header extends Component
         $this->emit("type_droit", $id);
         $this->type_id = $id;
         session()->put("type", $this->type_id);
+        if (Auth::user()->role->id == null ) {
+            return redirect()->route('login');
+        }
     }
     public function render()
     {

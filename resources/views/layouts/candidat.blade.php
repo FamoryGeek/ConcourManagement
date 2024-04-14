@@ -57,7 +57,7 @@
                 <!-- App body ends -->
 
                 <!-- App footer starts -->
-                <div class="app-footer">
+                <div class="app-footer text-center">
                     <span class="large" style="font-weight: bold; font-size:1.1em;">© FDEV93 & MATA91 2024</span>
                 </div>
                 <!-- App footer ends -->

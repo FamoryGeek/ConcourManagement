@@ -52,6 +52,7 @@ class Index extends Component
             $this->localite_id = $centre->localite_id;
         }
     }
+    
     public function updateCentre()
     {
         $validatedData = $this->validate();
