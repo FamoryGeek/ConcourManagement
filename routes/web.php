@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\CorpController;
 use App\Http\Controllers\admin\NoteController;
 use App\Http\Controllers\Admin\RoleController;
@@ -17,13 +16,14 @@ use App\Http\Controllers\admin\CandidatController;
 use App\Http\Controllers\Admin\Dashboardontroller;
 use App\Http\Controllers\admin\LocaliteController;
 use App\Http\Controllers\admin\CategorieController;
+use App\Http\Controllers\Candidat\ProfilController;
 use App\Http\Controllers\admin\TypeCandidatController;
-use App\Http\Controllers\admin\ProgrammationController;
 use App\Http\Controllers\AuthCandidat\LoginController;
+use App\Http\Controllers\admin\ProgrammationController;
 use App\Http\Controllers\Candidat\InscriptionController;
 use App\Http\Controllers\Candidat\NoteController as CandidatNoteController;
-use App\Http\Controllers\Candidat\ProfilController;
 use App\Http\Controllers\Candidat\ProgrammationController as CandidatProgrammationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -143,6 +143,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
 
 Route::group(['middleware' => 'candidat.guest'], function () {
     Route::get('candidat-login', [LoginController::class, 'index'])->name('candidatAuth.login');
+    Route::post('candidat-post', [LoginController::class, 'login'])->name('candidat.login');
+    Route::post('candidat-logout', [LoginController::class, 'logout'])->name('candidat.logout');
 });
 Route::prefix('candidat')->middleware(['authCandidat'])->group(function(){
     //notes

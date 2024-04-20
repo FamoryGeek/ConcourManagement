@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('dateNaissance');
             $table->string('lieuNaissance',255);
             $table->string('genre',10);
+            $table->string('email',50)->unique();
             $table->string('adresse',255);
             $table->string('numero',20);
             $table->string('status',30);

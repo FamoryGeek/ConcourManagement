@@ -50,7 +50,7 @@
                             @if ($step === 1)
                                 <!-- Vos champs pour les informations personnelles -->
                                 <div class="row gx-2">
-                                    <div class="">
+                                    <div class="col-sm-6 col-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="aa">N° nina<span
                                                     class="text-danger">*</span></label>
@@ -107,6 +107,17 @@
                                     </div>
                                     <div class="col-sm-6 col-6">
                                         <div class="mb-3">
+                                            <label class="form-label" for="ab">Email<span
+                                                    class="text-danger">*</span></label>
+                                            <input type="email" class="form-control" id="ab" wire:model="email"
+                                                placeholder="Entrez votre email">
+                                        </div>
+                                        @error('email')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="col-sm-6 col-6">
+                                        <div class="mb-3">
                                             <label class="form-label" for="af">Adresse<span
                                                     class="text-danger">*</span></label>
                                             <input type="text" class="form-control" id="af"
@@ -145,8 +156,6 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="ai">Status<span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="ai"
-                                                wire:model="status">
                                                 <select class="form-select" id="ai"  wire:model="status">
                                                     <option value="">--Status--</option>
                                                     <option value="Masculin">Célibataire</option>
