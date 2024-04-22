@@ -40,8 +40,8 @@
             <!-- Header actions start -->
             <div class="d-sm-flex d-none">
                 <div class="dropdown">
-                    <a class="dropdown-toggle d-flex p-3 position-relative" href="#!"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="dropdown-toggle d-flex p-3 position-relative" href="#!" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-bag fs-4 lh-1"></i>
                         <span class="count-label">6</span>
                     </a>
@@ -53,8 +53,7 @@
                                     <p class="m-0 text-danger">New product purchased</p>
                                     <p class="small m-0">Just now</p>
                                 </div>
-                                <div
-                                    class="bg-success-subtle border border-success px-3 py-2 rounded-1">
+                                <div class="bg-success-subtle border border-success px-3 py-2 rounded-1">
                                     <p class="m-0 text-success">Order received.</p>
                                     <p class="small m-0">Today, 07:45pm</p>
                                 </div>
@@ -63,8 +62,7 @@
                                     <p class="m-0 text-info">New item ordered.</p>
                                     <p class="small m-0">Today, 07:45pm</p>
                                 </div>
-                                <div
-                                    class="bg-warning-subtle border border-warning px-3 py-2 rounded-1">
+                                <div class="bg-warning-subtle border border-warning px-3 py-2 rounded-1">
                                     <p class="m-0 text-warning">New ticket</p>
                                     <p class="small m-0">Today, 09:30pm</p>
                                 </div>
@@ -76,8 +74,8 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a class="dropdown-toggle d-flex p-3 position-relative" href="#!"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="dropdown-toggle d-flex p-3 position-relative" href="#!" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-receipt fs-4 lh-1"></i>
                         <span class="count-label bg-danger">9</span>
                     </a>
@@ -147,11 +145,21 @@
 
             <!-- User settings start -->
             <div class="dropdown ms-2">
-                <a id="userSettings" class="dropdown-toggle user-settings" href="#!"
-                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="me-2 text-truncate d-lg-block d-none">Sally Esparza</span>
+                <a id="userSettings" class="dropdown-toggle user-settings" href="#!" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="me-2 text-truncate d-lg-block d-none">
+                        @if (session('nom') && session('prenom'))
+                            {{ session('prenom') }} {{ session('nom') }}
+                        @else
+                            user
+                        @endif
+                    </span>
                     <div class="icon-box md rounded-4 fw-bold bg-primary-subtle text-primary">
-                        SE
+                        @if (session('nom') && session('prenom'))
+                            {{ strtoupper(substr(session('prenom'), 0, 1))."".strtoupper(substr(session('nom'), 0, 1)) }}
+                        @else
+                            U
+                        @endif
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end shadow-lg">
@@ -160,7 +168,13 @@
                     <a class="dropdown-item d-flex align-items-center" href="settings.html"><i
                             class="bi bi-gear fs-4 me-2"></i>Account Settings</a>
                     <div class="mx-3 my-2 d-grid">
-                        <a href="login.html" class="btn btn-warning">Logout</a>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"
+                            class="btn btn-warning">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </div>
                 </div>
             </div>

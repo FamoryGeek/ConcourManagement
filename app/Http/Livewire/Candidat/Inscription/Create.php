@@ -20,7 +20,7 @@ class Create extends Component
     public $step = 1;
     public $candidats;
     public $diplomes, $typeCandidats, $corps;
-    public $nina, $nom, $prenom, $dateNaissance, $lieuNaissance, $adresse, $numero, $genre, $status, $diplome_id, $type_candidat_id, $corp_id;
+    public $nina, $nom, $prenom, $dateNaissance, $lieuNaissance, $email, $adresse, $numero, $genre, $status, $diplome_id, $type_candidat_id, $corp_id;
     public $diplomeImage, $certificatMedical, $ficheIndividuelle, $nina_image, $acteNaissance, $certificatNationalite, $lettreEquivalence;
 
     protected $rules = [
@@ -29,6 +29,7 @@ class Create extends Component
         'prenom' => 'required|string',
         'dateNaissance' => 'required|date',
         'lieuNaissance' => 'required|string',
+        'email' => 'required|email|string',
         'adresse' => 'required|string',
         'numero' => 'required|string',
         'genre' => 'required|string',
@@ -75,6 +76,7 @@ class Create extends Component
             ->where('dateNaissance', $validatedData['dateNaissance'])
             ->where('lieuNaissance', $validatedData['lieuNaissance'])
             ->where('numero', $validatedData['numero'])
+            ->where('email', $validatedData['email'])
             ->first();
 
             if ($existingCandidat) {
