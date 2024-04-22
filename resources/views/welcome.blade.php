@@ -262,24 +262,23 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="course-item">
-              <img src="{{ asset('accueil/img/course-1.jpg') }}" class="img-fluid" alt="...">
+                <img src="{{ asset('accueil/img/MK/mk.jpg') }}" class="img-fluid" alt="">
+              {{-- <img src="{{ asset('img/images/mk.jpg') }}" class="img-fluid" alt="..."> --}}
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Web Development</p>
-                  <p class="price">$169</p>
+                  <p class="category">Developpement Web </p>
+                  <p class="price"></p>
                 </div>
 
-                <h3><a href="course-details.html">Website Design</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <h4><a href="course-details.html">Mata Kamory Keita</a></h4>
+                <p class="description">Être content de son sort, voilà la plus grande richesse, car mouche du Roi est Roi.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="{{ asset('accueil/img/trainers/trainer-1-2.jpg') }}" class="img-fluid" alt="">
-                    <a href="" class="trainer-link">Antonio</a>
-                  </div>
+                
                   <div class="trainer-rank d-flex align-items-center">
-                    <i class="bi bi-person user-icon"></i>&nbsp;50
+                    <i class="bi bi-person user-icon"></i>&nbsp;91 18 30 83
                     &nbsp;&nbsp;
-                    <i class="bi bi-heart heart-icon"></i>&nbsp;65
+                    <i class="bi bi-envelope-open-fill"></i>&nbsp;matakeita642@gmail.com
+                    <i class="fas fa-phone"></i>&nbsp;
                   </div>
                 </div>
               </div>
@@ -288,50 +287,46 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="course-item">
-              <img src="{{ asset('accueil/img/course-2.jpg') }}" class="img-fluid" alt="...">
+                <img src="{{ asset('accueil/img/MK/m.jpg') }}" class="img-fluid" alt="">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Marketing</p>
-                  <p class="price">$250</p>
+                  <p class="category">Beauter</p>
+                  <p class="price"></p>
                 </div>
 
-                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <h3><a href="course-details.html">Mata Kamory Keita</a></h3>
+                <p class="description">Mk Keii</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="{{ asset('accueil/img/trainers/trainer-2-2.jpg') }}" class="img-fluid" alt="">
-                    <a href="" class="trainer-link">Lana</a>
-                  </div>
+                
                   <div class="trainer-rank d-flex align-items-center">
-                    <i class="bi bi-person user-icon"></i>&nbsp;35
+                    <i class="bi bi-person user-icon"></i>&nbsp;91 18 30 83
                     &nbsp;&nbsp;
-                    <i class="bi bi-heart heart-icon"></i>&nbsp;42
+                    <i class="bi bi-eye-fill"></i>&nbsp;matakeita198
                   </div>
                 </div>
               </div>
             </div>
           </div> <!-- End Course Item-->
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="course-item">
-              <img src="{{ asset('accueil/img/course-3.jpg') }}" class="img-fluid" alt="...">
+                <img src="{{ asset('accueil/img/MK/belle.jpg') }}" class="img-fluid" alt="">
+              {{-- <img src="{{ asset('img/images/mk.jpg') }}" class="img-fluid" alt="..."> --}}
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Content</p>
-                  <p class="price">$180</p>
+                  <p class="category">Contenu </p>
+                  <p class="price"></p>
                 </div>
 
-                <h3><a href="{{ route('login') }}">Copywriting</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <h3><a href="course-details.html">Mata Kamory Keita</a></h3>
+                <p class="description">On ne peut pas peindre du blanc sur du blanc, du noir sur du noir. Chacun a besoin de l'autre pour se révéler.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="{{ asset('accueil/img/trainers/trainer-3-2.jpg') }}" class="img-fluid" alt="">
-                    <a href="" class="trainer-link">Brandon</a>
-                  </div>
+                
                   <div class="trainer-rank d-flex align-items-center">
-                    <i class="bi bi-person user-icon"></i>&nbsp;20
+                    <i class="bi bi-person user-icon"></i>&nbsp;91 18 30 83
                     &nbsp;&nbsp;
-                    <i class="bi bi-heart heart-icon"></i>&nbsp;85
+                    <i class="bi bi-envelope-open-fill"></i>&nbsp;matakeita642@gmail.com
+                    <i class="fas fa-phone"></i>&nbsp;
                   </div>
                 </div>
               </div>
@@ -428,7 +423,9 @@
             <p>E122</p>
             <p>Bamako, Hamdalaye ACI 2000</p>
             <p class="mt-3"><strong>Phone:</strong> <span>+223 93 01 88 09</span></p>
+            <p class="mt-3"><span>+223 91 18 30 83</span></p>
             <p><strong>Email:</strong> <span>famorydev@outlook.fr</span></p>
+            <p><span>matakeita642@gmail.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter"></i></a>

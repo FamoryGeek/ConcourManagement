@@ -17,12 +17,13 @@ use App\Http\Controllers\admin\CandidatController;
 use App\Http\Controllers\Admin\Dashboardontroller;
 use App\Http\Controllers\admin\LocaliteController;
 use App\Http\Controllers\admin\CategorieController;
+use App\Http\Controllers\Candidat\ProfilController;
+use App\Http\Controllers\Admin\ProfilAdminController;
 use App\Http\Controllers\admin\TypeCandidatController;
-use App\Http\Controllers\admin\ProgrammationController;
 use App\Http\Controllers\AuthCandidat\LoginController;
+use App\Http\Controllers\admin\ProgrammationController;
 use App\Http\Controllers\Candidat\InscriptionController;
 use App\Http\Controllers\Candidat\NoteController as CandidatNoteController;
-use App\Http\Controllers\Candidat\ProfilController;
 use App\Http\Controllers\Candidat\ProgrammationController as CandidatProgrammationController;
 
 /*
@@ -49,7 +50,8 @@ Route::get('/candidat/dashboard', [Dashboardontroller::class, 'candidat'])->name
 Route::get('/candidat/inscription',[InscriptionController::class, 'index'])->name('candidat.inscription');
 
 
-Route::prefix('admin')->middleware(['auth'])->group(function(){
+Route::prefix('admin')->middleware(['auth'])->group(function()
+{
     //routes droits
     Route::controller(DroitController::class)->group(function(){
         Route::get('droits','index')->name('droit.index');
@@ -138,6 +140,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     //typeCandidats
     Route::controller(TypeCandidatController::class)->name('type-candidat.')->group(function () {
         Route::get('/typeCandidats','index')->name('index');
+    });
+
+    Route::controller(ProfilAdminController::class)->name('adminprofil.')->group(function () {
+        Route::get('/adminprofils','index')->name('index');
     });
 });
 
