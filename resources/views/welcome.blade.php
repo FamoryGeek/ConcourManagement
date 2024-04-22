@@ -290,7 +290,7 @@
                 <img src="{{ asset('accueil/img/MK/m.jpg') }}" class="img-fluid" alt="">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Beauter</p>
+                  <p class="category">Intelligence</p>
                   <p class="price"></p>
                 </div>
 
