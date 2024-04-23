@@ -11,9 +11,9 @@
         <div class="d-flex align-items-center flex-row flex-wrap">
 
           <!-- User details starts -->
-          <img src="assets/images/user5.png" class="img-5x rounded-circle" alt="Admin Dashboard">
+          <img src="{{ URL::to('storage/photo/' .Auth::user()->photo)}}" class="img-5x rounded-circle" alt="Admin Dashboard">
           <div class="ms-3 text-white">
-            <h5 class="mb-1">Clarence Wyatt</h5>
+            <h5 class="mb-1">{{Auth::user()->name}}</h5>
             <h6 class="m-0 fw-light">UX Designer</h6>
           </div>
           <!-- User details ends -->
@@ -24,21 +24,21 @@
               <i class="bi bi-envelope-open fs-2 lh-1 me-2"></i>
               <div>
                 <h6 class="mb-1">Email</h6>
-                <p class="m-0 fw-light small">info@sample.com</p>
+                <p class="m-0 fw-light small">{{Auth::user()->email}}</p>
               </div>
             </div>
             <div class="px-3 d-flex align-items-center border-start">
               <i class="bi bi-phone fs-2 lh-1 me-2"></i>
               <div>
                 <h6 class="mb-1">Contact</h6>
-                <p class="m-0 fw-light small">000 000 0000</p>
+                <p class="m-0 fw-light small">{{Auth::user()->telephone}}</p>
               </div>
             </div>
             <div class="px-3 d-flex align-items-center border-start">
               <i class="bi bi-pin-map fs-2 lh-1 me-2"></i>
               <div>
-                <h6 class="mb-1">Location</h6>
-                <p class="m-0 fw-light small">United States</p>
+                <h6 class="mb-1">Adresse</h6>
+                <p class="m-0 fw-light small">{{Auth::user()->adresse}}</p>
               </div>
             </div>
           </div>
@@ -129,70 +129,88 @@
                   <div class="col-sm-3 col-12">
 
                     <!-- Form field start -->
-                    <div class="mb-3">
-                      <label for="fullName" class="form-label">{{Auth::user()->name}}</label>
-                      <div class="input-group">
-                        <span class="input-group-text">
-                          <i class="bi bi-person"></i>
-                        </span>
-                        <input type="text" class="form-control" id="fullName" placeholder="Full name">
-                      </div>
-                    </div>
+                    <form action="{{route("adminprofil.update")}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+
+                            <div class="mb-3">
+                            <label for="fullName" class="form-label"></label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                <i class="bi bi-person"></i>
+                                </span>
+                                <input type="text" name="name" class="form-control" id="fullName" placeholder="Name">
+                            </div>
+                            </div>
+                            <!-- Form field end -->
+
+                        </div>
+                        <div class="col-sm-3 col-12">
+
+                            <!-- Form field start -->
+                            <div class="mb-3">
+                            <label for="yourEmail" class="form-label">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                <i class="bi bi-envelope"></i>
+                                </span>
+                                <input type="email"  name="email" class="form-control" id="yourEmail" placeholder="Email ID"
+                                value="Email">
+                            </div>
+                            </div>
+                            <!-- Form field end -->
+
+                        </div>
+                        <div class="col-sm-3 col-12">
+
+                            <!-- Form field start -->
+                            <div class="mb-3">
+                            <label for="photo" class="form-label">photo</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                <i class="bi bi-file"></i>
+                                </span>
+                                <input type="file"  name="photo" class="form-control" id="photo"
+                                placeholder="Photo">
+                            </div>
+
+                        </div> 
                     <!-- Form field end -->
 
-                  </div>
-                  <div class="col-sm-3 col-12">
+                    <div class="col-12">
 
-                    <!-- Form field start -->
-                    <div class="mb-3">
-                      <label for="yourEmail" class="form-label">Email</label>
-                      <div class="input-group">
-                        <span class="input-group-text">
-                          <i class="bi bi-envelope"></i>
-                        </span>
-                        <input type="email" class="form-control" id="yourEmail" placeholder="Email ID"
-                          value="info@email.com">
-                      </div>
-                    </div>
-                    <!-- Form field end -->
-
-                  </div>
-                  <div class="col-sm-3 col-12">
-
-                    <!-- Form field start -->
-                    <div class="mb-3">
-                      <label for="contactNumber" class="form-label">Contact</label>
-                      <div class="input-group">
-                        <span class="input-group-text">
-                          <i class="bi bi-phone"></i>
-                        </span>
-                        <input type="text" class="form-control" id="contactNumber"
-                          placeholder="Contact">
-                      </div>
+                        <!-- Form field start -->
+                        <div class="mb-3">
+                        <label for="adresse" class="form-label">adresse</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                            <i class="bi bi-map"></i>
+                            </span>
+                            <input type="text"  name="adresse" class="form-control" id="adresse"
+                            placeholder="adresse">
+                        </div>
 
                     </div>
-                    <!-- Form field end -->
-
-                  </div>
-                  <div class="col-sm-3 col-12">
-
-                    <!-- Form field start -->
-                    <div class="mb-3">
-                      <label for="birthDay" class="form-label">DOB</label>
-                      <div class="input-group">
-                        <span class="input-group-text">
-                          <i class="bi bi-calendar4"></i>
-                        </span>
-                        <input type="text" class="form-control" id="birthDay" placeholder="">
-                      </div>
-                    </div>
-                    <!-- Form field end -->
 
                   </div>
                   <div class="col-12">
 
                     <!-- Form field start -->
-                    <div class="m-0">
+                    <div class="mb-3">
+                      <label for="telephone" class="form-label">Telephone</label>
+                      <div class="input-group">
+                        <span class="input-group-text">
+                          <i class="bi bi-phone"></i>
+                        </span>
+                        <input type="text"  name="telephone" class="form-control" id="birthDay" placeholder="">
+                      </div>
+                    </div>
+                    <!-- Form field end -->
+                  </div>
+
+                  <div class="col-12">
+
+                    <!-- Form field start -->
+                    {{-- <div class="m-0">
                       <label class="form-label" for="abt">About</label>
                       <div class="input-group">
                         <span class="input-group-text">
@@ -200,12 +218,14 @@
                         </span>
                         <textarea class="form-control" id="abt" rows="4"></textarea>
                       </div>
-                    </div>
+                    </div> --}}
                     <!-- Form field end -->
 
                   </div>
 
-                </div>
+                </div><br>
+                <button type="submit" class="btn btn-primary">Modifier</button>
+            </form>
                 <!-- Row ends -->
             <div id="trainings"></div>
 
@@ -213,19 +233,20 @@
         </div>
       </div>
 
+      
       <div class="row gx-4">
-        <div class="col-xl-4 col-sm-6 col-12">
+        <div class="col-xl-6 col-sm-6 col-12">
           <div class="card mb-4 card-height-350">
             <div class="card-header">
-              <h5 class="card-title">Notifications</h5>
+              <h5 class="card-title">Changer Mot de Passe</h5>
             </div>
             <div class="card-body">
 
                 <div class="mb-3">
-                    <label class="form-label" for="currentPwd">Current password <span
+                    <label class="form-label" for="currentPwd">Actuel Mot de Passe <span
                         class="text-danger">*</span></label>
                     <div class="input-group">
-                      <input type="password" id="currentPwd" placeholder="Enter Current password"
+                      <input type="password" id="currentPwd" placeholder="Enter Actuel Mot de Passe"
                         class="form-control">
                       <button class="btn btn-outline-secondary" type="button">
                         <i class="bi bi-eye text-black"></i>
@@ -234,11 +255,11 @@
                   </div>
 
                   <div class="mb-3">
-                    <label class="form-label" for="newPwd">New password <span
+                    <label class="form-label" for="newPwd">Nouveau Mot de Passe<span
                         class="text-danger">*</span></label>
                     <div class="input-group">
                       <input type="password" id="newPwd" class="form-control"
-                        placeholder="Your password must be 8-20 characters long.">
+                        placeholder="">
                       <button class="btn btn-outline-secondary" type="button">
                         <i class="bi bi-eye text-black"></i>
                       </button>
@@ -246,10 +267,10 @@
                   </div>
 
                   <div class="mb-3">
-                    <label class="form-label" for="confNewPwd">Confirm new password <span
+                    <label class="form-label" for="confNewPwd">Confirmer nouveau mot de passe <span
                         class="text-danger">*</span></label>
                     <div class="input-group">
-                      <input type="password" id="confNewPwd" placeholder="Confirm new password"
+                      <input type="password" id="confNewPwd" placeholder="Confirmer nouveau mot de passe"
                         class="form-control">
                       <button class="btn btn-outline-secondary" type="button">
                         <i class="bi bi-eye text-black"></i>

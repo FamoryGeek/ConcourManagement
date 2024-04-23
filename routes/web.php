@@ -144,6 +144,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function()
 
     Route::controller(ProfilAdminController::class)->name('adminprofil.')->group(function () {
         Route::get('/adminprofils','index')->name('index');
+        Route::get('/adminprofils/edit','edit')->name('edit');
+        Route::post('/adminprofils/update','update')->name('update');
     });
 });
 

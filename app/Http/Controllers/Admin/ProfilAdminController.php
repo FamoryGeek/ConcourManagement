@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProfilAdminController extends Controller
 {
@@ -12,7 +14,8 @@ class ProfilAdminController extends Controller
      */
     public function index()
     {
-        return view('admin.profils.index');
+        $users = User::all();
+        return view('admin.profils.index', compact('users'));
     }
 
     /**
@@ -28,7 +31,8 @@ class ProfilAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+
     }
 
     /**
@@ -42,17 +46,42 @@ class ProfilAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit()
     {
-        //
+        return view('admin.profils.index');
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $users= User::find(Auth::user()->id);
+        // $request->validate([
+        //     'name' => 'required',
+        //      'email' => 'required',
+        //      'password' => 'required',
+        //      'photo' => 'mimes:jpeg, png, jpg, svg',
+        //     'telephone' => 'required',
+        // ]);
+        if($request->hasFile("photo")){
+            $photo = $request->file("photo");
+            $ext = $photo->getClientOriginalExtension();
+            $autorise = ["png", "jpg", "svg", "jpeg"];
+            if(! in_array(strtolower($ext), $autorise)){
+                return back()->with("error", "Choissisez une photo");
+            }
+            $profile_name = time(). '.' . $ext;
+            $photo->move(public_path('storage/photo'),$profile_name);
+        }
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $users->photo= $profile_name;
+        $users->telephone = $request->telephone;
+        $users->save();
+        // dd($users);
+        toastr()->success('le profil a ete modifier avec succes', 'Succes');
+        return redirect()->route('adminprofil.index');
     }
 
     /**
