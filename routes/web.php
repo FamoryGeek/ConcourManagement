@@ -146,6 +146,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function()
         Route::get('/adminprofils','index')->name('index');
         Route::get('/adminprofils/edit','edit')->name('edit');
         Route::post('/adminprofils/update','update')->name('update');
+        Route::post('/change-pass','updatePass')->name('mdp');
     });
 });
 

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfilAdminController extends Controller
 {
@@ -31,7 +32,7 @@ class ProfilAdminController extends Controller
      */
     public function store(Request $request)
     {
-       
+
 
     }
 
@@ -77,6 +78,7 @@ class ProfilAdminController extends Controller
         $users->name = $request->name;
         $users->email = $request->email;
         $users->photo= $profile_name;
+        $users->adresse = $request->adresse;
         $users->telephone = $request->telephone;
         $users->save();
         // dd($users);
@@ -90,5 +92,29 @@ class ProfilAdminController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function updatePass(Request $request)
+    {
+        if (!(Hash::check($request->current_password, Auth::user()->password))) {
+            // The passwords matches
+            return redirect()->back()->with("error", "Votre mot de passe actuel ne correspond pas au mot de passe fourni. Veuillez réessayer.");
+        }
+
+        if (strcmp($request->current_password, $request->password) == 0) {
+            //Current password and new password are same
+            return redirect()->back()->with("error", "Le nouveau mot de passe ne peut pas etre le meme que votre mot de passe actuel. Veuillez choisir un mot de passe different.");
+        }
+
+        $validatedData = $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        //     //Change Password
+        $user = User::find(Auth::user()->id);
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return redirect()->back()->with("success", "Password changed successfully !");
     }
 }

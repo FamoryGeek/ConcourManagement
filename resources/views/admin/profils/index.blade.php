@@ -173,7 +173,7 @@
                                 placeholder="Photo">
                             </div>
 
-                        </div> 
+                        </div>
                     <!-- Form field end -->
 
                     <div class="col-12">
@@ -233,56 +233,60 @@
         </div>
       </div>
 
-      
-      <div class="row gx-4">
-        <div class="col-xl-6 col-sm-6 col-12">
-          <div class="card mb-4 card-height-350">
-            <div class="card-header">
-              <h5 class="card-title">Changer Mot de Passe</h5>
-            </div>
-            <div class="card-body">
-
-                <div class="mb-3">
-                    <label class="form-label" for="currentPwd">Actuel Mot de Passe <span
-                        class="text-danger">*</span></label>
-                    <div class="input-group">
-                      <input type="password" id="currentPwd" placeholder="Enter Actuel Mot de Passe"
-                        class="form-control">
-                      <button class="btn btn-outline-secondary" type="button">
-                        <i class="bi bi-eye text-black"></i>
-                      </button>
-                    </div>
-                  </div>
-
+     
+        
+        <div class="row gx-4">
+          <div class="col-xl-6 col-sm-6 col-12">
+            <div class="card mb-4 card-height-350">
+              <div class="card-header">
+                <h5 class="card-title">Changer Mot de Passe</h5>
+              </div>
+              <div class="card-body">
+                <form action="{{route("adminprofil.mdp")}}" method="POST">
+                  @csrf
                   <div class="mb-3">
-                    <label class="form-label" for="newPwd">Nouveau Mot de Passe<span
-                        class="text-danger">*</span></label>
-                    <div class="input-group">
-                      <input type="password" id="newPwd" class="form-control"
-                        placeholder="">
-                      <button class="btn btn-outline-secondary" type="button">
-                        <i class="bi bi-eye text-black"></i>
-                      </button>
+                      <label class="form-label" for="currentPwd">Actuel Mot de Passe <span
+                          class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <input type="password" name="current_password" id="currentPwd" placeholder="Enter Actuel Mot de Passe"
+                          class="form-control">
+                        <button class="btn btn-outline-secondary" type="button">
+                          <i class="bi bi-eye text-black"></i>
+                        </button>
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="mb-3">
-                    <label class="form-label" for="confNewPwd">Confirmer nouveau mot de passe <span
-                        class="text-danger">*</span></label>
-                    <div class="input-group">
-                      <input type="password" id="confNewPwd" placeholder="Confirmer nouveau mot de passe"
-                        class="form-control">
-                      <button class="btn btn-outline-secondary" type="button">
-                        <i class="bi bi-eye text-black"></i>
-                      </button>
+                    <div class="mb-3">
+                      <label class="form-label" for="newPwd">Nouveau Mot de Passe<span
+                          class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <input type="password" name="password" id="newPwd" class="form-control"
+                          placeholder="">
+                        <button class="btn btn-outline-secondary" type="button">
+                          <i class="bi bi-eye text-black"></i>
+                        </button>
+                      </div>
                     </div>
-                  </div>
 
-
+                    <div class="mb-3">
+                      <label class="form-label" for="confNewPwd">Confirmer nouveau mot de passe <span
+                          class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <input type="password" name="password_confirmation" id="confNewPwd" placeholder="Confirmer nouveau mot de passe"
+                          class="form-control">
+                        <button class="btn btn-outline-secondary" type="button">
+                          <i class="bi bi-eye text-black"></i>
+                        </button>
+                      </div>
+                    </div>
+                
+                    <button type="submit" class="btn btn-primary">MODIDFIER</button>
+                  </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        
       <!-- Row ends -->
 
     </div>
