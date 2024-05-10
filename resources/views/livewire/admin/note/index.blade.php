@@ -18,6 +18,9 @@
                                         <option value="{{ now()->format('Y') }}" selected>{{ now()->format('Y') }}
                                         </option>
                                     </select>
+                                    @error('annee')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-lg-3 col-sm-4 col-12">
@@ -25,15 +28,16 @@
                                     <label class="form-label" for="a17">Cadre</label>
                                     <select class="form-select" id="a17" wire:model="cadre_id">
                                         <option value="0">Choisir le cadre</option>
-
-                                            @foreach ($cadres as $cadre)
-                                                <option value="{{ $cadre->id }}">
-                                                    {{ $cadre->nom }}
-                                                </option>
-                                            @endforeach
-
+                                        @foreach ($cadres as $cadre)
+                                            <option value="{{ $cadre->id }}">
+                                                {{ $cadre->nom }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
+                                @error('cadre_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-lg-3 col-sm-4 col-12">
                                 <div class="mb-3">
@@ -41,16 +45,37 @@
                                     <select class="form-select" id="cadre_select" wire:model="corp_id">
                                         <option value="0">Choisir le corp</option>
                                         @if (!empty($corps))
-                                        @foreach ($corps as $corp)
-                                            <option value="{{ $corp->id }}">
-                                                {{ $corp->nom }}
-                                            </option>
-                                        @endforeach
+                                            @foreach ($corps as $corp)
+                                                <option value="{{ $corp->id }}">
+                                                    {{ $corp->nom }}
+                                                </option>
+                                            @endforeach
                                         @endif
                                     </select>
                                 </div>
+                                @error('corp_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-lg-3 col-sm-4 col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="a16">Specialité</label>
+                                    <select name="module" id="specialite_select" wire:model="specialite_id"
+                                        class="form-select">
+                                        <option value="">Choisissez la spécialité</option>
+                                        @if (!empty($specialites))
+                                            @foreach ($specialites as $specialite)
+                                                <option value="{{ $specialite->id }}">{{ $specialite->nom }}
+                                                </option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                </div>
+                                @error('specialite_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="">
                                 <div class="mb-3">
                                     <label class="form-label" for="a16">Localite</label>
                                     <select class="form-select" id="a16" wire:model="localite_id">
@@ -62,6 +87,9 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                @error('localite_id')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                             </div>
 
                             <div class="d-flex gap-2 justify-content-end ">
@@ -78,7 +106,7 @@
                     @if ($resultats)
                         @if ($resultats->isNotEmpty())
                             <form action="" method="post">
-                                <div>
+                                {{-- <div>
                                     <h4>Choisir la spécialité et affecter les notes aux candidats</h4>
                                 </div>
                                 <div class="col-sm-3">
@@ -92,12 +120,13 @@
                                         @endforeach
                                     @endif
                                     </select>
-                                </div>
-                                <hr>
+                                </div> --}}
                                 <div class="alert alert-info alert-dismissible alert-alt fade show m-3">
                                     <strong>Attention ! Utilisez les points (.) en lieu et place des virgules
                                         (,)</strong>.
                                 </div>
+                                <hr>
+
                                 <table class="table align-middle table-hover m-0 truncate">
                                     <thead>
                                         <tr>

@@ -29,9 +29,13 @@ return new class extends Migration
                 'corp_id' => 1
             ],
             [
-                'nom' => 'ADMINISTRATEUR SYSTEME / RESEAUX INFORMATIQUES',
+                'nom' => 'ADMINISTRATEUR SYSTEME ',
                 'corp_id' => 1
             ],
+            [
+                'nom ' => 'RESEAUX INFORMATIQUES',
+                'corp_id' => 1
+            ]
         ]);
         /* DB::table('specialites')->insert([
             ['nom' => 'ACRIDOLOGIE'],

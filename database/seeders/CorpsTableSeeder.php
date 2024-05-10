@@ -21,22 +21,22 @@ class CorpsTableSeeder extends Seeder
             ],
             [
                 'nom'=>' TECHNICIENS DES ARTS ET DE LA CULTURE  ',
-                'cadre_id'=> 7,
+                'cadre_id'=> 6,
                 'categorie_id' => 3
             ],
             [
                 'nom'=>'  INGENIEURS DE L\'AGRICULTURE ET DU GENIE RURAL ',
-                'cadre_id'=> 31,
+                'cadre_id'=> 30,
                 'categorie_id' => 1
             ],
             [
                 'nom'=>'  TECHNICIENS DE L\'AGRICULTURE ET DU GENIE RURAL B2  ',
-                'cadre_id'=> 31,
+                'cadre_id'=> 30,
                 'categorie_id' => 3
             ],
             [
                 'nom'=>' AGENTS TECHNIQUES DE L\'AGRICULTURE ET DU GENIE RURAL C ',
-                'cadre_id'=> 31,
+                'cadre_id'=> 30,
                 'categorie_id' => 4
             ],
             [
@@ -164,6 +164,11 @@ class CorpsTableSeeder extends Seeder
                 'nom'=>' TECHNICIENS DE SANTE (B1)',
                 'cadre_id'=> 22,
                 'categorie_id' => 2
+            ],
+            [
+                'nom'=>' ASSISTANTS MEDICAUX (Niveau MASTER)',
+                'cadre_id'=> 22,
+                'categorie_id' => 1
             ],
 
 

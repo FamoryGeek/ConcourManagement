@@ -44,7 +44,7 @@
                                                 <td>{{ $candidat->genre }}</td>
                                                 <td>{{ $candidat->adresse }}</td>
                                                 <td>{{ $candidat->numero }}</td>
-                                                <td>{{ $candidau8t->status }}</td>
+                                                <td>{{ $candidat->status }}</td>
                                                 <td>
                                                     {{-- <a wire:click="#"
                                                         class="btn btn-info btn-sm" data-bs-toggle="modal"

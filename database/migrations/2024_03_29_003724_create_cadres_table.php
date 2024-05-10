@@ -23,7 +23,6 @@ return new class extends Migration
             ['nom' => 'SERVICES ECONOMIQUES'],
             ['nom' => 'AFFAIRES ETRANGERES'],
             ['nom' => 'ACTION SOCIALE'],
-            ['nom' => 'ACTION SOCIALE'],
             ['nom' => 'ARTS ET CULTURE'],
             ['nom' => 'CONSTRUCTIONS CIVILES'],
             ['nom' => 'DOUANE'],

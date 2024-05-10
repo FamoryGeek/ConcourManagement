@@ -29,9 +29,11 @@ return new class extends Migration
         });
         DB::table('users')->insert([
             [
-                'name' => 'Famory Keita',
+                'name' => 'Famory Keïta',
                 'email' => 'famory9301@gmail.com',
                 'password' => Hash::make('password'),
+                'adresse' => 'Kanadjiguila',
+                'telephone' => '+223 93 01 88 09',
                 'role_id' => 1,
                 'role_type_user_id' => 2,
             ],
