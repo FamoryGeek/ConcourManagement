@@ -47,7 +47,8 @@ return new class extends Migration
             ['nom' => 'SERVICE PENITENTIAIRE ET EDUCATION SURVEILLEE'],
             ['nom' => 'PROTECTION CIVILE'],
             ['nom' => 'GESTION DES RESSOURCES HUMAINES'],
-            ['nom' => 'EMPLOI']
+            ['nom' => 'EMPLOI'],
+            ['nom' => 'AGRICULTURE ET GENIE RURAL']
         ]);
     }
 

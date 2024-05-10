@@ -9,8 +9,9 @@ class Specialite extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    
-    public function corps(){
-        return $this->hasMany(Corp::class);
+
+    public function corp()
+    {
+        return $this->belongsTo(Corp::class);
     }
 }

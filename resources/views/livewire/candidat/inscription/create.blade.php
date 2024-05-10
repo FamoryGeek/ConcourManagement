@@ -142,11 +142,11 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="ah">Genre<span
                                                     class="text-danger">*</span></label>
-                                                <select class="form-select" id="ah"  wire:model="genre">
-                                                    <option value="">--Genre--</option>
-                                                    <option value="Masculin">Masculin</option>
-                                                    <option value="Féminin">Féminin</option>
-                                                </select>
+                                            <select class="form-select" id="ah" wire:model="genre">
+                                                <option value="">--Genre--</option>
+                                                <option value="Masculin">Masculin</option>
+                                                <option value="Féminin">Féminin</option>
+                                            </select>
                                         </div>
                                         @error('genre')
                                             <span class="text-danger">{{ $message }}</span>
@@ -156,12 +156,12 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="ai">Status<span
                                                     class="text-danger">*</span></label>
-                                                <select class="form-select" id="ai"  wire:model="status">
-                                                    <option value="">--Status--</option>
-                                                    <option value="Masculin">Célibataire</option>
-                                                    <option value="Féminin">Fiancé</option>
-                                                    <option value="Féminin">Marié</option>
-                                                </select>
+                                            <select class="form-select" id="ai" wire:model="status">
+                                                <option value="">--Status--</option>
+                                                <option value="Masculin">Célibataire</option>
+                                                <option value="Féminin">Fiancé</option>
+                                                <option value="Féminin">Marié</option>
+                                            </select>
                                         </div>
                                         @error('status')
                                             <span class="text-danger">{{ $message }}</span>
@@ -217,7 +217,7 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="">
+                                    <div class="col-lg-6 col-sm-6 col-6">
                                         <div class="mb-3">
                                             <label class="form-label mb-3" for="al">Corp<span
                                                     class="text-danger">*</span></label>
@@ -231,6 +231,44 @@
                                             </select>
                                         </div>
                                         @error('corp_id')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <!-- Champ pour sélectionner la spécialité -->
+                                    <div class="col-lg-6 col-sm-6 col-6">
+                                        <div class="mb-3">
+                                            <label class="form-label mb-3" for="al">Specialité<span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-select" id="specialite_select"
+                                                wire:model="specialite_id">
+                                                <option value="">Choisir le specialité</option>
+                                                @if (!empty($specialites))
+                                                    @foreach ($specialites as $specialite)
+                                                        <option value="{{ $specialite->id }}">{{ $specialite->nom }}
+                                                        </option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+                                        @error('specialite_id')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="">
+                                        <div class="mb-3">
+                                            <label class="form-label mb-3" for="al">Localité<span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-select" id="al" wire:model="localite_id">
+                                                <option value="">Choisir la Localite</option>
+                                                @foreach ($localites as $localite)
+                                                    <option value="{{ $localite->id }}">
+                                                        {{ $localite->nom }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        @error('localite_id')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -389,4 +427,5 @@
             </div>
         </div>
     </div>
+
 </div>

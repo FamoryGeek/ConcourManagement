@@ -19,7 +19,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="">
 
-                                   <h2><span class="num">1 - </span> Information personnelle</h2>
+                                    <h2><span class="num">1 - </span> Information personnelle</h2>
                                 </a>
                             </li>
                         @endif
@@ -53,7 +53,7 @@
                                         <input type="text" class="form-control" id="aa" wire:model="nina"
                                             placeholder="Entrez votre numero nina">
                                     </div>
-                                     @error('nina')
+                                    @error('nina')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -125,7 +125,8 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="ah">Genre<span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="ah" wire:model="genre">
+                                        <input type="text" class="form-control" id="ah"
+                                            wire:model="genre">
                                     </div>
                                     @error('genre')
                                         <span class="text-danger">{{ $message }}</span>
@@ -171,8 +172,8 @@
                                         </select>
                                     </div>
                                     @error('diplome_id')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="col-lg-6 col-sm-6 col-6">
                                     <div class="mb-3">
@@ -189,10 +190,10 @@
                                         </select>
                                     </div>
                                     @error('type_candidat_id')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
-                                <div class="">
+                                <div class="col-lg-6 col-sm-6 col-6">
                                     <div class="mb-3">
                                         <label class="form-label mb-3" for="al">Corp<span
                                                 class="text-danger">*</span></label>
@@ -206,8 +207,42 @@
                                         </select>
                                     </div>
                                     @error('corp_id')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-6 col-sm-6 col-6">
+                                    <div class="mb-3">
+                                        <label class="form-label mb-3" for="al">Corp<span
+                                                class="text-danger">*</span></label>
+                                        <select class="form-select" id="al" wire:model="specialite_id">
+                                            <option value="">Choisir le corp</option>
+                                            @foreach ($corps as $corp)
+                                                <option value="{{ $corp->id }}">
+                                                    {{ $corp->nom }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    @error('specialite_id')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-6 col-sm-6 col-6">
+                                    <div class="mb-3">
+                                        <label class="form-label mb-3" for="al">Corp<span
+                                                class="text-danger">*</span></label>
+                                        <select class="form-select" id="al" wire:model="localite_id">
+                                            <option value="">Choisir le corp</option>
+                                            @foreach ($corps as $corp)
+                                                <option value="{{ $corp->id }}">
+                                                    {{ $corp->nom }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    @error('localite_id')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -241,8 +276,8 @@
                                             </div>
                                         </div>
                                         @error('diplomeImage')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-12">
@@ -252,109 +287,108 @@
                                                 <label for="an" class="form-label">Image
                                                     du
                                                     Certificat Medical<span class="text-danger">*</span></label>
+                                                <input class="form-control" type="file" id="an"
+                                                    wire:model="certificatMedical">
+                                            </div>
+                                        </div>
+                                        @error('certificatMedical')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="m-0">
+                                                <label for="ao" class="form-label">Image
+                                                    de
+                                                    la fiche
+                                                    individuelle<span class="text-danger">*</span></label>
                                                 <input class="form-control" type="file"
-                                                    id="an" wire:model="certificatMedical">
-                                            </div>
-                                            </div>
-                                            @error('certificatMedical')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-12">
-                                        <div class="card mb-4">
-                                            <div class="card-body">
-                                                <div class="m-0">
-                                                    <label for="ao" class="form-label">Image
-                                                        de
-                                                        la fiche
-                                                        individuelle<span class="text-danger">*</span></label>
-                                                    <input class="form-control" type="file"
-                                                        wire:model="ficheIndividuelle" id="ao">
-                                                </div>
+                                                    wire:model="ficheIndividuelle" id="ao">
                                             </div>
                                         </div>
-                                        @error('ficheIndividuelle')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
                                     </div>
-                                    <div class="col-sm-6 col-12">
-                                        <div class="card mb-4">
-                                            <div class="card-body">
-                                                <div class="m-0">
-                                                    <label for="ap" class="form-label">Image
-                                                        du
-                                                        nina<span class="text-danger">*</span></label>
-                                                    <input class="form-control" type="file" wire:model="nina_image"
-                                                        id="ap">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @error('nina_image')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="col-sm-6 col-12">
-                                        <div class="card mb-4">
-                                            <div class="card-body">
-                                                <div class="m-0">
-                                                    <label for="aq" class="form-label">Image
-                                                        de
-                                                        l'acte de
-                                                        naissance<span class="text-danger">*</span></label>
-                                                    <input class="form-control" type="file"
-                                                        wire:model="acteNaissance" id="aq">
-                                                </div>
-                                            </div>
-                                        </div>
-                                         @error('acteNaissance')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="col-sm-6 col-12">
-                                        <div class="card mb-4">
-                                            <div class="card-body">
-                                                <div class="m-0">
-                                                    <label for="ar" class="form-label">Image
-                                                        du
-                                                        certificat
-                                                        de nationalité<span class="text-danger">*</span></label>
-                                                    <input class="form-control" type="file"
-                                                        wire:model="certificatNationalite" id="ar">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @error('certificatNationalite')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="col-sm-6 col-12">
-                                        <div class="card mb-4">
-                                            <div class="card-body">
-                                                <div class="m-0">
-                                                    <label for="as" class="form-label">Image
-                                                        de
-                                                        la lettre
-                                                        d'équivalence (etranger) <span
-                                                            class="text-danger">*</span></label>
-                                                    <input class="form-control" type="file"
-                                                        wire:model="lettreEquivalence" id="as">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @error('lettreEquivalence')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <!-- Row ends -->
-                                    <!-- -->
+                                    @error('ficheIndividuelle')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
-                                <!-- Boutons de navigation -->
-                                <div class="modal-footer">
-                                    <button type="button" class="me-3 btn btn-primary"
-                                        wire:click="previousStep">Précédent</button>
-                                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                                <div class="col-sm-6 col-12">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="m-0">
+                                                <label for="ap" class="form-label">Image
+                                                    du
+                                                    nina<span class="text-danger">*</span></label>
+                                                <input class="form-control" type="file" wire:model="nina_image"
+                                                    id="ap">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @error('nina_image')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
+                                <div class="col-sm-6 col-12">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="m-0">
+                                                <label for="aq" class="form-label">Image
+                                                    de
+                                                    l'acte de
+                                                    naissance<span class="text-danger">*</span></label>
+                                                <input class="form-control" type="file" wire:model="acteNaissance"
+                                                    id="aq">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @error('acteNaissance')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="m-0">
+                                                <label for="ar" class="form-label">Image
+                                                    du
+                                                    certificat
+                                                    de nationalité<span class="text-danger">*</span></label>
+                                                <input class="form-control" type="file"
+                                                    wire:model="certificatNationalite" id="ar">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @error('certificatNationalite')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="m-0">
+                                                <label for="as" class="form-label">Image
+                                                    de
+                                                    la lettre
+                                                    d'équivalence (etranger) <span class="text-danger">*</span></label>
+                                                <input class="form-control" type="file"
+                                                    wire:model="lettreEquivalence" id="as">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @error('lettreEquivalence')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <!-- Row ends -->
+                                <!-- -->
+                            </div>
+                            <!-- Boutons de navigation -->
+                            <div class="modal-footer">
+                                <button type="button" class="me-3 btn btn-primary"
+                                    wire:click="previousStep">Précédent</button>
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            </div>
                         @endif
                     </div>
                 </form>

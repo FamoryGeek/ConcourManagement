@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('corps', function (Blueprint $table) {
             $table->id();
             $table->string('nom',100);
-            $table->foreignIdFor(Specialite::class)->constrained();
+            //$table->foreignIdFor(Specialite::class)->constrained();
             $table->foreignIdFor(\App\Models\Categorie::class)->constrained();
             $table->foreignIdFor(\App\Models\Cadre::class)->constrained();
             $table->timestamps();
@@ -24,7 +24,6 @@ return new class extends Migration
         DB::table('corps')->insert([
             [
                 'nom' => 'INGENIEUR INFORMATICIEN',
-                'specialite_id' => 258,
                 'cadre_id' => 18,
                 'categorie_id' => 1
             ]

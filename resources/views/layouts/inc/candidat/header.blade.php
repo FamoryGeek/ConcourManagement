@@ -157,8 +157,9 @@
                     <div class="icon-box md rounded-4 fw-bold bg-primary-subtle text-primary">
                         @if (session('nom') && session('prenom'))
                             {{ strtoupper(substr(session('prenom'), 0, 1))."".strtoupper(substr(session('nom'), 0, 1)) }}
+                            {{-- {{ Auth::guard('candidat')->user()->nom }} --}}
                         @else
-                            U
+                            
                         @endif
                     </div>
                 </a>
@@ -185,5 +186,6 @@
 
     </div>
     <!-- App header actions ends -->
+
 
 </div>

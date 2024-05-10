@@ -7,7 +7,7 @@
                 <div class="card-header d-flex justify-content-between">
                     <h5 class="card-title">Listes des Roles</h5>
                     <button class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal"
-                    data-bs-target="#addRole">Ajouter</button>
+                        data-bs-target="#addRole">Ajouter</button>
                 </div>
                 <div class="card-body">
                     <div class="table-outer">
@@ -43,9 +43,10 @@
                                                     data-bs-target="#edit_custom_policy" href="#"><i
                                                         class="bi bi-pencil"></i>
                                                 </a>
-                                                <a class="btn btn-danger btn-sm delete_modal" data-bs-toggle="modal"
-                                                data-bs-target="#delete_custom_policy" href="#"><i
-                                                        class="bi bi-trash"></i>
+                                                <a class="btn btn-danger
+                                                 btn-sm delete_modal"
+                                                    data-bs-toggle="modal" data-bs-target="#delete_custom_policy"
+                                                    href="#"><i class="bi bi-trash"></i>
                                                 </a>
                                             </td>
                                         </tr>

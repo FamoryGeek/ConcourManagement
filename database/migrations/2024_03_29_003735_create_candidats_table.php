@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Localite;
+use App\Models\Specialite;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -33,6 +35,8 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Diplome::class)->constrained();
             $table->foreignIdFor(\App\Models\TypeCandidat::class)->constrained();
             $table->foreignIdFor(\App\Models\corp::class)->constrained();
+            $table->foreignIdFor(Specialite::class)->constrained();
+            $table->foreignIdFor(Localite::class)->constrained();
             $table->timestamps();
         });
     }

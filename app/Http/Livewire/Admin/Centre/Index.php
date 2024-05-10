@@ -28,18 +28,18 @@ class Index extends Component
 
     public function saveCentre()
     {
-        $validatedData = $this->validate();
-        try {
-            $centre = new Centre();
-            $centre->nom = $validatedData['nom'];
-            $centre->localite_id = $validatedData['localite_id'];
-            $centre->save();
-            toastr()->success('Centre creer avec success');
-            return redirect('admin/centres');
-        } catch (\Throwable $th) {
-            toastr()->error($th);
-            return redirect('admin/centres');
-        }
+            $validatedData = $this->validate();
+            try {
+                $centre = new Centre();
+                $centre->nom = $validatedData['nom'];
+                $centre->localite_id = $validatedData['localite_id'];
+                $centre->save();
+                toastr()->success('Centre creer avec success');
+                return redirect('admin/centres');
+            } catch (\Throwable $th) {
+                toastr()->error($th);
+                return redirect('admin/centres');
+            }
     }
 
     public function editCentre(int $id)
@@ -52,7 +52,7 @@ class Index extends Component
             $this->localite_id = $centre->localite_id;
         }
     }
-    
+
     public function updateCentre()
     {
         $validatedData = $this->validate();

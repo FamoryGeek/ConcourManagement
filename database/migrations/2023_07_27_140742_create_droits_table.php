@@ -76,6 +76,12 @@ return new class extends Migration
                 'type_droit_id' => 1,
             ],
             [
+                'nom' => 'Specialites',
+                'acces' => 1,
+                'route' => 'specialite.index',
+                'type_droit_id' => 1,
+            ],
+            [
                 'nom' => 'Diplômes',
                 'acces' => 1,
                 'route' => 'diplome.index',

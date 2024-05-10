@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Corp;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
@@ -15,9 +16,24 @@ return new class extends Migration
         Schema::create('specialites', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->foreignIdFor(Corp::class)->constrained();
             $table->timestamps();
         });
         DB::table('specialites')->insert([
+            [
+                'nom' => 'INFORMATIQUE DE GESTION',
+                'corp_id' => 1
+            ],
+            [
+                'nom' => '	ANALYSTE-PROGRAMMEUR',
+                'corp_id' => 1
+            ],
+            [
+                'nom' => 'ADMINISTRATEUR SYSTEME / RESEAUX INFORMATIQUES',
+                'corp_id' => 1
+            ],
+        ]);
+        /* DB::table('specialites')->insert([
             ['nom' => 'ACRIDOLOGIE'],
             ['nom' => 'ADMINISTRATION DES AFFAIRES'],
             ['nom' => 'ADMINISTRATION PUBLIQUE'],
@@ -505,7 +521,7 @@ return new class extends Migration
             ['nom' => 'UROLOGIE'],
             ['nom' => 'VULGARISATION AGRICOLE'],
             ['nom' => 'ZOOTECHNIE']
-        ]);
+        ]); */
     }
 
     /**

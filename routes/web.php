@@ -21,8 +21,10 @@ use App\Http\Controllers\Admin\ProfilAdminController;
 use App\Http\Controllers\admin\TypeCandidatController;
 use App\Http\Controllers\AuthCandidat\LoginController;
 use App\Http\Controllers\admin\ProgrammationController;
+use App\Http\Controllers\admin\SpecialiteController;
 use App\Http\Controllers\Candidat\InscriptionController;
 use App\Http\Controllers\Candidat\NoteController as CandidatNoteController;
+use App\Http\Controllers\Candidat\Postulercontroller;
 use App\Http\Controllers\Candidat\ProgrammationController as CandidatProgrammationController;
 
 
@@ -46,7 +48,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/dashboard', [Dashboardontroller::class, 'index'])->name('admin.dashboard');
 Route::get('/gestionnaire/dashboard', [Dashboardontroller::class, 'gestionnaire'])->name('gestionnaire.dashboard');
-Route::get('/candidat/dashboard', [Dashboardontroller::class, 'candidat'])->name('candidat.dashboard');
+
 Route::get('/candidat/inscription',[InscriptionController::class, 'index'])->name('candidat.inscription');
 
 
@@ -107,6 +109,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function()
         Route::get('/corps','index')->name('index');
     });
 
+    //specialites
+    Route::controller( SpecialiteController::class)->name('specialite.')->group(function(){
+        Route::get('/specialites','index')->name('index');
+    });
+
     //diplomes
     Route::controller(DiplomeController::class)->name('diplome.')->group(function () {
         Route::get('/diplomes','index')->name('index');
@@ -154,8 +161,10 @@ Route::group(['middleware' => 'candidat.guest'], function () {
     Route::get('candidat-login', [LoginController::class, 'index'])->name('candidatAuth.login');
     Route::post('candidat-post', [LoginController::class, 'login'])->name('candidat.login');
     Route::post('candidat-logout', [LoginController::class, 'logout'])->name('candidat.logout');
+
 });
-Route::prefix('candidat')->middleware(['authCandidat'])->group(function(){
+/* Route::get('/candidat/postulation/verifier', 'Admin\CandidatController@verifierPostulation')->name('verifier'); */
+Route::group(['middleware' => 'checksession'], function(){
     //notes
     Route::controller(CandidatNoteController::class)->name('candidat.')->group(function(){
         Route::get('/notes', 'index')->name('note.index');
@@ -168,4 +177,10 @@ Route::prefix('candidat')->middleware(['authCandidat'])->group(function(){
     Route::controller(ProfilController::class)->name('candidat.')->group(function(){
         Route::get('/profil', 'index')->name('profil.index');
     });
+    //postuler
+    Route::controller(Postulercontroller::class)->name('candidat.')->group(function(){
+        Route::get('/postuler', 'postuler')->name('postuler');
+        Route::get('/annuler', 'annuler')->name('annuler');
+    });
+    Route::get('/candidat/dashboard', [Dashboardontroller::class, 'candidat'])->name('candidat.dashboard');
 });

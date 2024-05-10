@@ -1,44 +1,37 @@
 <div>
-    @include('livewire.admin.corp.modal')
+    @include('livewire.admin.specialite.modal')
     <div class="row gx-4">
         <div class="col-sm-12">
             <div class="card mb-3">
                 <div class="card-header d-flex justify-content-between">
-                    <h5 class="card-title">Liste des corps</h5>
+                    <h5 class="card-title">Listes des Specialite</h5>
                     <button class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal"
                     data-bs-target="#addRole">Ajouter</button>
                 </div>
-                @if (session('status'))
-                    <h5 class="alert alert-success">{{ session('status') }}</h5>
-                @endif
                 <div class="card-body">
                     <div class="table-outer">
                         <div class="table-responsive">
                             <table class="table align-middle table-hover m-0 truncate">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Nom</th>
-                                        <th scope="col">Cadre</th>
-                                        <th scope="col">Categorie</th>
-                                        <th scope="col">Actions</th>
+                                        <th class="l-name" style="width: 30px;">#</th>
+                                        <th class="l-name">Nom</th>
+                                        <th class="l-days">Corps</th>
+                                        <th class="text-right">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($corps as $corp)
+                                    @foreach ($specialites as $specialite)
                                         <tr>
+                                            <td>{{ $specialite->id }}</td>
+                                            <td>{{ $specialite->nom }}</td>
+                                            <td>{{ $specialite->corp->nom }}</td>
                                             <td>
-                                                {{ $corp->id }}
-                                            </td>
-                                            <td>{{ $corp->nom }}</td>
-                                            <td>{{ $corp->cadre->nom }}</td>
-                                            <td>{{ $corp->categorie->nom }}</td>
-                                            <td>
-                                                <a wire:click="editCorp({{ $corp->id }})"  class="btn btn-info btn-sm update_modal" data-bs-toggle="modal"
+                                                <a wire:click="editSpecialite({{ $specialite->id }})"  class="btn btn-info btn-sm update_modal" data-bs-toggle="modal"
                                                     data-bs-target="#editModal" href="#"><i
                                                         class="bi bi-pencil"></i>
                                                 </a>
-                                                <a wire:click="deleteCorp({{ $corp->id }})"  class="btn btn-danger btn-sm delete_modal" data-bs-toggle="modal"
+                                                <a wire:click="deleteSpecialite({{ $specialite->id }})"  class="btn btn-danger btn-sm delete_modal" data-bs-toggle="modal"
                                                 data-bs-target="#deleteModal" href="#"><i
                                                         class="bi bi-trash"></i>
                                                 </a>

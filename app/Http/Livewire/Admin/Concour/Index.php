@@ -55,8 +55,8 @@ class Index extends Component
 
     public function destroyConcour(){
         try {
-            $centre = Concour::find($this->concour_id);
-            $centre->delete();
+            $concour = Concour::find($this->concour_id);
+            $concour->delete();
             toastr()->success('Candidature annuler avec sucess');
             return redirect('admin/concours');
         } catch (\Throwable $th) {

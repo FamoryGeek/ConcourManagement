@@ -6,6 +6,8 @@ use App\Models\Corp;
 use App\Models\Diplome;
 use Livewire\Component;
 use App\Models\Candidat;
+use App\Models\Localite;
+use App\Models\Specialite;
 use App\Models\TypeCandidat;
 use Livewire\WithFileUploads;
 use App\Models\CompteCandidat;
@@ -19,8 +21,8 @@ class Create extends Component
 
     public $step = 1;
     public $candidats;
-    public $diplomes, $typeCandidats, $corps;
-    public $nina, $nom, $prenom, $dateNaissance, $lieuNaissance, $email, $adresse, $numero, $genre, $status, $diplome_id, $type_candidat_id, $corp_id;
+    public $diplomes, $typeCandidats, $corps,$specialites,$localites;
+    public $nina, $nom, $prenom, $dateNaissance, $lieuNaissance, $email, $adresse, $numero, $genre, $status, $diplome_id, $type_candidat_id, $corp_id,$specialite_id,$localite_id;
     public $diplomeImage, $certificatMedical, $ficheIndividuelle, $nina_image, $acteNaissance, $certificatNationalite, $lettreEquivalence;
 
     protected $rules = [
@@ -36,6 +38,8 @@ class Create extends Component
         'status' => 'required|string',
         'diplome_id' => 'required|integer',
         'corp_id' => 'required|integer',
+        'specialite_id' => 'required|integer',
+        'localite_id' => 'required|integer',
         'type_candidat_id' => 'required|integer',
         'diplomeImage' => 'required|file|mimes:jpg,jpeg,png,pdf',
         'certificatMedical' => 'required|file|mimes:jpg,jpeg,png,pdf',
@@ -110,7 +114,7 @@ class Create extends Component
 
             DB::commit();
             toastr()->success('Inscription effectuée avec succès');
-            return redirect('candidat/dashboard');
+            return redirect('candidat/candidat-login');
         } catch (\Exception $e) {
             DB::rollback();
             toastr()->error('Erreur lors de l\'inscription : ' . $e->getMessage());
@@ -119,12 +123,34 @@ class Create extends Component
         }
     }
 
+    // Méthode pour charger dynamiquement les spécialités en fonction du corps sélectionné
+    public function loadSpecialites()
+    {
+        if (!empty($this->corp_id)) {
+            $corp = Corp::find($this->corp_id);
+            if ($corp) {
+                $this->specialites = $corp->specialites;
+            } else {
+                $this->specialites = [];
+            }
+        } else {
+            $this->specialites = [];
+        }
+    }
+
+    public function updatedCorpId()
+    {
+        $this->loadSpecialites();
+    }
+
+
     public function render()
     {
         $this->candidats = Candidat::get();
         $this->diplomes = Diplome::get();
         $this->typeCandidats = TypeCandidat::get();
         $this->corps = Corp::get();
+        $this->localites = Localite::get();
 
         return view('livewire.candidat.inscription.create');
     }

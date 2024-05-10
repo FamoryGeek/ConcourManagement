@@ -44,18 +44,13 @@
                                                 <td>{{ $candidat->genre }}</td>
                                                 <td>{{ $candidat->adresse }}</td>
                                                 <td>{{ $candidat->numero }}</td>
-                                                <td>{{ $candidat->status }}</td>
+                                                <td>{{ $candidau8t->status }}</td>
                                                 <td>
-                                                    <a wire:click="#"
+                                                    {{-- <a wire:click="#"
                                                         class="btn btn-info btn-sm" data-bs-toggle="modal"
                                                         data-bs-target="#editModal" href="#"><i
                                                             class="bi bi-pencil"></i>
-                                                    </a>
-                                                    <a wire:click="#"
-                                                        class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                                        data-bs-target="#deleteModal" href="#"><i
-                                                            class="bi bi-trash"></i>
-                                                    </a>
+                                                    </a> --}}
                                                     <a class="btn btn-info btn-sm" href=""><i
                                                             class="bi bi-eye"></i></a>
                                                 </td>

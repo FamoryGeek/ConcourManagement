@@ -7,7 +7,7 @@
                 <h5 class="modal-title h4" id="exampleModalLgLabel">
                     Ajouter un corp
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" wire:click="closeModal" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form wire:submit.prevent="saveCorp">
@@ -22,21 +22,6 @@
                                         placeholder="Entrez le nom du corp" autofocus>
                                 </div>
                                 @error('nom')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="col-lg-6 col-sm-2 col-6 ">
-                                <div class="mb-3">
-                                    <label class="form-label mb-3" for="a2">Nom de la specialité</label>
-                                    <input class="form-control" list="specialite" id="a2"  wire:model="specialite_id">
-                                    <datalist  id="specialite" >
-                                        <option value="">Choisir la specialité</option>
-                                        @foreach ($specialites as $specialite)
-                                            <option value="{{ $specialite->id }}">{{ $specialite->nom }}</option>
-                                        @endforeach
-                                    </datalist>
-                                </div>
-                                @error('specialite_id')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -116,20 +101,7 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="col-lg-6 col-sm-2 col-6 ">
-                                <div class="mb-3">
-                                    <label class="form-label mb-3" for="a2">Nom de la specialité</label>
-                                    <select class="form-select" id="a2" wire:model="specialite_id">
-                                        <option value="">Choisir la specialité</option>
-                                        @foreach ($specialites as $specialite)
-                                            <option value="{{ $specialite->id }}">{{ $specialite->nom }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                @error('specialite_id')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
+                            
                         </div>
                         <div class="row gx-2">
                             <div class="col-lg-6 col-sm-6 col-6">

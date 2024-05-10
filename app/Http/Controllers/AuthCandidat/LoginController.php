@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Candidat;
 use App\Models\CompteCandidat;
+use App\Models\Concour;
 
 class LoginController extends Controller
 {
@@ -55,6 +56,7 @@ class LoginController extends Controller
             return redirect()->back();
 
             /* return back()->withErrors([
+
                 'password' => 'Mot de passe incorrect.',
             ]); */
         }
@@ -63,10 +65,31 @@ class LoginController extends Controller
         Auth::login($candidat);
 
         // Stocker le nom et le prénom du candidat dans la session
-        $request->session()->put('nom', $candidat->id);
+        $request->session()->put('id', $candidat->id);
         $request->session()->put('nom', $candidat->nom);
         $request->session()->put('prenom', $candidat->prenom);
+        $request->session()->put('corps', $candidat->corp_id);
 
+        // Récupérer l'heure actuelle
+$heure = date('H');
+
+// Vérifier si c'est le jour (entre 6h et 18h)
+if ($heure >= 6 && $heure < 18) {
+    $message = "Bonjour";
+} else {
+    $message = "Bonsoir";
+}
+ $test = Concour::where('candidat_id',  $candidat->id)
+                ->first();
+ if ($test) {
+    // Le candidat existe
+    $request->session()->put('postuler', true);
+} else {
+    // Le candidat n'existe pas
+    $request->session()->put('postuler', false);
+}
+// Afficher le message
+toastr()->success('Bien le '.$message.' '.$candidat->nom.' '.$candidat->prenom);
         return redirect()->intended('/candidat/dashboard');
     }
 

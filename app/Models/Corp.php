@@ -10,8 +10,8 @@ class Corp extends Model
     use HasFactory;
     protected $guarded=[];
 
-    public function specialite(){
-        return $this->belongsTo(Specialite::class);
+    public function specialites(){
+        return $this->hasMany(Specialite::class);
     }
     public function cadre(){
         return $this->belongsTo(Cadre::class);
