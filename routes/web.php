@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\AncienSujet;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\CorpController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\admin\CadreController;
 use App\Http\Controllers\Admin\DroitController;
 use App\Http\Controllers\admin\CentreController;
 use App\Http\Controllers\admin\ModuleController;
+use App\Http\Livewire\Admin\AnciensSujets\Index;
 use App\Http\Controllers\admin\ConcourController;
 use App\Http\Controllers\admin\DiplomeController;
 use App\Http\Controllers\admin\CandidatController;
@@ -17,16 +19,17 @@ use App\Http\Controllers\Admin\Dashboardontroller;
 use App\Http\Controllers\admin\LocaliteController;
 use App\Http\Controllers\admin\CategorieController;
 use App\Http\Controllers\Candidat\ProfilController;
+use App\Http\Controllers\admin\SpecialiteController;
+use App\Http\Controllers\Admin\AncienSujetController;
 use App\Http\Controllers\Admin\ProfilAdminController;
+use App\Http\Controllers\Candidat\Postulercontroller;
 use App\Http\Controllers\admin\TypeCandidatController;
 use App\Http\Controllers\AuthCandidat\LoginController;
 use App\Http\Controllers\admin\ProgrammationController;
-use App\Http\Controllers\admin\SpecialiteController;
+use App\Http\Controllers\Candidat\AncienSujetController as CandidatAncienSujetController;
 use App\Http\Controllers\Candidat\InscriptionController;
 use App\Http\Controllers\Candidat\NoteController as CandidatNoteController;
-use App\Http\Controllers\Candidat\Postulercontroller;
 use App\Http\Controllers\Candidat\ProgrammationController as CandidatProgrammationController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -78,7 +81,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function()
     Route::controller(CadreController::class)->name('cadre.')->group(function () {
         Route::get('/cadres','index')->name('index');
     });
-
+    //ancien sujets
+    /* Route::get('/anciens-sujets', Index::class)->name('anciens-sujets.index'); */
+    Route::controller(AncienSujetController::class)->name('anciens-sujets.')->group(function(){
+        Route::get('/ancienSujets','index')->name('index');
+    });
     //candidats
     Route::controller(CandidatController::class)->name('candidat.')->group(function () {
         Route::get('/candidats','index')->name('index');
@@ -132,6 +139,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function()
     //notes routes
     Route::controller(NoteController::class)->name('note.')->group(function () {
         Route::get('/notes','index')->name('index');
+        Route::get('/notes/create', 'create')->name('create');
+        Route::get('/notes/edit', 'edit')->name('edit');
+        Route::get('/notes/show', 'show')->name('show');
     });
 
     //programmations
@@ -172,6 +182,9 @@ Route::group(['middleware' => 'checksession'], function(){
     //emploi du temps
     Route::controller(CandidatProgrammationController::class)->name('candidat.')->group(function(){
         Route::get('/programmations', 'index')->name('programmation.index');
+    });
+    Route::controller(CandidatAncienSujetController::class)->name('candidat.')->group(function(){
+        Route::get('/ancienSujets','index')->name('anciens-sujets.index');
     });
     //Profil
     Route::controller(ProfilController::class)->name('candidat.')->group(function(){

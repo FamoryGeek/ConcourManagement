@@ -10,9 +10,9 @@ class Concour extends Model
     use HasFactory;
     protected $guarded=[];
 
-    public function candidat()
+    public function candidats()
     {
-        return $this->belongsTo(Candidat::class);
+        return $this->hasMany(Candidat::class);
     }
 
     public function corp()

@@ -24,7 +24,7 @@ return new class extends Migration
         DB::table('corps')->insert([
             [
                 'nom' => 'INGENIEUR INFORMATICIEN',
-                'cadre_id' => 18,
+                'cadre_id' => 17,
                 'categorie_id' => 1
             ]
         ]);

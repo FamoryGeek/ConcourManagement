@@ -61,10 +61,10 @@ class RoleController extends Controller
             }
 
             $html = "
-            <div class='col-md-4'>
-                <input id='id.$droit->id' $exist name='droits[]' value='$droit->id '
-                    type='checkbox' class='ml-1'>
-                    <label for='id.$droit->id '> $droit->nom</label>
+            <div class='form-check col-md-4'>
+                <input id='$droit->id' $exist name='droits[]' value='$droit->id '
+                    type='checkbox' class='form-check-input'>
+                    <label for='$droit->id' class='form-check-label'> $droit->nom</label>
             </div>
             ";
             echo $html;

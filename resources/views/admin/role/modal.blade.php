@@ -37,10 +37,10 @@
                             <div class="row">
                             @foreach ($droits as $droit)
                                 <div class="form-check col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="id{{ $droit->id }}"
+                                    <input class="form-check-input" type="checkbox" id="{{ $droit->id }}"
                                         name="role_droits[]" value="{{ $droit->id }}">
                                     <label class="form-check-label"
-                                        for="id{{ $droit->id }}">{{ $droit->nom }}</label>
+                                        for="{{ $droit->id }}">{{ $droit->nom }}</label>
                                 </div>
                             @endforeach
                             </div>
@@ -103,7 +103,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title h4" id="exampleModalLgLabel">
-                    Ajouter un role
+                    Modifier un role
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>

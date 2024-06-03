@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Specialite;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -484,10 +485,9 @@ class SpecialitesSeeder extends Seeder
                 'corp_id' => 32
             ],
 
-
-
-
-
         ];
+        foreach ($specialites as $key => $specialite) {
+            Specialite::create($specialite);
+        }
     }
 }

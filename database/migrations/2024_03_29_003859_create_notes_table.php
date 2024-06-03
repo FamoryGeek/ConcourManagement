@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
             $table->string('annee');
-            $table->integer('notes');
+            $table->integer('epreuveTechnique');
+            $table->integer('cultureGeneral');
             $table->foreignIdFor(\App\Models\Candidat::class)->constrained();
-            $table->foreignIdFor(\App\Models\Module::class)->constrained();
             $table->timestamps();
         });
     }

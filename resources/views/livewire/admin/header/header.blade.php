@@ -17,9 +17,11 @@
             }
         @endphp
         @if ($button)
-            <button type="button" class="btn btn-primary {{ $type->id == $session ? '' : 'active' }}"
-                wire:click='type({{ $type->id }})'>{{ $type->nom }} <span class="btn-icon-right">
+
+            <button type="button" class="btn btn-primary p-1 fw-bold {{ $type->id == $session ? '' : 'active' }}"
+                wire:click='type({{ $type->id }})'><i class="bi bi-gear fs-5 me-1 "></i> <span class="btn-icon-right">{{ $type->nom }}</span>
             </button>
+
         @endif
     @endforeach
 </div>

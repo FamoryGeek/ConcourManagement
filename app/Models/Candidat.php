@@ -31,4 +31,12 @@ class Candidat extends Authenticatable
         return $this->belongsTo(Cadre::class);
     }
 
+    public function note()
+    {
+        return $this->hasOne(Note::class);
+    }
+    public function concours()
+    {
+        return $this->belongsTo(Concour::class);
+    }
 }

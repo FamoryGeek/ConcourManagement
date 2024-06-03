@@ -114,7 +114,7 @@ class Create extends Component
 
             DB::commit();
             toastr()->success('Inscription effectuée avec succès');
-            return redirect('candidat/candidat-login');
+            return redirect('candidat-login');
         } catch (\Exception $e) {
             DB::rollback();
             toastr()->error('Erreur lors de l\'inscription : ' . $e->getMessage());

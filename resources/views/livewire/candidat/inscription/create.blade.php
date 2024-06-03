@@ -156,12 +156,12 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="ai">Status<span
                                                     class="text-danger">*</span></label>
-                                            <select class="form-select" id="ai" wire:model="status">
-                                                <option value="">--Status--</option>
-                                                <option value="Masculin">Célibataire</option>
-                                                <option value="Féminin">Fiancé</option>
-                                                <option value="Féminin">Marié</option>
-                                            </select>
+                                                <select class="form-select" id="ai" wire:model="status">
+                                                    <option value="">--Status--</option>
+                                                    <option value="Célibataire">Célibataire</option>
+                                                    <option value="Fiancé">Fiancé</option>
+                                                    <option value="Marié">Marié</option>
+                                                </select>
                                         </div>
                                         @error('status')
                                             <span class="text-danger">{{ $message }}</span>

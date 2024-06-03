@@ -31,6 +31,12 @@
                         <span class="menu-text">Emploi du temps</span>
                     </a>
                 </li>
+                <li class="{{ request()->is('candidat/ancienSujets')? 'active current-page' : '' }}">
+                    <a href="{{ route('candidat.anciens-sujets.index') }}">
+                        <i class="bi bi-file-text"></i>
+                        <span class="menu-text">Anciens sujets</span>
+                    </a>
+                </li>
                 <li class="{{ request()->is('candidat/profil')? 'active current-page' : '' }}">
                     <a href="{{ route('candidat.profil.index') }}">
                         <i class="bi bi-person"></i>

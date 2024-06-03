@@ -21,7 +21,7 @@ class Index extends Component
     {
         $this->validateOnly($fields);
     }
-
+    
     public function saveCadre()
     {
         $validatedData = $this->validate();

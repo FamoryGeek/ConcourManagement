@@ -31,7 +31,7 @@
     <div class="header-actions">
 
         <!-- Search container start -->
-        <div class=" bg-white rounded-4 p-3">
+        <div class=" bg-white rounded-4 p-3 m-2 d-flex align-items-center">
             @livewire('admin.header.header')
         </div>
         <!-- Search container ends -->
