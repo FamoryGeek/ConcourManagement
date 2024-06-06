@@ -27,4 +27,9 @@ class Corp extends Model
     {
         return $this->hasMany(Programmation::class);
     }
+
+    public function candidats()
+    {
+        return $this->hasMany(Candidat::class);
+    }
 }

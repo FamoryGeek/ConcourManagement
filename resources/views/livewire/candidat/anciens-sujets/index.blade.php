@@ -107,7 +107,7 @@
                         <div class="ms-3">
                             <h5 class="mb-1">{{ $sujet->titre }}</h5>
                             <p class="mb-1">{{ $sujet->date_publication }}</p>
-                            <p class="m-0 text-secondary small">Web Developer</p>
+                            <p class="m-0 text-secondary small"></p>
                         </div>
                         <div class="ms-auto">
                             <a href="#"  wire:click.prevent="download({{ $sujet->id }})" class="icon-box sm bg-secondary-subtle rounded-circle"><i

@@ -1,112 +1,117 @@
 @extends('layouts.candidat')
 @section('content')
- <!-- Row starts -->
- <div class="row gx-4">
-    <div class="col-xl-3 col-sm-6 col-12">
-      <div class="card mb-4 bg-primary">
-        <div class="card-body">
-          <div class="m-0 text-white">
-            <div class="fw-semibold mb-3">New Orders</div>
-            <div class="position-relative">
-              <h2 class="m-0">300</h2>
-              <span class="badge bg-secondary-subtle text-body small mb-2">
-                <i class="bi bi-exclamation-circle-fill me-1 text-warning"></i>8 new orders
-              </span>
-              <div class=""><span class="badge bg-danger me-1">+28%</span>Compared to
-                last week</div>
-              <i class="bi bi-box-seam display-3 opacity-25 position-absolute end-0 top-0 me-2"></i>
-            </div>
-            <div class="mt-3">
-              <div class="small">Last updated on <span class="opacity-50">Jan 10, 6:30:59 AM</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-sm-6 col-12">
-      <div class="card mb-4 bg-primary">
-        <div class="card-body">
-          <div class="m-0 text-white">
-            <div class="fw-semibold mb-3">Orders Delivered</div>
-            <div class="position-relative">
-              <h2 class="m-0">600</h2>
-              <span class="badge bg-secondary-subtle text-body small mb-2">
-                <i class="bi bi-exclamation-circle-fill me-1 text-warning"></i>4 orders delivered
-              </span>
-              <div class=""><span class="badge bg-danger me-1">+20%</span>Compared to
-                last week</div>
-              <i class="bi bi-bar-chart display-3 opacity-25 position-absolute end-0 top-0 me-2"></i>
-            </div>
-            <div class="mt-3">
-              <div class="small">Last updated on <span class="opacity-50">Jan 12, 8:20:30 AM</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-sm-6 col-12">
-      <div class="card mb-4 bg-primary">
-        <div class="card-body">
-          <div class="m-0 text-white">
-            <div class="fw-semibold mb-3">Orders Pending</div>
-            <div class="position-relative">
-              <h2 class="m-0">900</h2>
-              <span class="badge bg-secondary-subtle text-body small mb-2">
-                <i class="bi bi-exclamation-circle-fill me-1 text-warning"></i>5 pending orders
-              </span>
-              <div class=""><span class="badge bg-danger me-1">+36%</span>Compared to
-                last week</div>
-              <i class="bi bi-sticky display-3 opacity-25 position-absolute end-0 top-0 me-2"></i>
-            </div>
-            <div class="mt-3">
-              <div class="small">Last updated on <span class="opacity-50">Jan 14, 9:45:35 AM</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-sm-6 col-12">
-      <div class="card mb-4 bg-primary">
-        <div class="card-body">
-          <div class="m-0 text-white">
-            <div class="fw-semibold mb-3">Orders Cancelled</div>
-            <div class="position-relative">
-              <h2 class="m-0">200</h2>
-              <span class="badge bg-light-subtle text-danger small mb-2">
-                <i class="bi bi-exclamation-circle-fill me-1 text-warning"></i>7 orders cancelled
-              </span>
-              <div class=""><span class="badge bg-danger me-1">+39%</span>Compared to last week</div>
-              <i class="bi bi-wallet2 display-3 opacity-25 position-absolute end-0 top-0 me-2"></i>
-            </div>
-            <div class="mt-3">
-              <div class="small">Last updated on <span class="opacity-50">Jan 18, 9:29:59 AM</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Row ends -->
+    <!-- Row starts -->
+    <div class="row gx-4">
+        <div class="col-sm-12">
+          <div class="card mb-3">
+            <div class="card-body">
 
-  <!-- Row starts -->
-  <div class="row gx-4">
-    <div class="col-sm-12">
-      <!-- Card starts -->
-      <div class="card mb-4">
-        <div class="card-header">
-          <h5 class="card-title">Orders Summary</h5>
-        </div>
-        <div class="card-body">
+              <!-- Row starts -->
+              <div class="row justify-content-center align-items-end">
+                <div class="col-xl-4 col-lg-4 col-sm-12 col-12">
+                  <div class="p-3">
+                    <img src="{{ asset('assets/images/login2.svg') }}" alt="Contact Us" class="img-fluid">
+                  </div>
+                </div>
+                <div class="col-xl-8 col-lg-8 col-sm-12 col-12">
+                  <div class="p-3">
 
-          <div class="graph-body auto-align-graph">
-            <div id="orders"></div>
+                    <!-- Row starts -->
+                    <div class="row g-4">
+                      <div class="col-sm-6 col-12">
+                        <div class="card bg-primary">
+                          <div class="card-body text-white">
+                            <div class="d-flex mb-2">
+                              <div class="icon-box md bg-white rounded-5 me-3">
+                                <i class="bi bi-box fs-4 text-primary"></i>
+                              </div>
+                              <div class="d-flex flex-column">
+                                <h2 class="m-0 lh-1">40k</h2>
+                                <p class="m-0 opacity-50">Salaries</p>
+                              </div>
+                            </div>
+                            <div class="m-0">
+                              <div class="progress thin mb-2 bg-secondary">
+                                <div class="progress-bar bg-white" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="m-0 small fw-light">30 higher than last month.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-12">
+                        <div class="card bg-info">
+                          <div class="card-body text-white">
+                            <div class="d-flex mb-2">
+                              <div class="icon-box md bg-white rounded-5 me-3">
+                                <i class="bi bi-box fs-4 text-info"></i>
+                              </div>
+                              <div class="d-flex flex-column">
+                                <h2 class="m-0 lh-1">10k</h2>
+                                <p class="m-0 opacity-50">Food</p>
+                              </div>
+                            </div>
+                            <div class="m-0">
+                              <div class="progress thin mb-2 bg-secondary">
+                                <div class="progress-bar bg-white" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="m-0 small fw-light">50 higher than last month.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-12">
+                        <div class="card bg-danger">
+                          <div class="card-body text-white">
+                            <div class="d-flex mb-2">
+                              <div class="icon-box md bg-white rounded-5 me-3">
+                                <i class="bi bi-box fs-4 text-danger"></i>
+                              </div>
+                              <div class="d-flex flex-column">
+                                <h2 class="m-0 lh-1">10k</h2>
+                                <p class="m-0 opacity-50">Rents</p>
+                              </div>
+                            </div>
+                            <div class="m-0">
+                              <div class="progress thin mb-2  bg-secondary">
+                                <div class="progress-bar bg-white" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="m-0 small fw-light">30 higher than last month.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-12">
+                        <div class="card bg-success">
+                          <div class="card-body text-white">
+                            <div class="d-flex mb-2">
+                              <div class="icon-box md bg-white rounded-5 me-3">
+                                <i class="bi bi-box fs-4 text-success"></i>
+                              </div>
+                              <div class="d-flex flex-column">
+                                <h2 class="m-0 lh-1">20k</h2>
+                                <p class="m-0 opacity-50">Transport</p>
+                              </div>
+                            </div>
+                            <div class="m-0">
+                              <div class="progress thin mb-2 bg-secondary">
+                                <div class="progress-bar bg-white" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="m-0 small fw-light">20 higher than last month.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Row ends -->
+
+                  </div>
+                </div>
+              </div>
+              <!-- Row ends -->
+
+            </div>
           </div>
-
         </div>
       </div>
-      <!-- Card ends -->
-
-    </div>
-  </div>
-  <!-- Row ends -->
 @endsection

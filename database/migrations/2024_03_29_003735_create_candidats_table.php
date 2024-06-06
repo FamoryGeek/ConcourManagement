@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('adresse',255);
             $table->string('numero',20);
             $table->string('status',30);
+            $table->boolean('etat');
             $table->longText('diplomeImage');
             $table->longText('ficheIndividuelle');
             $table->longText('lettreEquivalence');

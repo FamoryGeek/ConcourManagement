@@ -10,7 +10,7 @@ class AncienSujetController extends Controller
 {
     public function index()
     {
-        $autorisation = $this->autorisation(Auth::user()->role, 'cadre.index');
+        $autorisation = $this->autorisation(Auth::user()->role, 'anciens-sujets.index');
         if ($autorisation == 'false') {
             toastr()->info('Vous n\'avez pas le droit d\'acceder à ces ressources', 'Tentative échoué');
             return redirect()->route('admin.dashboard');

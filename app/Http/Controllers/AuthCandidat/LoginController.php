@@ -29,7 +29,7 @@ class LoginController extends Controller
         $candidat = Candidat::where('email', $request->email)->first();
 
         if (!$candidat) {
-            toastr()->info('Adresse email non trouvée.');
+            toastr()->error('Adresse email non trouvée.');
             return redirect()->back();
             /* return back()->withErrors([
                 'email' => 'Adresse email non trouvée.',
@@ -43,7 +43,7 @@ class LoginController extends Controller
         $compteCandidat = CompteCandidat::where('candidat_id', $candidatId)->first();
 
         if (!$compteCandidat) {
-            toastr()->info('Identifiants invalides.');
+            toastr()->error('Identifiants invalides.');
             return redirect()->back();
             /* return back()->withErrors([
                 'email' => 'Identifiants invalides.',
@@ -52,7 +52,7 @@ class LoginController extends Controller
 
         // Vérifier si le mot de passe est correct
         if (!password_verify($request->password, $compteCandidat->password)) {
-            toastr()->info('Mot de passe incorrect.');
+            toastr()->error('Mot de passe incorrect.');
             return redirect()->back();
 
             /* return back()->withErrors([

@@ -21,7 +21,7 @@ class Index extends Component
     {
         $this->validateOnly($fields);
     }
-    
+
     public function saveCadre()
     {
         $validatedData = $this->validate();
@@ -54,7 +54,7 @@ class Index extends Component
             $cadre = Cadre::find($this->cadre_id);
             $cadre->nom = $validatedData['nom'];
             $cadre->save();
-            toastr()->success('Cadre creer avec success');
+            toastr()->success('Cadre modifier avec success');
             return redirect('admin/cadres');
         } catch (\Throwable $th) {
             toastr()->error($th);

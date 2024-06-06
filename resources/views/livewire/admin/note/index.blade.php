@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-between mt-1">
-                        <a class="text-info" href="javascript:void(0);">
+                        <a class="text-info" href="{{ route('note.show') }}">
                             <span>Voir les notes</span>
                             <i class="bi bi-arrow-right ms-2"></i>
                         </a>

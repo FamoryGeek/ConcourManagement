@@ -26,10 +26,12 @@ use App\Http\Controllers\Candidat\Postulercontroller;
 use App\Http\Controllers\admin\TypeCandidatController;
 use App\Http\Controllers\AuthCandidat\LoginController;
 use App\Http\Controllers\admin\ProgrammationController;
+use App\Http\Controllers\Admin\SessionController;
 use App\Http\Controllers\Candidat\AncienSujetController as CandidatAncienSujetController;
 use App\Http\Controllers\Candidat\InscriptionController;
 use App\Http\Controllers\Candidat\NoteController as CandidatNoteController;
 use App\Http\Controllers\Candidat\ProgrammationController as CandidatProgrammationController;
+use App\Models\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -149,9 +151,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function()
         Route::get('/programmations','index')->name('index');
     });
 
-    //notes
-    Route::controller(NoteController::class)->name('note.')->group(function () {
-        Route::get('/notes','index')->name('index');
+    //session
+    Route::controller(SessionController::class)->name('session.')->group(function(){
+        Route::get('/sessions', 'index')->name('index');
     });
 
     //typeCandidats

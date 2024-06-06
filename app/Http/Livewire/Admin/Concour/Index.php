@@ -68,7 +68,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->concours = Concour::get();
+        $this->concours = Concour::all();
         $this->corps = Corp::get();
         $this->candidats = Candidat::get();
         return view('livewire.admin.concour.index');

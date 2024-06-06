@@ -288,7 +288,7 @@
                             <!-- Étape 3 : Dossier -->
                             @if ($step === 3)
                                 <div class="alert alert-info alert-dismissible alert-alt fade show m-3">
-                                    <strong>Veuillez choisir une image sous format (png, jpg,jpeg)!</strong>.
+                                    <strong>Veuillez choisir une image sous format (pdf, png, jpg,jpeg)!</strong>.
                                 </div>
 
                                 <!-- Vos champs pour le dossier -->

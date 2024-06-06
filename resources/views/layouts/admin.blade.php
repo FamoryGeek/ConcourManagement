@@ -96,6 +96,7 @@
     <script src="{{ asset('assets/vendor/apex/custom/analytics/sales.js') }}"></script>
     <script src="{{ asset('assets/vendor/apex/custom/analytics/views.js') }}"></script>
     <script src="{{ asset('assets/vendor/apex/custom/analytics/audiences.js') }}"></script>
+    <script src="{{ asset('assets/vendor/apex/custom/orders/orders.js') }}"></script>
          <!-- Morris Graphs -->
          <script src="{{ asset('assets/vendor/morris/raphael-min.js') }}"></script>
          <script src="{{ asset('assets/vendor/morris/morris.min.js') }}"></script>

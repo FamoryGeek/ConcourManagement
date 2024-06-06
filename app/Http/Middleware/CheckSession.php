@@ -19,7 +19,7 @@ class CheckSession
         //Vérifie si la session de l'utilisateur existe
         if (!Session::has('nom') || !Session::has('prenom')) {
             // Redirige l'utilisateur vers la page d'accueil
-            toastr()->error('Vous etes deconnecter');
+            toastr()->info('Vous avez été deconnecter');
             return redirect('/');
         }
         return $next($request);
