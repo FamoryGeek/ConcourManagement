@@ -116,6 +116,24 @@ return new class extends Migration
                 'acces' => 1,
                 'route' => 'type-candidat.index',
                 'type_droit_id' => 1,
+            ],
+            [
+                'nom' => 'Anciens Sujets',
+                'acces' => 1,
+                'route' => 'anciens-sujets.index',
+                'type_droit_id' => 1,
+            ],
+            [
+                'nom' => 'Session',
+                'acces' => 1,
+                'route' => 'session.index',
+                'type_droit_id' => 1,
+            ],
+            [
+                'nom' => 'Parametre Selection',
+                'acces' => 1,
+                'route' => 'parametre-selection.index',
+                'type_droit_id' => 1,
             ]
         ]);
     }

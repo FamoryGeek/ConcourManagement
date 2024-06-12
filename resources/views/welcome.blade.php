@@ -50,7 +50,7 @@
       @if (Route::has('login'))
       <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
           @auth
-              <a href="{{ route('candidat.dashboard') }}" class="btn-getstarted">Home</a>
+              <a href="{{ route('admin.dashboard') }}" class="btn-getstarted">Home</a>
           @else
               <a href="{{ route('candidatAuth.login') }}" class="btn-getstarted">Se connecter</a>
 
@@ -273,7 +273,7 @@
                 <h4><a href="course-details.html">Mata Kamory Keita</a></h4>
                 <p class="description">Être content de son sort, voilà la plus grande richesse, car mouche du Roi est Roi.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
-                
+
                   <div class="trainer-rank d-flex align-items-center">
                     <i class="bi bi-person user-icon"></i>&nbsp;91 18 30 83
                     &nbsp;&nbsp;
@@ -297,7 +297,7 @@
                 <h3><a href="course-details.html">Mata Kamory Keita</a></h3>
                 <p class="description">Mk Keii</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
-                
+
                   <div class="trainer-rank d-flex align-items-center">
                     <i class="bi bi-person user-icon"></i>&nbsp;91 18 30 83
                     &nbsp;&nbsp;
@@ -321,7 +321,7 @@
                 <h3><a href="course-details.html">Mata Kamory Keita</a></h3>
                 <p class="description">On ne peut pas peindre du blanc sur du blanc, du noir sur du noir. Chacun a besoin de l'autre pour se révéler.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
-                
+
                   <div class="trainer-rank d-flex align-items-center">
                     <i class="bi bi-person user-icon"></i>&nbsp;91 18 30 83
                     &nbsp;&nbsp;

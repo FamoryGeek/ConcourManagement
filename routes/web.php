@@ -21,11 +21,13 @@ use App\Http\Controllers\admin\CategorieController;
 use App\Http\Controllers\Candidat\ProfilController;
 use App\Http\Controllers\admin\SpecialiteController;
 use App\Http\Controllers\Admin\AncienSujetController;
+use App\Http\Controllers\Admin\ParametreSelectionController;
 use App\Http\Controllers\Admin\ProfilAdminController;
 use App\Http\Controllers\Candidat\Postulercontroller;
 use App\Http\Controllers\admin\TypeCandidatController;
 use App\Http\Controllers\AuthCandidat\LoginController;
 use App\Http\Controllers\admin\ProgrammationController;
+use App\Http\Controllers\Admin\ResultatController;
 use App\Http\Controllers\Admin\SessionController;
 use App\Http\Controllers\Candidat\AncienSujetController as CandidatAncienSujetController;
 use App\Http\Controllers\Candidat\InscriptionController;
@@ -154,6 +156,16 @@ Route::prefix('admin')->middleware(['auth'])->group(function()
     //session
     Route::controller(SessionController::class)->name('session.')->group(function(){
         Route::get('/sessions', 'index')->name('index');
+    });
+
+    //parametre de selection
+    Route::controller(ParametreSelectionController::class)->name('parametre-selection.')->group(function(){
+        Route::get('/parametreSelection', 'index')->name('index');
+    });
+
+    //resultat
+    Route::controller(ResultatController::class)->name('resultat.')->group(function(){
+        Route::get('/resultat', 'index')->name('index');
     });
 
     //typeCandidats

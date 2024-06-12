@@ -136,4 +136,35 @@
           </div>
         </div> --}}
     </div>
+    <form wire:submit.prevent="publier" method="post">
+        <div class="row gx-4">
+            <div class="col-lg-3 col-sm-4 col-12">
+                <div class="mb-3">
+                    <label class="form-label" for="a14">Annee</label>
+                    <select class="form-select" id="a14" wire:model="annee">
+                        <option value="">Choisissez l'annee</option>
+                        @foreach ( $sessions as $session )
+                        <option value="{{ $session->annee }}" >{{ $session->annee }}
+                        </option>
+                        @endforeach
+
+                    </select>
+                    @error('annee')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-4 col-12 ">
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        Proclamer
+                    </button>
+                    <button type="submit" class="btn btn-secondary">
+                        Cacher
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </form>
 </div>

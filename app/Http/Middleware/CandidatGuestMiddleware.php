@@ -18,7 +18,8 @@ class CandidatGuestMiddleware
     {
         if (Auth::check()) {
             // Utilisateur authentifié, rediriger vers candidat/dashboard
-            return redirect('candidat/dashboard');
+
+            return redirect('candidat/dasboard');
         }
         
         return $next($request);

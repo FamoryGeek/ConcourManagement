@@ -9,4 +9,8 @@ class Session extends Model
 {
     use HasFactory;
     protected $guarded =[];
+    public function paramSelections()
+    {
+        return $this->hasMany(ParamSelection::class);
+    }
 }

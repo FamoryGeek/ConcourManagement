@@ -20,7 +20,7 @@ class CheckSession
         if (!Session::has('nom') || !Session::has('prenom')) {
             // Redirige l'utilisateur vers la page d'accueil
             toastr()->info('Vous avez été deconnecter');
-            return redirect('/');
+            return redirect('/candidat-login');
         }
         return $next($request);
     }

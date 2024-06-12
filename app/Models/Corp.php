@@ -32,4 +32,9 @@ class Corp extends Model
     {
         return $this->hasMany(Candidat::class);
     }
+
+    public function paramSelections()
+    {
+        return $this->hasMany(ParamSelection::class);
+    }
 }

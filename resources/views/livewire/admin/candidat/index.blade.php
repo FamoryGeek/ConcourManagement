@@ -1,4 +1,5 @@
 <div>
+    @include('livewire.admin.candidat.modal')
     <div class="row gx-4">
         <div class="col-sm-12">
             <div class="card mb-3">
@@ -58,7 +59,8 @@
                                                                             data-bs-target="#editModal" href="#"><i
                                                                                 class="bi bi-pencil"></i>
                                                                         </a> --}}
-                                                                    <a class="btn btn-info btn-sm" href=""><i class="bi bi-eye"></i></a>
+                                                                    <a href="#" class="btn btn-info btn-sm" wire:click="show({{ $candidat->id }})" data-bs-toggle="modal"
+                                                                        data-bs-target="#addModal"><i class="bi bi-eye"></i></a>
                                                                 </td>
                                                             </tr>
                                                         @endforeach
