@@ -31,116 +31,15 @@
     <div class="header-actions">
 
         <!-- Search container start -->
-        @livewire('candidat.header.header')
+
         <!-- Search container ends -->
 
         <!-- Header action bar starts -->
         <div class="bg-white p-2 rounded-4 d-flex align-items-center">
 
             <!-- Header actions start -->
-            <div class="d-sm-flex d-none">
-                <div class="dropdown">
-                    <a class="dropdown-toggle d-flex p-3 position-relative" href="#!" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-bag fs-4 lh-1"></i>
-                        <span class="count-label">6</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-sm">
-                        <h5 class="fw-semibold px-3 py-2 text-primary">Orders</h5>
-                        <div class="scroll250">
-                            <div class="mx-3 d-flex gap-2 flex-column">
-                                <div class="bg-danger-subtle border border-danger px-3 py-2 rounded-1">
-                                    <p class="m-0 text-danger">New product purchased</p>
-                                    <p class="small m-0">Just now</p>
-                                </div>
-                                <div class="bg-success-subtle border border-success px-3 py-2 rounded-1">
-                                    <p class="m-0 text-success">Order received.</p>
-                                    <p class="small m-0">Today, 07:45pm</p>
-                                </div>
-
-                                <div class="bg-info-subtle border border-info px-3 py-2 rounded-1">
-                                    <p class="m-0 text-info">New item ordered.</p>
-                                    <p class="small m-0">Today, 07:45pm</p>
-                                </div>
-                                <div class="bg-warning-subtle border border-warning px-3 py-2 rounded-1">
-                                    <p class="m-0 text-warning">New ticket</p>
-                                    <p class="small m-0">Today, 09:30pm</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-grid m-3">
-                            <a href="javascript:void(0)" class="btn btn-primary">View all</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <a class="dropdown-toggle d-flex p-3 position-relative" href="#!" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-receipt fs-4 lh-1"></i>
-                        <span class="count-label bg-danger">9</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-sm">
-                        <h5 class="fw-semibold px-3 py-2 text-primary">Invoices</h5>
-                        <div class="scroll250">
-                            <div class="dropdown-item">
-                                <div class="d-flex align-items-center py-2">
-                                    <img src="assets/images/user1.png" class="img-3x me-3 rounded-5"
-                                        alt="Admin Theme" />
-                                    <div class="m-0">
-                                        <h4 class="mb-2 text-primary">$450.00</h4>
-                                        <h6 class="mb-1 fw-semibold">MSD Solutions</h6>
-                                        <p class="m-0 text-secondary">
-                                            Invoice #99885<span class="badge bg-info ms-2">Paid</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown-item">
-                                <div class="d-flex align-items-center py-2">
-                                    <img src="assets/images/user2.png" class="img-3x me-3 rounded-5"
-                                        alt="Admin Theme" />
-                                    <div class="m-0">
-                                        <h4 class="mb-2 text-primary">$290.00</h4>
-                                        <h6 class="mb-1 fw-semibold">VK Inc</h6>
-                                        <p class="m-0 text-secondary">
-                                            Invoice #99887<span class="badge bg-info ms-2">Paid</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown-item">
-                                <div class="d-flex align-items-center py-2">
-                                    <img src="assets/images/user3.png" class="img-3x me-3 rounded-5"
-                                        alt="Admin Theme" />
-                                    <div class="m-0">
-                                        <h4 class="mb-2 text-primary">$330.00</h4>
-                                        <h6 class="mb-1 fw-semibold">Sky Labs</h6>
-                                        <p class="m-0 text-secondary">
-                                            Invoice #99888<span class="badge bg-info ms-2">Paid</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown-item">
-                                <div class="d-flex align-items-center py-2">
-                                    <img src="assets/images/user4.png" class="img-3x me-3 rounded-5"
-                                        alt="Admin Theme" />
-                                    <div class="m-0">
-                                        <h4 class="mb-2 text-primary">$380.00</h4>
-                                        <h6 class="mb-1 fw-semibold">Good Works Inc</h6>
-                                        <p class="m-0 text-secondary">
-                                            Invoice #99889<span class="badge bg-info ms-2">Paid</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-grid m-3">
-                            <a href="javascript:void(0)" class="btn btn-primary">View all</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            @livewire('candidat.header.header')
             <!-- Header actions end -->
 
             <!-- User settings start -->
@@ -159,7 +58,7 @@
                             {{ strtoupper(substr(session('prenom'), 0, 1))."".strtoupper(substr(session('nom'), 0, 1)) }}
                             {{-- {{ Auth::guard('candidat')->user()->nom }} --}}
                         @else
-                            
+
                         @endif
                     </div>
                 </a>

@@ -136,7 +136,7 @@
           </div>
         </div> --}}
     </div>
-    <form wire:submit.prevent="publier" method="post">
+    <form >
         <div class="row gx-4">
             <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
@@ -156,10 +156,10 @@
             </div>
             <div class="col-lg-3 col-sm-4 col-12 ">
                 <div class="mt-4">
-                    <button type="submit" class="btn btn-primary">
+                    <button  wire:click="publier()" class="btn btn-primary">
                         Proclamer
                     </button>
-                    <button type="submit" class="btn btn-secondary">
+                    <button wire:click="cacher()" class="btn btn-danger">
                         Cacher
                     </button>
                 </div>

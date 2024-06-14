@@ -101,7 +101,7 @@ toastr()->success('Bien le '.$message.' '.$candidat->nom.' '.$candidat->prenom);
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
-        return redirect('/');
+        toastr('info','Vous avez ete deconnecter');
+        return redirect('/candidat-login');
     }
 }

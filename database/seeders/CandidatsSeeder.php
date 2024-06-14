@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Candidat;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CandidatsSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class CandidatsSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Candidat::factory()->count(50)->create();
     }
 }
