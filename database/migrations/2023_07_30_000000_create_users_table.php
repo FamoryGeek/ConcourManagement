@@ -29,11 +29,11 @@ return new class extends Migration
         });
         DB::table('users')->insert([
             [
-                'name' => 'Famory Keïta',
-                'email' => 'famory9301@gmail.com',
+                'name' => 'Mata Keïta',
+                'email' => 'matakeita642@gmail.com',
                 'password' => Hash::make('password'),
-                'adresse' => 'Kanadjiguila',
-                'telephone' => '+223 93 01 88 09',
+                'adresse' => 'kati',
+                'telephone' => '+223 91 18 30 83',
                 'role_id' => 1,
                 'role_type_user_id' => 2,
             ],
