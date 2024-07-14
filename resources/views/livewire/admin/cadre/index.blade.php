@@ -24,7 +24,7 @@
                                     @foreach ($cadres as $cadre)
                                         <tr>
                                             <td>{{ $cadre->id }}</td>
-                                            <td>{{ $cadre->nom }}</td>
+                                            <td>{{ strToUpper($cadre->nom )}}</td>
                                             <td>
                                                 <a wire:click="editCadre({{ $cadre->id }})" class="btn btn-info btn-sm" data-bs-toggle="modal"
                                                     data-bs-target="#editModal" href="#"><i

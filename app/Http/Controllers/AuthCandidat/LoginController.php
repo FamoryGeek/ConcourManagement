@@ -71,25 +71,25 @@ class LoginController extends Controller
         $request->session()->put('corps', $candidat->corp_id);
 
         // Récupérer l'heure actuelle
-$heure = date('H');
+        $heure = date('H');
 
-// Vérifier si c'est le jour (entre 6h et 18h)
-if ($heure >= 6 && $heure < 18) {
-    $message = "Bonjour";
-} else {
-    $message = "Bonsoir";
-}
- $test = Concour::where('candidat_id',  $candidat->id)
-                ->first();
- if ($test) {
-    // Le candidat existe
-    $request->session()->put('postuler', true);
-} else {
-    // Le candidat n'existe pas
-    $request->session()->put('postuler', false);
-}
-// Afficher le message
-toastr()->success('Bien le '.$message.' '.$candidat->nom.' '.$candidat->prenom);
+        // Vérifier si c'est le jour (entre 6h et 18h)
+        if ($heure >= 6 && $heure < 18) {
+            $message = "Bonjour";
+        } else {
+            $message = "Bonsoir";
+        }
+        $test = Concour::where('candidat_id',  $candidat->id)
+            ->first();
+        if ($test) {
+            // Le candidat existe
+            $request->session()->put('postuler', true);
+        } else {
+            // Le candidat n'existe pas
+            $request->session()->put('postuler', false);
+        }
+        // Afficher le message
+        toastr()->success('Bien le ' . $message . ' ' . $candidat->nom . ' ' . $candidat->prenom);
         return redirect()->intended('/candidat/dashboard');
     }
 
@@ -101,7 +101,7 @@ toastr()->success('Bien le '.$message.' '.$candidat->nom.' '.$candidat->prenom);
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-        toastr('info','Vous avez ete deconnecter');
+        toastr('info', 'Vous avez ete deconnecter');
         return redirect('/candidat-login');
     }
 }

@@ -30,7 +30,7 @@
                                             <td>
                                                 {{ $parametreSelection->id }}
                                             </td>
-                                            <td>{{ $parametreSelection->corp->nom }}</td>
+                                            <td>{{ strToUpper($parametreSelection->corp->nom) }}</td>
                                             <td>{{ $parametreSelection->session->annee }}</td>
                                             <td>{{ $parametreSelection->nombre }}</td>
                                             <td>

@@ -14,4 +14,7 @@ class Localite extends Model
     public function centres() {
         return $this->hasMany(Centre::class);
     }
+    public function candidats(){
+        return $this->hasMany(Candidat::class);
+    }
 }

@@ -27,7 +27,7 @@
                                     @foreach ($sujets as $sujet)
                                         <tr>
                                             <td>{{ $sujet->id }}</td>
-                                            <td>{{ $sujet->titre }}</td>
+                                            <td>{{ strToUpper($sujet->titre) }}</td>
                                             <td>{{ $sujet->description }}</td>
                                             <td>{{ $sujet->date_publication }}</td>
                                             {{-- <td></td> --}}

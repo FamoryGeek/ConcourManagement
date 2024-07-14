@@ -2,9 +2,9 @@
     <nav id="sidebar" class="sidebar-wrapper">
 
         <!-- App brand starts -->
-        <div class="app-brand p-3 my-2">
-            <a href="{{ route('admin.dashboard') }}">
-                <img src="{{ asset('assets/images/logo.svg') }}" class="logo" alt="Bootstrap Gallery" />
+        <div class="app-brand p-3 my-2 text-center">
+            <a href="" class="">
+                <img src="{{ asset('accueil/img/logo1.png') }}" class="" style="width: 50%"  alt="Fonction Publique" />
             </a>
         </div>
 

@@ -91,7 +91,7 @@
                                 Votre mot de passe doit comporter entre 8 et 20 caractères.
                             </div>
                         </div>
-                       {{--  <div class="row mb-3">
+                         <div class="row mb-3">
                             <label class="form-label" for="password-confirm">Confirmez le mot de passe <span
                                 class="text-danger">*</span></label>
 
@@ -104,7 +104,7 @@
                                     <i class="bi bi-eye"></i>
                                 </button>
                             </div>
-                        </div> --}}
+                        </div> 
 
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary">

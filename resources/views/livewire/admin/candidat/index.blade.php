@@ -25,7 +25,7 @@
                                         <th scope="col">Genre</th>
                                         <th scope="col">Adresse</th>
                                         <th scope="col">Numero</th>
-                                        <th scope="col">Status</th>
+                                        <th scope="col">Etat</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -34,7 +34,7 @@
                                         <tr>
                                             <th scope="col" colspan="10" class="text-center text-bold">
                                                 <button class="btn btn-secondary btn-sm" data-bs-toggle="collapse" data-bs-target="#corp-{{ $corpId }}">
-                                                    {{ $candidatsByCorp->first()->corp->nom }} <i class="bi bi-chevron-down"></i>
+                                                    {{ strToUpper($candidatsByCorp->first()->corp->nom) }} <i class="bi bi-chevron-down"></i>
                                                 </button>
                                             </th>
                                         </tr>
@@ -46,20 +46,29 @@
                                                             <tr>
                                                                 <td>{{ $candidat->id }}</td>
                                                                 <td>{{ $candidat->nina }}</td>
-                                                                <td>{{ $candidat->nom }}</td>
+                                                                <td>{{ strToUpper($candidat->nom) }}</td>
                                                                 <td>{{ $candidat->prenom }}</td>
                                                                 <td>{{ $candidat->dateNaissance }}</td>
                                                                 <td>{{ $candidat->genre }}</td>
                                                                 <td>{{ $candidat->adresse }}</td>
                                                                 <td>{{ $candidat->numero }}</td>
-                                                                <td>{{ $candidat->status }}</td>
+                                                                <td>
+                                                                    @if ($candidat->etat === 1)
+                                                                    <span class="btn btn-warning">En cours</span>
+                                                                    @elseif ($candidat->etat === 2)
+                                                                    <span class="btn btn-success">Valider</span>
+                                                                    @else
+                                                                    <span class="btn btn-danger">Rejeter</span>
+                                                                    @endif
+                                                                </td>
                                                                 <td>
                                                                     {{-- <a wire:click="#"
                                                                             class="btn btn-info btn-sm" data-bs-toggle="modal"
                                                                             data-bs-target="#editModal" href="#"><i
                                                                                 class="bi bi-pencil"></i>
                                                                         </a> --}}
-                                                                    <a href="#" class="btn btn-info btn-sm" wire:click="show({{ $candidat->id }})" data-bs-toggle="modal"
+                                                                        {{-- <a href="" class="btn btn-"></a> --}}
+                                                                    <a href="#" wire:click="viewFile({{ $candidat->id }})" class="btn btn-info btn-sm"  data-bs-toggle="modal"
                                                                         data-bs-target="#addModal"><i class="bi bi-eye"></i></a>
                                                                 </td>
                                                             </tr>

@@ -30,9 +30,9 @@
                                             <td>
                                                 {{ $corp->id }}
                                             </td>
-                                            <td>{{ $corp->nom }}</td>
-                                            <td>{{ $corp->cadre->nom }}</td>
-                                            <td>{{ $corp->categorie->nom }}</td>
+                                            <td>{{ strToUpper($corp->nom) }}</td>
+                                            <td>{{ strToUpper($corp->cadre->nom) }}</td>
+                                            <td>{{ strToUpper($corp->categorie->nom) }}</td>
                                             <td>
                                                 <a wire:click="editCorp({{ $corp->id }})"  class="btn btn-info btn-sm update_modal" data-bs-toggle="modal"
                                                     data-bs-target="#editModal" href="#"><i

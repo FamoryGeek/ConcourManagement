@@ -24,8 +24,8 @@
                                     @foreach ($specialites as $specialite)
                                         <tr>
                                             <td>{{ $specialite->id }}</td>
-                                            <td>{{ $specialite->nom }}</td>
-                                            <td>{{ $specialite->corp->nom }}</td>
+                                            <td>{{ strToUpper($specialite->nom) }}</td>
+                                            <td>{{ strToUpper($specialite->corp->nom) }}</td>
                                             <td>
                                                 <a wire:click="editSpecialite({{ $specialite->id }})"  class="btn btn-info btn-sm update_modal" data-bs-toggle="modal"
                                                     data-bs-target="#editModal" href="#"><i

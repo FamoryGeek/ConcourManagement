@@ -50,6 +50,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::controller(\App\Http\Controllers\WelcomeController::class)->group(function(){
+    Route::get('/','index')->name('welcome');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -203,6 +207,9 @@ Route::group(['middleware' => 'checksession'], function(){
     //Profil
     Route::controller(ProfilController::class)->name('candidat.')->group(function(){
         Route::get('/profil', 'index')->name('profil.index');
+        Route::get('/candidatprofils/edit','edit')->name('profil.edit');
+        Route::post('/candidatprofils/update','modifierCandidatProfil')->name('updateProfil');
+        Route::post('/change-pass','updatePassword')->name('updatePassword');
     });
     //postuler
     Route::controller(Postulercontroller::class)->name('candidat.')->group(function(){

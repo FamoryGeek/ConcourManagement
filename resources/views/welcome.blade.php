@@ -9,7 +9,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ asset('accueil/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset('accueil/img/mali.png') }}" rel="icon">
   <link href="{{ asset('accueil/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -33,10 +33,10 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="#" class="logo d-flex align-items-center me-auto">
+      <a href="#" class=" d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="">Concurify</h1>
+        <img src="{{ asset('accueil/img/logo1.png') }}" style="width: 25%"   alt="">
+        {{--<h1 class="">Concurify</h1>--}}
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -55,7 +55,7 @@
               <a href="{{ route('candidatAuth.login') }}" class="btn-getstarted">Se connecter</a>
 
               @if (Route::has('candidat.inscription'))
-                  <a href="{{ route('candidat.inscription') }}" class="btn-getstarted">S'enregistrer</a>
+                  <a href="{{ route('candidat.inscription') }}" class="btn-getstarted">Inscription</a>
               @endif
           @endauth
       </div>
@@ -68,10 +68,10 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
-      <img src="{{ asset('accueil/img/hero-bg.jpg') }}" alt="" data-aos="fade-in">
+      <img src="{{ asset('accueil/img/background.jpg') }}" alt="" data-aos="fade-in">
 
       <div class="container">
-        <h2 data-aos="fade-up" data-aos-delay="100" class="">Concurify<br>Votre porte d'entrée vers la fonction publique au Mali.</h2>
+        <h2 data-aos="fade-up" data-aos-delay="100" class="">MaliConcours<br>Votre porte d'entrée dans la fonction publique au Mali.</h2>
         <p data-aos="fade-up" data-aos-delay="200">Bienvenue sur MaliConcours, votre plateforme dédiée à simplifier et optimiser votre parcours vers la fonction publique au Mali. Découvrez nos services pour réussir vos concours avec succès !</p>
         <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
           <a href="{{ route('candidat.inscription') }}" class="btn-get-started">S'inscrire</a>
@@ -88,20 +88,18 @@
         <div class="row gy-4">
 
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-            <img src="{{ asset('accueil/img/about.jpg') }}" class="img-fluid" alt="">
+            <img src="{{ asset('accueil/img/Republique.jpg') }}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
-            <h3>Voluptatem dignissimos provident quasi corporis</h3>
+            <h3>Missions</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+                Au Mali, le recrutement s’effectue par voie de concours conformément aux dispositions de l’article 29 et suivant de la loi N*02-053 du 16 décembre 2002 portant Statut général des fonctionnaires.
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Le recrutement a pour objet de pourvoir à la vacance des emplois permanents de l’Administration. La limitation du nombre d’emplois à pourvoir a pour conséquence les recours au concours comme moyen de sélection des candidats au recrutement.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Le concours permet de donner une égale chance à tous les candidats en application du principe de l’égalité devant les emplois publics et de choisir autant que possible les meilleurs en vue de relever le niveau qualitatif du personnel de l’Administration.</span></li>
             </ul>
-            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            <a href="{{ route('candidat.inscription') }}" class="read-more"><span>S'inscrire</span><i class="bi bi-arrow-right"></i></a>
           </div>
 
         </div>
@@ -119,28 +117,28 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="{{ $candidat }}" data-purecounter-duration="1" class="purecounter"></span>
               <p class="">Candidats</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
-              <p class="">Concours</p>
+              <span data-purecounter-start="0" data-purecounter-end="{{ $cadre }}" data-purecounter-duration="1" class="purecounter"></span>
+              <p class="">Cadre</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="{{ $corp }}" data-purecounter-duration="1" class="purecounter"></span>
               <p class="">Corps</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="{{ $specialite }}" data-purecounter-duration="1" class="purecounter"></span>
               <p class="">Specialite</p>
             </div>
           </div><!-- End Stats Item -->
@@ -160,13 +158,18 @@
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="why-box">
-              <h3>Why Choose Our Products?</h3>
+              <h3>Mot du directeur</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+                  Devenir fonctionnaire est souvent une vocation. Les avantages de la fonction publique sont nombreux : nombreuses possibilités d’évolution, carrières diversifiées là où le secteur privé tend à la spécialisation.
+
+                  Au Centre National des Concours de la Fonction Publique, nous organisons les concours directs d’entrée dans la fonction publique d’Etat de façon transparente et sur la base du mérite.
+
+                  Nous encourageons fortement la participation féminine lors des différents concours.
+
+                  Il bon de savoir que, la fonction publique d’Etat offre des possibilités de concours professionnels d’avancement de catégories (C => B1, B1 => B2). Le Centre organise aussi le recrutement de contractuels pour combler les besoins en personnel d’appui dans les structures de l’Etat.
               </p>
               <div class="text-center">
-                <a href="#" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+                <a href="{{ route('candidat.inscription') }}" class="more-btn"><span>S'inscrire</span> <i class="bi bi-chevron-right"></i></a>
               </div>
             </div>
           </div><!-- End Why Box -->
@@ -253,87 +256,12 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Courses</h2>
-        <p class="">Popular Courses</p>
+        <p class="">Organigramme</p>
       </div><!-- End Section Title -->
 
+
       <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="course-item">
-                <img src="{{ asset('accueil/img/MK/mk.jpg') }}" class="img-fluid" alt="">
-              {{-- <img src="{{ asset('img/images/mk.jpg') }}" class="img-fluid" alt="..."> --}}
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Developpement Web </p>
-                  <p class="price"></p>
-                </div>
-
-                <h4><a href="course-details.html">Mata Kamory Keita</a></h4>
-                <p class="description">Être content de son sort, voilà la plus grande richesse, car mouche du Roi est Roi.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bi bi-person user-icon"></i>&nbsp;91 18 30 83
-                    &nbsp;&nbsp;
-                    <i class="bi bi-envelope-open-fill"></i>&nbsp;matakeita642@gmail.com
-                    <i class="fas fa-phone"></i>&nbsp;
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="course-item">
-                <img src="{{ asset('accueil/img/MK/m.jpg') }}" class="img-fluid" alt="">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Intelligence</p>
-                  <p class="price"></p>
-                </div>
-
-                <h3><a href="course-details.html">Mata Kamory Keita</a></h3>
-                <p class="description">Mk Keii</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bi bi-person user-icon"></i>&nbsp;91 18 30 83
-                    &nbsp;&nbsp;
-                    <i class="bi bi-eye-fill"></i>&nbsp;matakeita198
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="course-item">
-                <img src="{{ asset('accueil/img/MK/belle.jpg') }}" class="img-fluid" alt="">
-              {{-- <img src="{{ asset('img/images/mk.jpg') }}" class="img-fluid" alt="..."> --}}
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Contenu </p>
-                  <p class="price"></p>
-                </div>
-
-                <h3><a href="course-details.html">Mata Kamory Keita</a></h3>
-                <p class="description">On ne peut pas peindre du blanc sur du blanc, du noir sur du noir. Chacun a besoin de l'autre pour se révéler.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bi bi-person user-icon"></i>&nbsp;91 18 30 83
-                    &nbsp;&nbsp;
-                    <i class="bi bi-envelope-open-fill"></i>&nbsp;matakeita642@gmail.com
-                    <i class="fas fa-phone"></i>&nbsp;
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-        </div>
+          <img src="{{ asset('accueil/img/organigramme.png') }}" alt="" data-aos="fade-in">
 
       </div>
 
@@ -344,66 +272,7 @@
 
       <div class="container">
 
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="{{ asset('accueil/img/trainers/famory.jpg') }}" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>Famory Keïta</h4>
-                <span>Développement web</span>
-                <p>
-                    Les grands d'où viennent tous et ils s'échappent et font de l'exercice. Je déteste ceux qui ont vu la vérité et qui cherchent soit ou soit
-                </p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <img src="{{ asset('accueil/img/trainers/famory2.jpg') }}" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>Famory Keïta</h4>
-                <span>Marketing</span>
-                <p>
-                    Les repoussés fuient pour atteindre personne qui connaît le plaisir d'être repoussé. Au temps de l'architecte des choses
-                </p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <img src="{{ asset('accueil/img/trainers/famory3.jpg') }}" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>Famory Keïta</h4>
-                <span>Contenu</span>
-                <p>
-                    Parce que le plaisir est aveuglé par les besoins. Le tout est réalisé par ceux qui continuent et donnent un brillant toro de travaux
-                </p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
+          <img src="{{ asset('accueil/img/monument.jpg') }}" class="d-flex align-items-center me-auto" alt="" data-aos="fade-in" >
 
       </div>
 
@@ -417,38 +286,22 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="#" class="logo d-flex align-items-center">
-            <span class="">Concurify</span>
+            <span class="">MlConcours</span>
           </a>
-          <div class="footer-contact pt-3">
-            <p>E122</p>
-            <p>Bamako, Hamdalaye ACI 2000</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+223 93 01 88 09</span></p>
-            <p class="mt-3"><span>+223 91 18 30 83</span></p>
-            <p><strong>Email:</strong> <span>famorydev@outlook.fr</span></p>
-            <p><span>matakeita642@gmail.com</span></p>
-          </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/p/Centre-National-des-Concours-de-la-Fonction-Publique-CNCFP-du-MALI-100063493567416/?locale=fr_FR"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Liens utiles</h4>
           <ul>
             <li><a href="#">Accueil</a></li>
             <li><a href="#">À propos de nous</a></li>
             <li><a href="#">Services</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nos services</h4>
-          <ul>
-            <li><a href="#">Création de sites web</a></li>
-            <li><a href="#">Développement web</a></li>
           </ul>
         </div>
 

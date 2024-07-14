@@ -24,7 +24,7 @@
                                     @foreach ($diplomes as $diplome)
                                         <tr>
                                             <td>{{ $diplome->id }}</td>
-                                            <td>{{ $diplome->nom }}</td>
+                                            <td>{{ strToUpper($diplome->nom) }}</td>
                                             <td>
                                                 <a wire:click="editDiplome({{ $diplome->id }})"
                                                     class="btn btn-info btn-sm" data-bs-toggle="modal"

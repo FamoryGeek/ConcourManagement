@@ -24,7 +24,7 @@
                                     @foreach ($modules as $module)
                                         <tr>
                                             <td>{{ $module->id }}</td>
-                                            <td>{{ $module->nom }}</td>
+                                            <td>{{ strToUpper($module->nom) }}</td>
                                             <td>
                                                 <a wire:click="editModule({{ $module->id }})"
                                                     class="btn btn-info btn-sm" data-bs-toggle="modal"

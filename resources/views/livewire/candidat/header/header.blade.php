@@ -1,3 +1,4 @@
+
 <div>
     <div class="d-sm-flex d-none">
         <div class="dropdown">
@@ -5,8 +6,8 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-bell fs-4 lh-1"></i>
                 <span class="count-label">
-                    @if ($candidat['0']->etat == 0)
-                    1
+                    @if ($candidat['0']->messages)
+                   {{ $nombre }}
                     @else
                     0
                     @endif
@@ -16,10 +17,13 @@
                 <h5 class="fw-semibold px-3 py-2 text-primary">Notification</h5>
                 <div class="scroll250">
                     <div class="mx-3 d-flex gap-2 flex-column">
-                        @if ($candidat['0']->etat == 0)
+                        @if ($candidat['0']->etat )
                         <div class="bg-danger-subtle border border-danger px-3 py-2 rounded-1">
                             <p class="m-0 text-danger">Message de supenssion</p>
-                            <p class="small m-0">Vous avez été supendu à cause de certains dossier Invalide</p>
+                            @foreach ($candidat['0']->messages as $message )
+                            <p class="small m-0">{{ $message->description }}</p>
+                            @endforeach
+
                         </div>
                         @else
                         Pas de notiffication

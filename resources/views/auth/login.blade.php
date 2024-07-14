@@ -30,9 +30,11 @@
           <form action="{{ route('login') }}" method="post">
             @csrf
             <!-- Logo starts -->
-            <a href="{{ URL('/') }}" class="auth-logo mt-5 mb-3">
-              <img src="{{ asset('assets/images/logo.svg') }}" alt="Bootstrap Gallery" />
-            </a>
+            <div class="app-brand p-3 my-2 text-center">
+                <a href="" class="">
+                    <img src="{{ asset('accueil/img/logo1.png') }}" class="" style="width: 50%" alt="Bootstrap Gallery" />
+                </a>
+            </div>
             <!-- Logo ends -->
 
             <!-- Authbox starts -->
@@ -84,19 +86,11 @@
                 </div>
               </div>
 
-              <div class="d-flex justify-content-end mb-3">
-                @if (Route::has('password.request'))
-                <a class="btn btn-link" href="{{ route('password.request') }}">
-                    {{ __('Mot de passe oublié?') }}
-                </a>
-            @endif
-              </div>
+
 
               <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-primary">Se connecter</button>
-                <a href="{{ route('register') }}" class="btn btn-outline-dark"
-                  >Non enregistré ? S'inscrire</a
-                >
+
               </div>
             </div>
             <!-- Authbox ends -->

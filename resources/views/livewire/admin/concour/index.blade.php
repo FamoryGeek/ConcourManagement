@@ -26,8 +26,8 @@
                                         <tr>
                                             <td>{{ $concour->id }}</td>
                                             <td>{{ $concour->annee }}</td>
-                                            <td>{{ $concour->corp->nom }}</td>
-                                            <td>{{ $concour->candidat->nina." ".$concour->candidat->nom." ".$concour->candidat->prenom  }}</td>
+                                            <td>{{ strToUpper($concour->corp->nom) }}</td>
+                                            <td>{{ strToUpper($concour->candidat->nina)." ".strToUpper($concour->candidat->nom)." ".$concour->candidat->prenom  }}</td>
                                             <td>
                                                 <a wire:click="deleteConcour({{ $concour->id }})"  class="btn btn-danger btn-sm delete_modal" data-bs-toggle="modal"
                                                 data-bs-target="#deleteModal" href="#"><i

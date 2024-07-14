@@ -25,8 +25,8 @@
                                     @foreach ($programmations as $programmation)
                                         <tr>
                                             <td>{{ $programmation->id }}</td>
-                                            <td>{{ $programmation->centre->nom }}</td>
-                                            <td>{{ $programmation->corp->nom }}</td>
+                                            <td>{{ strToUpper($programmation->centre->nom) }}</td>
+                                            <td>{{ strToUpper($programmation->corp->nom) }}</td>
                                             <td>{{ $programmation->date  }}</td>
                                             <td>
                                                 <a wire:click="editProgrammation({{ $programmation->id }})"  class="btn btn-info btn-sm delete_modal" data-bs-toggle="modal"

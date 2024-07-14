@@ -24,8 +24,8 @@
                                     @foreach ($centres as $centre)
                                         <tr>
                                             <td>{{ $centre->id }}</td>
-                                            <td>{{ $centre->nom }}</td>
-                                            <td>{{ $centre->localite->nom }}</td>
+                                            <td>{{ strToUpper($centre->nom) }}</td>
+                                            <td>{{ strToUpper($centre->localite->nom) }}</td>
                                             <td>
                                                 <a wire:click="editCentre({{ $centre->id }})"  class="btn btn-info btn-sm update_modal" data-bs-toggle="modal"
                                                     data-bs-target="#editModal" href="#"><i

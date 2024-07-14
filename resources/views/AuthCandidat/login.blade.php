@@ -25,9 +25,11 @@
                     <form action="{{ route('candidat.login') }}" method="post">
                         @csrf
                         <!-- Logo starts -->
-                        <a href="{{ URL('/') }}" class="auth-logo mt-5 mb-3">
-                            <img src="{{ asset('assets/images/logo.svg') }}" alt="Bootstrap Gallery" />
-                        </a>
+                        <div class="app-brand p-3 my-2 text-center">
+                            <a href="" class="">
+                                <img src="{{ asset('accueil/img/logo1.png') }}" class="" style="width: 50%" alt="Bootstrap Gallery" />
+                            </a>
+                        </div>
                         <!-- Logo ends -->
 
                         <!-- Authbox starts -->

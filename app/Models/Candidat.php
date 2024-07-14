@@ -44,4 +44,10 @@ class Candidat extends Authenticatable
     {
         return $this->belongsTo(Concour::class);
     }
+    public function localite(){
+        return $this->belongsTo(Localite::class);
+    }
+    public function messages(){
+        return $this->hasMany(Message::class);
+    }
 }

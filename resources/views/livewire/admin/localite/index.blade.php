@@ -24,7 +24,7 @@
                                     @foreach ($localites as $localite)
                                         <tr>
                                             <td>{{ $localite->id }}</td>
-                                            <td>{{ $localite->nom }}</td>
+                                            <td>{{ strToUpper($localite->nom) }}</td>
                                             <td>
                                                 <a wire:click="editLocalite({{ $localite->id }})"
                                                     class="btn btn-info btn-sm" data-bs-toggle="modal"

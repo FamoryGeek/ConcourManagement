@@ -24,7 +24,7 @@
                                     @foreach ($categories as $categorie)
                                         <tr>
                                             <td>{{ $categorie->id }}</td>
-                                            <td>{{ $categorie->nom }}</td>
+                                            <td>{{ strToUpper($categorie->nom) }}</td>
                                             <td>
                                                 <a wire:click="editCategorie({{ $categorie->id }})"
                                                     class="btn btn-info btn-sm" data-bs-toggle="modal"

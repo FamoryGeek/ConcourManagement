@@ -3,115 +3,73 @@
     <!-- Row starts -->
     <div class="row gx-4">
         <div class="col-sm-12">
-          <div class="card mb-3">
-            <div class="card-body">
-
-              <!-- Row starts -->
-              <div class="row justify-content-center align-items-end">
-                <div class="col-xl-4 col-lg-4 col-sm-12 col-12">
-                  <div class="p-3">
-                    <img src="{{ asset('assets/images/login2.svg') }}" alt="Contact Us" class="img-fluid">
-                  </div>
-                </div>
-                <div class="col-xl-8 col-lg-8 col-sm-12 col-12">
-                  <div class="p-3">
+            <div class="card mb-3">
+                <div class="card-body">
 
                     <!-- Row starts -->
-                    <div class="row g-4">
-                      <div class="col-sm-6 col-12">
-                        <div class="card bg-primary">
-                          <div class="card-body text-white">
-                            <div class="d-flex mb-2">
-                              <div class="icon-box md bg-white rounded-5 me-3">
-                                <i class="bi bi-box fs-4 text-primary"></i>
-                              </div>
-                              <div class="d-flex flex-column">
-                                <h2 class="m-0 lh-1">40k</h2>
-                                <p class="m-0 opacity-50">Salaries</p>
-                              </div>
+                    <div class="row justify-content-center align-items-end">
+                        <div class="col-xl-4 col-lg-4 col-sm-12 col-12">
+                            <div class="p-3">
+                                <img src="{{ asset('assets/images/login2.svg') }}" alt="Contact Us" class="img-fluid">
                             </div>
-                            <div class="m-0">
-                              <div class="progress thin mb-2 bg-secondary">
-                                <div class="progress-bar bg-white" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <p class="m-0 small fw-light">30 higher than last month.</p>
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                      <div class="col-sm-6 col-12">
-                        <div class="card bg-info">
-                          <div class="card-body text-white">
-                            <div class="d-flex mb-2">
-                              <div class="icon-box md bg-white rounded-5 me-3">
-                                <i class="bi bi-box fs-4 text-info"></i>
-                              </div>
-                              <div class="d-flex flex-column">
-                                <h2 class="m-0 lh-1">10k</h2>
-                                <p class="m-0 opacity-50">Food</p>
-                              </div>
+                        <div class="col-xl-8 col-lg-8 col-sm-12 col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="modal position-static d-block shade-light rounded-3" tabindex="-1"
+                                        role="dialog" id="modalPayment">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+
+                                                <div class="modal-body p-5 text-center">
+                                                    @if (session('postuler') === true)
+                                                    <h1 class="display-4">
+                                                        <i class="bi bi-check-circle text-success"></i>
+                                                    </h1>
+
+
+                                                        <h4 class="text-success">Votre candidature a été envoyé</h4>
+                                                        <p>Votre dossier est en cours de traitement vous serrez informé pour la suite.</p>
+                                                        <button type="button" class="btn btn-lg btn-danger w-100"
+                                                            data-bs-dismiss="modal">
+                                                            <a href="{{ route('candidat.annuler') }}"  class="text-white">Annuler sa candidature</a>
+                                                        </button>
+                                                        @else
+                                                        <h1 class="display-4">
+                                                            <i class="bi bi-info-circle text-info"></i>
+                                                        </h1>
+                                                        <h4 class="text-info">Postuler au corp: </h4>
+                                                        <p>Cliquez sur le button en bas pour postuler</p>
+                                                        <button type="button" class="btn btn-lg btn-primary w-100"
+                                                            data-bs-dismiss="modal">
+                                                            <a href="{{ route('candidat.postuler') }}" class="text-white">Postuler</a>
+                                                        </button>
+                                                        @endif
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="m-0">
-                              <div class="progress thin mb-2 bg-secondary">
-                                <div class="progress-bar bg-white" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <p class="m-0 small fw-light">50 higher than last month.</p>
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                      <div class="col-sm-6 col-12">
-                        <div class="card bg-danger">
-                          <div class="card-body text-white">
-                            <div class="d-flex mb-2">
-                              <div class="icon-box md bg-white rounded-5 me-3">
-                                <i class="bi bi-box fs-4 text-danger"></i>
-                              </div>
-                              <div class="d-flex flex-column">
-                                <h2 class="m-0 lh-1">10k</h2>
-                                <p class="m-0 opacity-50">Rents</p>
-                              </div>
+                        {{-- <div class="col-xl-8 col-lg-8 col-sm-12 col-12">
+                            <div class="alert alert-info alert-dismissible alert-alt fade show ">
+                                <strong>Ce fichier est sous format (pdf)!</strong>.
                             </div>
-                            <div class="m-0">
-                              <div class="progress thin mb-2  bg-secondary">
-                                <div class="progress-bar bg-white" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <p class="m-0 small fw-light">30 higher than last month.</p>
+                            <div class="p-3">
+
+                                <!-- Row starts -->
+
+                                <!-- Row ends -->
+
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-12">
-                        <div class="card bg-success">
-                          <div class="card-body text-white">
-                            <div class="d-flex mb-2">
-                              <div class="icon-box md bg-white rounded-5 me-3">
-                                <i class="bi bi-box fs-4 text-success"></i>
-                              </div>
-                              <div class="d-flex flex-column">
-                                <h2 class="m-0 lh-1">20k</h2>
-                                <p class="m-0 opacity-50">Transport</p>
-                              </div>
-                            </div>
-                            <div class="m-0">
-                              <div class="progress thin mb-2 bg-secondary">
-                                <div class="progress-bar bg-white" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <p class="m-0 small fw-light">20 higher than last month.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                        </div> --}}
                     </div>
                     <!-- Row ends -->
 
-                  </div>
                 </div>
-              </div>
-              <!-- Row ends -->
-
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 @endsection

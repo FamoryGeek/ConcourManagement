@@ -12,8 +12,9 @@ class Controller extends BaseController
     protected function autorisation($role, $controller)
     {
         $droits = $role->droits;
-        foreach ($droits as $droit) {
 
+        foreach ($droits as $droit) {
+            //dd($droit);
             if ($droit->route == $controller && $droit->acces == 1) {
                 $auth = 'true';
             } else {

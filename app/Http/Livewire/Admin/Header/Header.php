@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Header;
 
+use App\Models\Message;
 use Livewire\Component;
 use App\Models\Type_droit;
 use Illuminate\Support\Facades\Auth;

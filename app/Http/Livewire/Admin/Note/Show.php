@@ -70,7 +70,7 @@ class Show extends Component
 
         $this->resultats = Candidat::where('corp_id', $this->corp_id)
             ->where('specialite_id', $this->specialite_id)
-            ->where('etat', 1)
+            ->where('etat', 2)
             ->whereIn('id', function($query) {
                 $query->select('candidat_id')
                     ->from('concours')

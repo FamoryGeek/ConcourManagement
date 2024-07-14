@@ -74,7 +74,8 @@ class Create extends Component
 
         $this->annee = $validatedData['annee'];
 
-        $this->resultats = Candidat::where('corp_id', $this->corp_id)
+        $this->resultats = Candidat::where('etat', 2)
+            ->where('corp_id', $this->corp_id)
             ->where('localite_id', $this->localite_id)
             ->where('specialite_id', $this->specialite_id)
             ->whereIn('id', function($query) {
