@@ -19,25 +19,25 @@
                         <span class="menu-text">Tableau de bord</span>
                     </a>
                 </li>
-                <li class="{{ request()->is('candidat/notes')? 'active current-page' : '' }}">
+                <li class="{{ request()->is('notes')? 'active current-page' : '' }}">
                     <a href="{{ route('candidat.note.index') }}">
                         <i class="bi bi-wallet2"></i>
                         <span class="menu-text">Notes</span>
                     </a>
                 </li>
-                <li class="{{ request()->is('candidat/programmations')? 'active current-page' : '' }}">
+                <li class="{{ request()->is('programmations')? 'active current-page' : '' }}">
                     <a href="{{ route('candidat.programmation.index') }}">
                         <i class="bi bi-calendar-event"></i>
                         <span class="menu-text">Emploi du temps</span>
                     </a>
                 </li>
-                <li class="{{ request()->is('candidat/ancienSujets')? 'active current-page' : '' }}">
+                <li class="{{ request()->is('ancienSujets')? 'active current-page' : '' }}">
                     <a href="{{ route('candidat.anciens-sujets.index') }}">
                         <i class="bi bi-file-text"></i>
                         <span class="menu-text">Anciens sujets</span>
                     </a>
                 </li>
-                <li class="{{ request()->is('candidat/profil')? 'active current-page' : '' }}">
+                <li class="{{ request()->is('profil')? 'active current-page' : '' }}">
                     <a href="{{ route('candidat.profil.index') }}">
                         <i class="bi bi-person"></i>
                         <span class="menu-text">Profil</span>

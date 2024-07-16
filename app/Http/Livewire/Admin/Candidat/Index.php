@@ -7,6 +7,8 @@ use App\Models\Diplome;
 use App\Models\Message;
 use Livewire\Component;
 use App\Models\Candidat;
+use App\Models\Concour;
+use App\Models\Session;
 use App\Models\TypeCandidat;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Carbon;
@@ -59,13 +61,21 @@ class Index extends Component
     {
         $validatedData = $this->validate();
         try {
+            $session = Session::where('etat', 1)
+                            ->get();
+                //dd($this->candidat_id);
             DB::beginTransaction();
             $candidat = Candidat::find($this->candidat_id);
             $candidat->etat = 0;
             $candidat->save();
+            $concour =  Concour::where('candidat_id',$this->candidat_id)
+                            ->where('annee',$session['0']->annee);
+
+            $concour->delete();
             //dd($candidat->etat);
             $message = new Message();
             $message->candidat_id = $this->candidat_id;
+            $message->type = 0;
             $message->description = $validatedData['description'];
             $message->save();
             DB::commit();
@@ -86,6 +96,7 @@ class Index extends Component
             $candidat->save();
             $message = new Message();
             $message->candidat_id = $id;
+            $message->type = 1;
             $message->description = "Votre candidature a bien été Valider";
             $message->save();
             DB::commit();
@@ -104,7 +115,7 @@ class Index extends Component
             $query->select('candidat_id')
                 ->from('concours');
         })
-            ->get();
+        ->get();
         return view('livewire.admin.candidat.index');
     }
 }

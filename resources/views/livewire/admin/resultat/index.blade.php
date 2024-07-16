@@ -217,7 +217,9 @@
                         <button wire:click="generatePDF" class="btn btn-primary text-center">Imprimer</button>
                     </div>
 
+
             @endif
         @endif
     </div>
 </div>
+

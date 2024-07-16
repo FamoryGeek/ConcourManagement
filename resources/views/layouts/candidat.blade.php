@@ -83,15 +83,6 @@
 
     </div>
     <!-- Page wrapper ends -->
-    @if (session('postuler') === true)
-    <div class="buy-now">
-        <a id="postulerBtn" href="{{ route('candidat.annuler') }}"  class="btn btn-danger btn-buy-now">Annuler sa candidature</a>
-    </div>
-    @else
-    <div class="buy-now">
-        <a id="postulerBtn" href="{{ route('candidat.postuler') }}"  class="btn btn-danger btn-buy-now">Postuler</a>
-    </div>
-    @endif
     <!-- *************
    ************ JavaScript Files *************
   ************* -->

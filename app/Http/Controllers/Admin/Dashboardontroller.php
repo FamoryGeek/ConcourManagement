@@ -24,6 +24,8 @@ class Dashboardontroller extends Controller
         return view('gestionnaire.dashboard');
     }
     public function candidat(){
-        return view('candidat.dashboard');
+        $candidat = Candidat::find(session('id'));
+        $m = $candidat->messages;
+        return view('candidat.dashboard', compact('m','candidat'));
     }
 }

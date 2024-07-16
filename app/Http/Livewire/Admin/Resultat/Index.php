@@ -112,7 +112,7 @@ class Index extends Component
         $corp =  Corp::where('id', $this->corp_id)->pluck('nom')->first();
         $specialite = Specialite::where('id', $this->specialite_id)->pluck('nom')->first();
         $nombre = $this->nombre;
-        //dd($session,$cadre,$specialite,$nombre,$corp);
+
         $pdf = PDF::loadView('pdf.resultats', [
             'resultats' => $this->resultats,
             'session' => $session,
@@ -121,13 +121,19 @@ class Index extends Component
             'nombre' => $nombre,
             'corp' => $corp
         ]);
-        return response()->streamDownload(
+
+        return response()->stream(
             function () use ($pdf) {
                 echo $pdf->output();
             },
-            "resultats.pdf"
+            200,
+            [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="resultats.pdf"',
+            ]
         );
     }
+
 
     public function render()
     {

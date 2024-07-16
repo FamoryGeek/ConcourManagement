@@ -23,28 +23,47 @@
 
                                                 <div class="modal-body p-5 text-center">
                                                     @if (session('postuler') === true)
-                                                    <h1 class="display-4">
-                                                        <i class="bi bi-check-circle text-success"></i>
-                                                    </h1>
-
-
-                                                        <h4 class="text-success">Votre candidature a été envoyé</h4>
-                                                        <p>Votre dossier est en cours de traitement vous serrez informé pour la suite.</p>
+                                                        @if ($candidat->etat === 1)
+                                                        <h1 class="display-4">
+                                                            <i class="bi bi-info-circle text-warning"></i>
+                                                        </h1>
+                                                        <h4 class="text-warning">Vous avez postuler au corps:
+                                                            <b>{{ session('candidature') }}</b></h4>
+                                                            <p>Votre dossier est en cours de traitement vous serrez informé
+                                                                pour la suite.</p>
+                                                        @elseif ($candidat->etat === 2)
+                                                            <h1 class="display-4">
+                                                                <i class="bi bi-check-circle text-success"></i>
+                                                            </h1>
+                                                            <h4 class="text-success">Vous avez postuler au corps:
+                                                                <b>{{ session('candidature') }}</b></h4>
+                                                            <p>Votre dossier a bien été valider.</p>
+                                                            @else
+                                                            <h1 class="display-4">
+                                                                <i class="bi bi-x-circle text-danger"></i>
+                                                            </h1>
+                                                            <h4 class="text-danger">Vous avez postuler au corps:
+                                                                <b>{{ session('candidature') }}</b></h4>
+                                                            <p>Votre dossier à été rejeter veuillez consulte votre boite de notiffication pour plus d'information.</p>
+                                                        @endif
                                                         <button type="button" class="btn btn-lg btn-danger w-100"
                                                             data-bs-dismiss="modal">
-                                                            <a href="{{ route('candidat.annuler') }}"  class="text-white">Annuler sa candidature</a>
+                                                            <a href="{{ route('candidat.annuler') }}"
+                                                                class="text-white">Annuler sa candidature</a>
                                                         </button>
-                                                        @else
+                                                    @else
                                                         <h1 class="display-4">
                                                             <i class="bi bi-info-circle text-info"></i>
                                                         </h1>
-                                                        <h4 class="text-info">Postuler au corp: </h4>
+                                                        <h4 class="text-info">Postuler au corp:
+                                                            <b>{{ session('candidature') }}</b></h4>
                                                         <p>Cliquez sur le button en bas pour postuler</p>
                                                         <button type="button" class="btn btn-lg btn-primary w-100"
                                                             data-bs-dismiss="modal">
-                                                            <a href="{{ route('candidat.postuler') }}" class="text-white">Postuler</a>
+                                                            <a href="{{ route('candidat.postuler') }}"
+                                                                class="text-white">Postuler</a>
                                                         </button>
-                                                        @endif
+                                                    @endif
 
                                                 </div>
                                             </div>

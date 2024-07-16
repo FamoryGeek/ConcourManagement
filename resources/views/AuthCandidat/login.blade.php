@@ -4,8 +4,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Gestion de concour</title>
-        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" />
+        <title>MaliConcour - change password</title>
+        <link rel="shortcut icon" href="{{ asset('accueil/img/mali.png') }}" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
         <!-- *************
@@ -26,8 +26,8 @@
                         @csrf
                         <!-- Logo starts -->
                         <div class="app-brand p-3 my-2 text-center">
-                            <a href="" class="">
-                                <img src="{{ asset('accueil/img/logo1.png') }}" class="" style="width: 50%" alt="Bootstrap Gallery" />
+                            <a href="{{ route('welcome') }}" class="">
+                                <img src="{{ asset('accueil/img/logo1.png') }}" class="" style="width: 50%" alt="Fonction publique" />
                             </a>
                         </div>
                         <!-- Logo ends -->

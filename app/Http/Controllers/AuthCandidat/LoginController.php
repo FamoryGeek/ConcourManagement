@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\AuthCandidat;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Candidat;
-use App\Models\CompteCandidat;
 use App\Models\Concour;
+use App\Models\Candidat;
+use Illuminate\Http\Request;
+use App\Models\CompteCandidat;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -69,6 +70,7 @@ class LoginController extends Controller
         $request->session()->put('nom', $candidat->nom);
         $request->session()->put('prenom', $candidat->prenom);
         $request->session()->put('corps', $candidat->corp_id);
+        $request->session()->put('candidature', $candidat->corp->nom);
 
         // Récupérer l'heure actuelle
         $heure = date('H');
@@ -88,6 +90,10 @@ class LoginController extends Controller
             // Le candidat n'existe pas
             $request->session()->put('postuler', false);
         }
+        /* $changePassword = CompteCandidat::where('candidat_id', $candidat->id);
+        if ($changePassword->password_changed) {
+            # code...
+        } */
         // Afficher le message
         toastr()->success('Bien le ' . $message . ' ' . $candidat->nom . ' ' . $candidat->prenom);
         return redirect()->intended('/candidat/dashboard');
@@ -103,5 +109,36 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
         toastr('info', 'Vous avez ete deconnecter');
         return redirect('/candidat-login');
+    }
+
+    public function changepassword(){
+        return view('AuthCandidat.password-change');
+    }
+
+    public function change(Request $request)
+    {
+
+        $candidat = CompteCandidat::where('candidat_id', session('id'))->first();
+        if (!$candidat) {
+            toastr()->error('Candidat non trouvé');
+            return redirect()->route('candidat.profil.index');
+        }
+
+        if (!Hash::check($request->currentPassword, $candidat->password)) {
+            toastr()->error('Mot de passe actuel incorrect');
+            return redirect()->route('candidat.profil.index');
+        }
+
+        try {
+            $candidat->password = Hash::make($request->password);
+            $candidat->save();
+
+            toastr()->success('Mot de passe mis à jour avec succès');
+
+            return redirect()->route('candidat.profil.index');
+        } catch (\Exception $e) {
+            toastr()->error('Erreur lors de la mise à jour du mot de passe : ' . $e->getMessage());
+            return redirect()->route('candidat.profil.index');
+        }
     }
 }

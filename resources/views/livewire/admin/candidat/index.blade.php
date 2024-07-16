@@ -54,11 +54,20 @@
                                                                 <td>{{ $candidat->numero }}</td>
                                                                 <td>
                                                                     @if ($candidat->etat === 1)
-                                                                    <span class="btn btn-warning">En cours</span>
+                                                                    <span class="badge border border-warning text-warning">
+                                                                        <i class="bi bi-circle-fill"></i>
+                                                                        En cours
+                                                                    </span>
                                                                     @elseif ($candidat->etat === 2)
-                                                                    <span class="btn btn-success">Valider</span>
+                                                                    <span class="badge border border-success text-success">
+                                                                        {{-- <i class="bi bi-circle-fill"></i> --}}
+                                                                        Valider
+                                                                    </span>
                                                                     @else
-                                                                    <span class="btn btn-danger">Rejeter</span>
+                                                                    <span class="badge border border-danger text-danger">
+                                                                        <i class="bi bi-circle-fill"></i>
+                                                                        Rejeter
+                                                                    </span>
                                                                     @endif
                                                                 </td>
                                                                 <td>

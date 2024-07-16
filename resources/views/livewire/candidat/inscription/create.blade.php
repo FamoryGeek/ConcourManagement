@@ -35,13 +35,6 @@
                                     </a>
                                 </li>
                             @endif
-                            @if ($step === 3)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <h2> <span class="num">3 - </span> Dossier</h2>
-                                    </a>
-                                </li>
-                            @endif
                         </ul>
                     </div>
                     <form wire:submit.prevent="candidatSave" enctype="multipart/form-data">
@@ -280,15 +273,14 @@
                                 <div class="modal-footer">
                                     <button type="button" class="me-3 btn btn-primary"
                                         wire:click="previousStep">Précédent</button>
-                                    <button type="button" class="btn btn-primary"
-                                        wire:click="nextStep">Suivant</button>
+                                        <button type="submit" class="btn btn-primary">Envoyer</button>
                                 </div>
                             @endif
 
                             <!-- Étape 3 : Dossier -->
-                            @if ($step === 3)
+                            {{-- @if ($step === 3)
                                 <div class="alert alert-info alert-dismissible alert-alt fade show m-3">
-                                    <strong>Veuillez choisir une image sous format (pdf, png, jpg,jpeg)!</strong>.
+                                    <strong>Veuillez choisir un fichier sous format (pdf, png, jpg,jpeg)!</strong>.
                                 </div>
 
                                 <!-- Vos champs pour le dossier -->
@@ -297,9 +289,9 @@
                                         <div class="card mb-4">
                                             <div class="card-body">
                                                 <div class="m-0">
-                                                    <label for="am" class="form-label">Image
-                                                        du
-                                                        diplôme<span class="text-danger">*</span></label>
+                                                    <label for="am" class="form-label">
+                                                       Fichier du diplôme
+                                                        <span class="text-danger">*</span></label>
                                                     <input class="form-control" type="file" id="am"
                                                         wire:model="diplomeImage">
                                                 </div>
@@ -313,9 +305,9 @@
                                         <div class="card mb-4">
                                             <div class="card-body">
                                                 <div class="m-0">
-                                                    <label for="an" class="form-label">Image
-                                                        du
-                                                        Certificat Medical<span class="text-danger">*</span></label>
+                                                    <label for="an" class="form-label">
+                                                        Fichier du certificat medical(pour les personnes handicapés)
+                                                        <span class="text-danger">*</span></label>
                                                     <input class="form-control" type="file" id="an"
                                                         wire:model="certificatMedical">
                                                 </div>
@@ -329,10 +321,9 @@
                                         <div class="card mb-4">
                                             <div class="card-body">
                                                 <div class="m-0">
-                                                    <label for="ao" class="form-label">Image
-                                                        de
-                                                        la fiche
-                                                        individuelle<span class="text-danger">*</span></label>
+                                                    <label for="ao" class="form-label">
+                                                        Fichier de la fiche individuelle
+                                                        <span class="text-danger">*</span></label>
                                                     <input class="form-control" type="file"
                                                         wire:model="ficheIndividuelle" id="ao">
                                                 </div>
@@ -346,9 +337,9 @@
                                         <div class="card mb-4">
                                             <div class="card-body">
                                                 <div class="m-0">
-                                                    <label for="ap" class="form-label">Image
-                                                        du
-                                                        nina<span class="text-danger">*</span></label>
+                                                    <label for="ap" class="form-label">
+                                                        Fichier du nina
+                                                        <span class="text-danger">*</span></label>
                                                     <input class="form-control" type="file"
                                                         wire:model="nina_image" id="ap">
                                                 </div>
@@ -362,10 +353,9 @@
                                         <div class="card mb-4">
                                             <div class="card-body">
                                                 <div class="m-0">
-                                                    <label for="aq" class="form-label">Image
-                                                        de
-                                                        l'acte de
-                                                        naissance<span class="text-danger">*</span></label>
+                                                    <label for="aq" class="form-label">
+                                                        Fichier de l'acte de naissance
+                                                        <span class="text-danger">*</span></label>
                                                     <input class="form-control" type="file"
                                                         wire:model="acteNaissance" id="aq">
                                                 </div>
@@ -379,10 +369,8 @@
                                         <div class="card mb-4">
                                             <div class="card-body">
                                                 <div class="m-0">
-                                                    <label for="ar" class="form-label">Image
-                                                        du
-                                                        certificat
-                                                        de nationalité<span class="text-danger">*</span></label>
+                                                    <label for="ar" class="form-label">
+                                                        Fichier du certificat de nationalité<span class="text-danger">*</span></label>
                                                     <input class="form-control" type="file"
                                                         wire:model="certificatNationalite" id="ar">
                                                 </div>
@@ -396,10 +384,9 @@
                                         <div class="card mb-4">
                                             <div class="card-body">
                                                 <div class="m-0">
-                                                    <label for="as" class="form-label">Image
-                                                        de
-                                                        la lettre
-                                                        d'équivalence (etranger) <span
+                                                    <label for="as" class="form-label">
+                                                        Fichier de la lettre d'équivalence (pour les etrangers)
+                                                        <span
                                                             class="text-danger">*</span></label>
                                                     <input class="form-control" type="file"
                                                         wire:model="lettreEquivalence" id="as">
@@ -419,7 +406,7 @@
                                         wire:click="previousStep">Précédent</button>
                                     <button type="submit" class="btn btn-primary">Envoyer</button>
                                 </div>
-                            @endif
+                            @endif --}}
                         </div>
                     </form>
                 </div>
