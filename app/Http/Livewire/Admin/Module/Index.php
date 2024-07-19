@@ -86,7 +86,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->modules = Module::get();
+        $this->modules = Module::orderBy('nom')->get();
         return view('livewire.admin.module.index');
     }
 }

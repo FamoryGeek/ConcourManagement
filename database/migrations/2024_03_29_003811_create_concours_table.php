@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('annee',15);
             $table->foreignIdFor(\App\Models\Corp::class)->constrained();
-            $table->foreignIdFor(\App\Models\Candidat::class)->constrained();
+            $table->foreignIdFor(\App\Models\Candidat::class)->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

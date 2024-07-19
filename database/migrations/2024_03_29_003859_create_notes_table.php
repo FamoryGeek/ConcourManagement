@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('annee');
             $table->integer('epreuveTechnique');
             $table->integer('cultureGeneral');
-            $table->foreignIdFor(\App\Models\Candidat::class)->constrained();
+            $table->foreignIdFor(\App\Models\Candidat::class)->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

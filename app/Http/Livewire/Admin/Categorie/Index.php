@@ -86,7 +86,8 @@ class Index extends Component
 
     public function render()
     {
-        $this->categories = Categorie::get();
+        $this->categories = Categorie::orderBy('nom')
+        ->get();
         return view('livewire.admin.categorie.index');
     }
 }

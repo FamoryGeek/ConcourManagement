@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nom',100);
             //$table->foreignIdFor(Specialite::class)->constrained();
             $table->foreignIdFor(\App\Models\Categorie::class)->constrained();
-            $table->foreignIdFor(\App\Models\Cadre::class)->constrained();
+            $table->foreignIdFor(\App\Models\Cadre::class)->constrained()->onDelete('cascade');
             $table->timestamps();
         });
         DB::table('corps')->insert([

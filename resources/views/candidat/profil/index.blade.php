@@ -237,8 +237,8 @@
                                                                             <select class="form-select" name="genre"
                                                                                 id="genre" wire:model="genre">
                                                                                 <option value="">--Genre--</option>
-                                                                                <option value="Masculin">Masculin</option>
-                                                                                <option value="Féminin">Féminin</option>
+                                                                                <option  @if($candidats->genre == 'Masculin') selected @endif value="Masculin">Masculin</option>
+                                                                                <option @if($candidats->genre == 'Féminin') selected @endif value="Féminin">Féminin</option>
                                                                             </select>
                                                                         </div>
                                                                         @error('genre')
@@ -264,10 +264,10 @@
                                                                             <select class="form-select" name="status"
                                                                                 id="status" wire:model="status">
                                                                                 <option value="">--Status--</option>
-                                                                                <option value="Célibataire">Célibataire
-                                                                                </option>
-                                                                                <option value="Fiancé">Fiancé</option>
-                                                                                <option value="Marié">Marié</option>
+                                                                                <option  @if($candidats->status == 'Célibataire') selected @endif value="Célibataire">Célibataire</option>
+                                                                                <option @if($candidats->status == 'Fiancé') selected @endif value="Fiancé">Fiancé</option>
+                                                                                <option @if($candidats->status == 'Marié') selected @endif value="Marié">Marié</option>
+                                                                                <option @if($candidats->status == 'Veuf(ve)') selected @endif value="Veuf(ve)">Veuf(ve)</option>
                                                                             </select>
                                                                         </div>
                                                                         @error('status')

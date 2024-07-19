@@ -94,7 +94,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->programmations = Programmation::get();
+        $this->programmations = Programmation::orderBy('corp_id')->get();
         $this->centres = Centre::get();
         $this->corps = Corp::get();
         return view('livewire.admin.programmation.index');

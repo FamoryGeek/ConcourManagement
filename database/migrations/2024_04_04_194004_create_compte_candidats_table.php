@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('password')->default('password');
             $table->string('passwordVerified');
             $table->boolean('password_changed')->default(0);
-            $table->foreignIdFor(Candidat::class)->constrained();
+            $table->foreignIdFor(Candidat::class)->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

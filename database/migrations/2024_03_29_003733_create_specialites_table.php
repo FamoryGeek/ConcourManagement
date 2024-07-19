@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('specialites', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->foreignIdFor(Corp::class)->constrained();
+            $table->foreignIdFor(Corp::class)->constrained()->onDelete('cascade');
             $table->timestamps();
         });
         DB::table('specialites')->insert([

@@ -88,8 +88,8 @@ class Index extends Component
 
     public function render()
     {
-        $this->specialites = Specialite::get();
-        $this->corps = Corp::get();
+        $this->specialites = Specialite::orderBy('nom')->get();
+        $this->corps = Corp::orderBy('nom')->get();
         return view('livewire.admin.specialite.index');
     }
 }

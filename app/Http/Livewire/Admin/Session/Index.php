@@ -89,7 +89,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->sessions = Session::all();
+        $this->sessions = Session::orderBy('annee','desc')->get();
         return view('livewire.admin.session.index');
     }
 }

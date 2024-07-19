@@ -18,8 +18,8 @@ return new class extends Migration
             $table->timestamps();
         });
         DB::table('type_candidats')->insert([
-            ['nom' => 'Régulier'],
-            ['nom' => 'Contractuel']
+            ['nom' => 'REGULIER'],
+            ['nom' => 'CONTRACTUEL']
         ]);
     }
 

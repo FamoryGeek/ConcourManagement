@@ -158,7 +158,7 @@
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="why-box">
-              <h3>Mot du directeur</h3>
+              <h3>Mots du Directeur</h3>
               <p>
                   Devenir fonctionnaire est souvent une vocation. Les avantages de la fonction publique sont nombreux : nombreuses possibilités d’évolution, carrières diversifiées là où le secteur privé tend à la spécialisation.
 
@@ -305,20 +305,20 @@
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-12 footer-newsletter">
+       {{--  <div class="col-lg-4 col-md-12 footer-newsletter">
           <form action="forms/newsletter.php" method="post" class="php-email-form">
             <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
             <div class="loading">Loading</div>
             <div class="error-message"></div>
             <div class="sent-message">Votre demande d'abonnement a été envoyée. Merci!</div>
           </form>
-        </div>
+        </div> --}}
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1">ConCuriFy</strong> <span>By FDEV93 & MDEV91</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1">MaliConcours</strong> <span>By FDEV93 & MDEV91</span></p>
       <div class="credits">
 
       </div>

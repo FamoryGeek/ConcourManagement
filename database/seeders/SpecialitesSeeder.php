@@ -15,11 +15,11 @@ class SpecialitesSeeder extends Seeder
     {
         $specialites = [
             [
-                'nom' => 'Informatique de Gestion',
+                'nom' => 'INFORMATIQUE DE GESTION',
                 'corp_id' => 2
             ],
             [
-                'nom' => 'Maintenance',
+                'nom' => 'MAINTENANCE',
                 'corp_id' => 2
             ],
             [
@@ -28,7 +28,7 @@ class SpecialitesSeeder extends Seeder
             ],
             [
                 'nom' => 'DOCUMENTATION',
-                'corp_id' =>   3
+                'corp_id' => 3
             ],
             [
                 'nom' => 'ANIMATION SOCIOCULTURELLE',
@@ -87,7 +87,7 @@ class SpecialitesSeeder extends Seeder
                 'corp_id' => 5
             ],
             [
-                'nom' => ' GENIE RURAL',
+                'nom' => 'GENIE RURAL',
                 'corp_id' => 5
             ],
             [
@@ -95,14 +95,13 @@ class SpecialitesSeeder extends Seeder
                 'corp_id' => 5
             ],
             [
-                'nom' => ' AMELIORATION ET PRODUCTION DE SBMENCES',
+                'nom' => 'AMELIORATION ET PRODUCTION DE SBMENCES',
                 'corp_id' => 5
             ],
             [
                 'nom' => 'TECHNOLOGIE DE SEMENCES',
                 'corp_id' => 5
             ],
-
             [
                 'nom' => 'AGRICULTURE',
                 'corp_id' => 6
@@ -112,57 +111,55 @@ class SpecialitesSeeder extends Seeder
                 'corp_id' => 6
             ],
             [
-                'nom' => '  Eaux et Forêts',
+                'nom' => 'EAUX ET FORÊTS',
                 'corp_id' => 7
             ],
             [
-                'nom' => ' Biologie',
+                'nom' => 'BIOLOGIE',
                 'corp_id' => 7
             ],
             [
-                'nom' => ' Environnement ou Ecologie',
+                'nom' => 'ENVIRONNEMENT OU ECOLOGIE',
                 'corp_id' => 7
             ],
             [
-                'nom' => 'Environnement',
+                'nom' => 'ENVIRONNEMENT',
                 'corp_id' => 7
             ],
             [
-                'nom' => 'Eaux et Forêts',
+                'nom' => 'EAUX ET FORÊTS',
                 'corp_id' => 8
             ],
             [
-                'nom' => 'Aquaculture',
+                'nom' => 'AQUACULTURE',
                 'corp_id' => 8
             ],
             [
-                'nom' => 'Eaux et Forêts',
+                'nom' => 'EAUX ET FORÊTS',
                 'corp_id' => 9
             ],
             [
-                'nom' => 'Aquaculture',
+                'nom' => 'AQUACULTURE',
                 'corp_id' => 9
             ],
-
-
             [
-                'nom' => 'Elevage',
+                'nom' => 'ELEVAGE',
                 'corp_id' => 10
             ],
             [
-                'nom' => 'Zootechnie',
+                'nom' => 'ZOOTECHNIE',
                 'corp_id' => 10
             ],
             [
-                'nom' => 'Médecine vétérinaire (niveau Doctorat)',
+                'nom' => 'MÉDECINE VÉTÉRINAIRE (NIVEAU DOCTORAT)',
                 'corp_id' => 10
             ],
             [
-                'nom' => 'Elevage',
+                'nom' => 'ELEVAGE',
                 'corp_id' => 11
             ],
             [
-                'nom' => 'Elevage',
+                'nom' => 'ELEVAGE',
                 'corp_id' => 12
             ],
             [
@@ -218,7 +215,7 @@ class SpecialitesSeeder extends Seeder
                 'corp_id' => 16
             ],
             [
-                'nom' => ' EXPLOITATION MINIERE',
+                'nom' => 'EXPLOITATION MINIÈRE',
                 'corp_id' => 16
             ],
             [
@@ -238,11 +235,11 @@ class SpecialitesSeeder extends Seeder
                 'corp_id' => 16
             ],
             [
-                'nom' => 'GENIE INDUSTRIEL ET MAINTENANCE (MECANIQUE)',
+                'nom' => 'GENIE INDUSTRIEL ET MAINTENANCE (MÉCANIQUE)',
                 'corp_id' => 17
             ],
             [
-                'nom' => 'EXPLOITATION MINIERE',
+                'nom' => 'EXPLOITATION MINIÈRE',
                 'corp_id' => 17
             ],
             [
@@ -250,7 +247,7 @@ class SpecialitesSeeder extends Seeder
                 'corp_id' => 17
             ],
             [
-                'nom' => 'MECANIQUE AUTO',
+                'nom' => 'MÉCANIQUE AUTO',
                 'corp_id' => 18
             ],
             [
@@ -274,174 +271,171 @@ class SpecialitesSeeder extends Seeder
                 'corp_id' => 18
             ],
             [
-                'nom' => ' ELECTRONIQUE INDUSTRIELLE',
+                'nom' => 'ÉLECTRONIQUE INDUSTRIELLE',
                 'corp_id' => 18
             ],
             [
-                'nom' => 'Impôts',
+                'nom' => 'IMPÔTS',
                 'corp_id' => 19
             ],
             [
-                'nom' => 'Douanes',
+                'nom' => 'DOUANES',
                 'corp_id' => 20
             ],
             [
-                'nom' => 'Transit',
+                'nom' => 'TRANSIT',
                 'corp_id' => 21
             ],
             [
-                'nom' => 'Douanes',
+                'nom' => 'DOUANES',
                 'corp_id' => 21
             ],
-
             [
-                'nom' => 'Gestion des Entreprises et Administrations',
+                'nom' => 'GESTION DES ENTREPRISES ET ADMINISTRATIONS',
                 'corp_id' => 22
             ],
             [
-                'nom' => 'Marketing',
+                'nom' => 'MARKETING',
                 'corp_id' => 22
             ],
             [
-                'nom' => 'Techniques de Commercialisation',
+                'nom' => 'TECHNIQUES DE COMMERCIALISATION',
                 'corp_id' => 22
             ],
             [
-                'nom' => 'Commerce International',
+                'nom' => 'COMMERCE INTERNATIONAL',
                 'corp_id' => 22
             ],
             [
-                'nom' => 'Journalisme et Communication',
+                'nom' => 'JOURNALISME ET COMMUNICATION',
                 'corp_id' => 23
             ],
             [
-                'nom' => 'Sport (Sciences et techniques des activités physiques et sportives)',
+                'nom' => 'SPORT (SCIENCES ET TECHNIQUES DES ACTIVITÉS PHYSIQUES ET SPORTIVES)',
                 'corp_id' => 24
             ],
             [
-                'nom' => 'Animation Socio-éducative (Sciences et techniques de L\'animation)',
+                'nom' => 'ANIMATION SOCIO-ÉDUCATIVE (SCIENCES ET TECHNIQUES DE L\'ANIMATION)',
                 'corp_id' => 24
             ],
-
-
             [
-                'nom' => 'Statistique',
+                'nom' => 'STATISTIQUE',
                 'corp_id' => 25
             ],
             [
-                'nom' => ' Statistique et Traitement informatique des données',
+                'nom' => 'STATISTIQUE ET TRAITEMENT INFORMATIQUE DES DONNÉES',
                 'corp_id' => 26
             ],
             [
-                'nom' => 'Anesthésiel',
+                'nom' => 'ANESTHÉSIE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Réanimation',
+                'nom' => 'RÉANIMATION',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Biologie médicale',
+                'nom' => 'BIOLOGIE MÉDICALE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Cardiologie',
+                'nom' => 'CARDIOLOGIE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Chirurgie générale',
+                'nom' => 'CHIRURGIE GÉNÉRALE',
                 'corp_id' => 27
             ],
             [
-                'nom' => ' Chirurgie pédiatrique',
+                'nom' => 'CHIRURGIE PÉDIATRIQUE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Dermatologie',
+                'nom' => 'DERMATOLOGIE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Léprologie',
+                'nom' => 'LÉPROLOGIE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Diabétologie',
+                'nom' => 'DIABÉTOLOGIE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Endocrinologie maladies métaboliques',
+                'nom' => 'ENDOCRINOLOGIE MALADIES MÉTABOLIQUES',
                 'corp_id' => 27
             ],
             [
-                'nom' => ' Gynécologie-Obstétrique',
+                'nom' => 'GYNECOLOGIE-OBSTÉTRIQUE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Néphrologie et Hémodialyse',
+                'nom' => 'NÉPHROLOGIE ET HÉMODIALYSE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Ophtalmologie',
+                'nom' => 'OPHTALMOLOGIE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Pédiatrie',
+                'nom' => 'PÉDIATRIE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Radiologie',
+                'nom' => 'RADIOLOGIE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Imagerie médicale',
+                'nom' => 'IMAGERIE MÉDICALE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Rhumatologie',
+                'nom' => 'RHUMATOLOGIE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Stomatologie et chirurgie maxillo-faciale',
+                'nom' => 'STOMATOLOGIE ET CHIRURGIE MAXILLO-FACIALE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Traumatologie-Orthopédique',
+                'nom' => 'TRAUMATOLOGIE-ORTHOPÉDIQUE',
                 'corp_id' => 27
             ],
             [
-                'nom' => 'Médecine générale',
+                'nom' => 'MÉDECINE GÉNÉRALE',
                 'corp_id' => 28
             ],
             [
-                'nom' => 'Pharmacie générale',
+                'nom' => 'PHARMACIE GÉNÉRALE',
                 'corp_id' => 28
             ],
             [
-                'nom' => 'Odontostomatologie',
+                'nom' => 'ODONTOSTOMATOLOGIE',
                 'corp_id' => 28
             ],
             [
-                'nom' => 'Biologie médicale (Maintenance des appareils biomédicaux)',
+                'nom' => 'BIOLOGIE MÉDICALE (MAINTENANCE DES APPAREILS BIOMÉDICAUX)',
                 'corp_id' => 29
             ],
             [
-                'nom' => 'Hygiène Assainissement',
+                'nom' => 'HYGIÈNE ASSAINISSEMENT',
                 'corp_id' => 29
             ],
             [
-                'nom' => 'Infirmier d\'Etat',
+                'nom' => 'INFIRMIER D\'ÉTAT',
                 'corp_id' => 30
             ],
             [
-                'nom' => 'Sage-femme',
+                'nom' => 'SAGE-FEMME',
                 'corp_id' => 30
             ],
             [
-                'nom' => 'Labo-pharmacie',
+                'nom' => 'LABO-PHARMACIE',
                 'corp_id' => 30
             ],
             [
-                'nom' => 'Biologie médicale',
+                'nom' => 'BIOLOGIE MÉDICALE',
                 'corp_id' => 30
             ],
             [
@@ -449,43 +443,43 @@ class SpecialitesSeeder extends Seeder
                 'corp_id' => 30
             ],
             [
-                'nom' => 'Infirmier (Santé publique)',
+                'nom' => 'INFIRMIER (SANTÉ PUBLIQUE)',
                 'corp_id' => 31
             ],
             [
-                'nom' => 'Obstétrique',
+                'nom' => 'OBSTÉTRIQUE',
                 'corp_id' => 31
             ],
             [
-                'nom' => 'Labo-pharmacie',
+                'nom' => 'LABO-PHARMACIE',
                 'corp_id' => 31
             ],
             [
-                'nom' => 'Imagerie médicale',
+                'nom' => 'IMAGERIE MÉDICALE',
                 'corp_id' => 32
             ],
             [
-                'nom' => 'Radiologie',
+                'nom' => 'RADIOLOGIE',
                 'corp_id' => 32
             ],
             [
-                'nom' => 'Anesthésie',
+                'nom' => 'ANESTHÉSIE',
                 'corp_id' => 32
             ],
             [
-                'nom' => 'Réanimation',
+                'nom' => 'RÉANIMATION',
                 'corp_id' => 32
             ],
             [
-                'nom' => 'Odontostomatologie',
+                'nom' => 'ODONTOSTOMATOLOGIE',
                 'corp_id' => 32
             ],
             [
-                'nom' => 'Ophtalmologie',
+                'nom' => 'OPHTALMOLOGIE',
                 'corp_id' => 32
             ],
-
         ];
+
         foreach ($specialites as $key => $specialite) {
             Specialite::create($specialite);
         }

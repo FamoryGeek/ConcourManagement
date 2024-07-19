@@ -188,8 +188,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function()
 Route::group(['middleware' => 'candidat.guest'], function () {
     Route::get('candidat-login', [LoginController::class, 'index'])->name('candidatAuth.login');
     Route::post('candidat-post', [LoginController::class, 'login'])->name('candidat.login');
-    Route::get('candidat-change-password',[LoginController::class, 'changePassword'])->name('candidat.changePassword');
-    Route::post('candidat-change',[LoginController::class, 'changePassword'])->name('candidat.change');
+    Route::get('candidat-change-password/{id}',[LoginController::class, 'changePassword'])->name('candidat.changePassword');
+    Route::post('candidat-change',[LoginController::class, 'change'])->name('candidat.change');
     Route::post('candidat-logout', [LoginController::class, 'logout'])->name('candidat.logout');
 
 });

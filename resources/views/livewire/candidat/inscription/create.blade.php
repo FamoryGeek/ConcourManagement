@@ -5,8 +5,7 @@
             <div class="col-sm-12">
                 <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between">
-                        <h5 class="card-title"><a href="{{ URL('/') }}"><i
-                                    class="bi bi-arrow-left-circle"></i></a>Fiche d'inscritpion</h5>
+                        <h3 class="card-title">Fiche d'inscritpion</h3>
                         <a class="btn btn-primary btn-sm" href="{{ URL('/') }}"><i
                                 class="bi bi-arrow-left-circle"></i>Accueil</a>
                     </div>
@@ -23,7 +22,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="">
 
-                                        <h2><span class="num">1 - </span> Information personnelle</h2>
+                                        <h2><span class="num"><i class="bi bi-1-circle"></i></span> Information personnelle</h2>
                                     </a>
                                 </li>
                             @endif
@@ -31,7 +30,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
 
-                                        <h2><span class="num">2 - </span> Profile</h2>
+                                        <h2><span class="num"><i class="bi bi-2-circle"></i></span> Profiles</h2>
                                     </a>
                                 </li>
                             @endif
@@ -67,7 +66,7 @@
                                     </div>
                                     <div class="col-sm-6 col-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="ac">Prénom<span
+                                            <label class="form-label" for="ac">Prénom(s)<span
                                                     class="text-danger">*</span></label>
                                             <input type="text" class="form-control" id="ac"
                                                 placeholder="Entrez votre prénom " wire:model="prenom">
@@ -120,7 +119,7 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="col-sm-6 col-6">
+                                    <div class="col-sm-3 col-3">
                                         <div class="mb-3">
                                             <label class="form-label" for="ag">Numero de
                                                 téléphone<span class="text-danger">*</span></label>
@@ -131,12 +130,23 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    <div class="col-sm-3 col-3">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="ag">Numero de
+                                                téléphone (Cas d'urgence)<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="ag"
+                                                wire:model="numeroSecondaire">
+                                        </div>
+                                        @error('numeroSecondaire')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
                                     <div class="col-sm-6 col-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="ah">Genre<span
                                                     class="text-danger">*</span></label>
                                             <select class="form-select" id="ah" wire:model="genre">
-                                                <option value="">--Genre--</option>
+                                                <option value="">--Choissir le genre--</option>
                                                 <option value="Masculin">Masculin</option>
                                                 <option value="Féminin">Féminin</option>
                                             </select>
@@ -147,13 +157,14 @@
                                     </div>
                                     <div class="col-sm-6 col-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="ai">Status<span
+                                            <label class="form-label" for="ai">Statut<span
                                                     class="text-danger">*</span></label>
                                                 <select class="form-select" id="ai" wire:model="status">
-                                                    <option value="">--Status--</option>
+                                                    <option value="">--Choisir le statut--</option>
                                                     <option value="Célibataire">Célibataire</option>
                                                     <option value="Fiancé">Fiancé</option>
                                                     <option value="Marié">Marié</option>
+                                                    <option value="Veuf(ve)">Veuf(ve)</option>
                                                 </select>
                                         </div>
                                         @error('status')
@@ -212,7 +223,7 @@
                                     </div>
                                     <div class="col-lg-6 col-sm-6 col-6">
                                         <div class="mb-3">
-                                            <label class="form-label mb-3" for="al">Corp<span
+                                            <label class="form-label mb-3" for="al">Corps<span
                                                     class="text-danger">*</span></label>
                                             <select class="form-select" id="al" wire:model="corp_id">
                                                 <option value="">Choisir le corp</option>
@@ -231,7 +242,7 @@
                                     <!-- Champ pour sélectionner la spécialité -->
                                     <div class="col-lg-6 col-sm-6 col-6">
                                         <div class="mb-3">
-                                            <label class="form-label mb-3" for="al">Specialité<span
+                                            <label class="form-label mb-3" for="al">Specialités<span
                                                     class="text-danger">*</span></label>
                                             <select class="form-select" id="specialite_select"
                                                 wire:model="specialite_id">

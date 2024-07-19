@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+use function Laravel\Prompts\password;
+
 class LoginController extends Controller
 {
     public function index()
@@ -62,41 +64,48 @@ class LoginController extends Controller
             ]); */
         }
 
-        // Authentification réussie
-        Auth::login($candidat);
 
-        // Stocker le nom et le prénom du candidat dans la session
-        $request->session()->put('id', $candidat->id);
-        $request->session()->put('nom', $candidat->nom);
-        $request->session()->put('prenom', $candidat->prenom);
-        $request->session()->put('corps', $candidat->corp_id);
-        $request->session()->put('candidature', $candidat->corp->nom);
+        $changePassword = CompteCandidat::where('candidat_id', $candidat->id)->get();
+        //dd($changePassword['0']->password_changed);
+        if ($changePassword['0']->password_changed == 1) {
+            // Authentification réussie
+            Auth::login($candidat);
 
-        // Récupérer l'heure actuelle
-        $heure = date('H');
+            // Stocker le nom et le prénom du candidat dans la session
+            $request->session()->put('id', $candidat->id);
+            $request->session()->put('nom', $candidat->nom);
+            $request->session()->put('prenom', $candidat->prenom);
+            $request->session()->put('corps', $candidat->corp_id);
+            $request->session()->put('candidature', $candidat->corp->nom);
 
-        // Vérifier si c'est le jour (entre 6h et 18h)
-        if ($heure >= 6 && $heure < 18) {
-            $message = "Bonjour";
-        } else {
-            $message = "Bonsoir";
+            // Récupérer l'heure actuelle
+            $heure = date('H');
+
+            // Vérifier si c'est le jour (entre 6h et 18h)
+            if ($heure >= 6 && $heure < 18) {
+                $message = "Bonjour";
+            } else {
+                $message = "Bonsoir";
+            }
+            $test = Concour::where('candidat_id',  $candidat->id)
+                ->first();
+            if ($test) {
+                // Le candidat existe
+                $request->session()->put('postuler', true);
+            } else {
+                // Le candidat n'existe pas
+                $request->session()->put('postuler', false);
+            }
+            // Afficher le message
+            toastr()->success('Bien le ' . $message . ' ' . $candidat->nom . ' ' . $candidat->prenom);
+            return redirect()->intended('/candidat/dashboard');
+        }else {
+            // Authentification réussie
+            //Auth::login($candidat);
+            $candidat = CompteCandidat::where('candidat_id', $candidatId)->first();
+            toastr()->warning('Vous devez changer votre mot de passe ');
+            return redirect()->intended('/candidat-change-password/'.$changePassword['0']->candidat_id);
         }
-        $test = Concour::where('candidat_id',  $candidat->id)
-            ->first();
-        if ($test) {
-            // Le candidat existe
-            $request->session()->put('postuler', true);
-        } else {
-            // Le candidat n'existe pas
-            $request->session()->put('postuler', false);
-        }
-        /* $changePassword = CompteCandidat::where('candidat_id', $candidat->id);
-        if ($changePassword->password_changed) {
-            # code...
-        } */
-        // Afficher le message
-        toastr()->success('Bien le ' . $message . ' ' . $candidat->nom . ' ' . $candidat->prenom);
-        return redirect()->intended('/candidat/dashboard');
     }
 
 
@@ -111,34 +120,67 @@ class LoginController extends Controller
         return redirect('/candidat-login');
     }
 
-    public function changepassword(){
-        return view('AuthCandidat.password-change');
+    public function changepassword($id)
+    {
+        $candidat = Candidat::find($id);
+        return view('AuthCandidat.password-change',compact('candidat'));
     }
 
     public function change(Request $request)
     {
-
-        $candidat = CompteCandidat::where('candidat_id', session('id'))->first();
+        //dd($request->id);
+        $candidat = CompteCandidat::where('candidat_id', $request->id)->first();
         if (!$candidat) {
             toastr()->error('Candidat non trouvé');
-            return redirect()->route('candidat.profil.index');
+            return redirect('/candidat-change-password'.$request->id);
+        }
+        //dd($request);
+        if ($request->password != $candidat->password_confirmation) {
+            toastr()->error('Mot de passe non identique');
+            return redirect('/candidat-change-password/'.$request->id);
+        }else {
+            try {
+                $candidat->password = Hash::make($request->password);
+                $candidat->passwordVerified = Hash::make($request->password_confirmation);
+                $candidat->password_changed = 1;
+                $candidat->save();
+                $candidat = Candidat::where('id', $request->id)->first();
+                Auth::login($candidat);
+                // Stocker le nom et le prénom du candidat dans la session
+                $request->session()->put('id', $candidat->id);
+                $request->session()->put('nom', $candidat->nom);
+                $request->session()->put('prenom', $candidat->prenom);
+                $request->session()->put('corps', $candidat->corp_id);
+                $request->session()->put('candidature', $candidat->corp->nom);
+
+                // Récupérer l'heure actuelle
+                $heure = date('H');
+
+                // Vérifier si c'est le jour (entre 6h et 18h)
+                if ($heure >= 6 && $heure < 18) {
+                    $message = "Bonjour";
+                } else {
+                    $message = "Bonsoir";
+                }
+                $test = Concour::where('candidat_id',  $candidat->id)
+                    ->first();
+                if ($test) {
+                    // Le candidat existe
+                    $request->session()->put('postuler', true);
+                } else {
+                    // Le candidat n'existe pas
+                    $request->session()->put('postuler', false);
+                }
+                toastr()->success('Bien le ' . $message . ' ' . $candidat->nom . ' ' . $candidat->prenom);
+                toastr()->success('Mot de passe mis à jour avec succès');
+                toastr()->info('Veuillez charge les fichiers necessaire avent de postuler dans votre profile');
+                return redirect()->intended('/candidat/dashboard');
+            } catch (\Exception $e) {
+                toastr()->error('Erreur lors de la mise à jour du mot de passe : ' . $e->getMessage());
+                return redirect()->intended('/candidat-change-password'.$request->id);
+            }
         }
 
-        if (!Hash::check($request->currentPassword, $candidat->password)) {
-            toastr()->error('Mot de passe actuel incorrect');
-            return redirect()->route('candidat.profil.index');
-        }
 
-        try {
-            $candidat->password = Hash::make($request->password);
-            $candidat->save();
-
-            toastr()->success('Mot de passe mis à jour avec succès');
-
-            return redirect()->route('candidat.profil.index');
-        } catch (\Exception $e) {
-            toastr()->error('Erreur lors de la mise à jour du mot de passe : ' . $e->getMessage());
-            return redirect()->route('candidat.profil.index');
-        }
     }
 }

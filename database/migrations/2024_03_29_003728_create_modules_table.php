@@ -18,8 +18,8 @@ return new class extends Migration
             $table->timestamps();
         });
         DB::table('modules')->insert([
-            ['nom' => 'Epreuve Technique'],
-            ['nom' => 'Culture Générale'],
+            ['nom' => 'EPREUVE TECHNIQUE'],
+            ['nom' => 'CULTURE GENERALE'],
         ]);
     }
 

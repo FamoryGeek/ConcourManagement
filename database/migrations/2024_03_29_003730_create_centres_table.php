@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('centres', function (Blueprint $table) {
             $table->id();
             $table->string('nom',50);
-            $table->foreignIdFor(\App\Models\Localite::class)->constrained();
+            $table->foreignIdFor(\App\Models\Localite::class)->constrained()->onDelete('cascade');
             $table->timestamps();
         });
         DB::table('centres')->insert([

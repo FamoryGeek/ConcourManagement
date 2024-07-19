@@ -105,9 +105,9 @@ class Index extends Component
 
     public function render()
     {
-        $this->corps = Corp::get();
-        $this->cadres = Cadre::get();
-        $this->categories = Categorie::get();
+        $this->corps = Corp::orderBy('nom')->get();
+        $this->cadres = Cadre::orderBy('nom')->get();
+        $this->categories = Categorie::orderBy('nom')->get();
         return view('livewire.admin.corp.index');
     }
 }

@@ -86,7 +86,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->localites = Localite::get();
+        $this->localites = Localite::orderBy('nom')->get();
         return view('livewire.admin.localite.index');
     }
 }

@@ -86,7 +86,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->diplomes = Diplome::get();
+        $this->diplomes = Diplome::orderBy('nom')->get();
         return view('livewire.admin.diplome.index');
     }
 }

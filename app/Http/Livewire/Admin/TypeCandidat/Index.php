@@ -87,7 +87,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->typeCandidats = TypeCandidat::get();
+        $this->typeCandidats = TypeCandidat::orderBy('nom')->get();
         return view('livewire.admin.type-candidat.index');
     }
 }

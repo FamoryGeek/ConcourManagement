@@ -24,7 +24,7 @@ class Create extends Component
     public $step = 1;
     public $candidats;
     public $diplomes, $typeCandidats, $corps, $specialites, $localites;
-    public $nina, $nom, $prenom, $dateNaissance, $lieuNaissance, $email, $adresse, $numero, $genre, $status, $diplome_id, $type_candidat_id, $corp_id, $specialite_id, $localite_id;
+    public $nina, $nom, $prenom, $dateNaissance, $lieuNaissance, $email, $adresse, $numero, $numeroSecondaire, $genre, $status, $diplome_id, $type_candidat_id, $corp_id, $specialite_id, $localite_id;
     public $diplomeImage, $certificatMedical, $ficheIndividuelle, $nina_image, $acteNaissance, $certificatNationalite, $lettreEquivalence;
 
     public function rules()
@@ -42,6 +42,7 @@ class Create extends Component
             'email' => 'required|email|string',
             'adresse' => 'required|string|min:2',
             'numero' => ['required', 'string', 'regex:/^\d{8}$/'],
+            'numeroSecondaire' => ['required', 'string', 'regex:/^\d{8}$/'],
             'genre' => 'required|string',
             'status' => 'required|string',
             'diplome_id' => 'required|integer',
@@ -76,6 +77,9 @@ class Create extends Component
         'numero.required' => 'Le champ Numéro est obligatoire.',
         'numero.string' => 'Le champ Numéro doit être une chaîne de caractères.',
         'numero.regex' => 'Le champ Numéro doit être composé de 8 chiffres.',
+        'numeroSecondaire.required' => 'Le champ Numéro est obligatoire.',
+        'numeroSecondaire.string' => 'Le champ Numéro doit être une chaîne de caractères.',
+        'numeroSecondaire.regex' => 'Le champ Numéro doit être composé de 8 chiffres.',
         'genre.required' => 'Le champ Genre est obligatoire.',
         'genre.string' => 'Le champ Genre doit être une chaîne de caractères.',
         'status.required' => 'Le champ Status est obligatoire.',
@@ -153,6 +157,7 @@ class Create extends Component
             $validatedData['email'] = $this->email;
             $validatedData['adresse'] = $this->adresse;
             $validatedData['numero'] = $this->numero;
+            $validatedData['numeroSecondaire'] = $this->numeroSecondaire;
             $validatedData['genre'] = $this->genre;
             $validatedData['status'] = $this->status;
             $validatedData['diplome_id'] = $this->diplome_id;
@@ -222,11 +227,11 @@ class Create extends Component
 
     public function render()
     {
-        $this->candidats = Candidat::get();
-        $this->diplomes = Diplome::get();
-        $this->typeCandidats = TypeCandidat::get();
-        $this->corps = Corp::get();
-        $this->localites = Localite::get();
+        $this->candidats = Candidat::orderBy('nom')->get();
+        $this->diplomes = Diplome::orderBy('nom')->get();
+        $this->typeCandidats = TypeCandidat::orderBy('nom')->get();
+        $this->corps = Corp::orderBy('nom','asc')->get();
+        $this->localites = Localite::orderBy('nom')->get();
 
         return view('livewire.candidat.inscription.create');
     }

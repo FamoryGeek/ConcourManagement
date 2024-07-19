@@ -85,7 +85,8 @@ class Index extends Component
 
     public function render()
     {
-        $this->cadres = Cadre::get();
+        $this->cadres = Cadre::orderBy('nom')
+        ->get();
         return view('livewire.admin.cadre.index');
     }
 }

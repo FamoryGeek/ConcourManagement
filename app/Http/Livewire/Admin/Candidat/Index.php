@@ -111,7 +111,8 @@ class Index extends Component
 
     public function render()
     {
-        $this->candidats = Candidat::whereIn('id', function ($query) {
+        $this->candidats = Candidat::where('etat', 1)
+        ->whereIn('id', function ($query) {
             $query->select('candidat_id')
                 ->from('concours');
         })
